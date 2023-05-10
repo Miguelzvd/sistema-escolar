@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  gap: 0.625rem;
+  width: 100%;
+  height: 4.5rem;
+  background: #07416B;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 5rem;
+  width: 28.5rem;
+  height: 1.5rem;
+}
+
+.nav-item{
+  width: fit-content;
+  height: 1.5rem;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
