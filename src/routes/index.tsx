@@ -7,6 +7,7 @@ export function Routes(){
         <ReactRoutes>
             <Route index element={<Home/>}/>
             <Route path='sign-up' element={<Login/>}/>
+            <Route path='sign-up' element={<Login/>}/>
         </ReactRoutes>
     );
 }

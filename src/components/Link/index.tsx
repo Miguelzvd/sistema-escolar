@@ -1,5 +1,6 @@
 import style from './style.module.css'
-import { Link as LinkItem } from "react-router-dom"
+import { Link as LinkItem } from 'react-router-dom'
+
 interface linkProps{
     link:string;
     text:string;
