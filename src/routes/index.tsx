@@ -1,6 +1,6 @@
 import { Route, Routes as ReactRoutes } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { Login } from "../pages/Login/Login";
+import { Login } from "../pages/Login";
 
 export function Routes() {
   return (
