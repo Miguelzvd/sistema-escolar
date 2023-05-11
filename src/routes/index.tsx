@@ -1,13 +1,13 @@
-import { Route, Routes as ReactRoutes } from 'react-router-dom';
-import { Home } from '../pages/Home';
-import { Login } from '../pages/Login';
+import { Route, Routes as ReactRoutes } from "react-router-dom";
+import { Home } from "../pages/Home";
+import { Login } from "../pages/Login/Login";
 
-export function Routes(){
-    return(
-        <ReactRoutes>
-            <Route index element={<Home/>}/>
-            <Route path='sign-up' element={<Login/>}/>
-            <Route path='sign-up' element={<Login/>}/>
-        </ReactRoutes>
-    );
+export function Routes() {
+  return (
+    <ReactRoutes>
+      <Route index element={<Home />} />
+      <Route path="sign-up" element={<Login />} />
+      <Route path="sign-up" element={<Login />} />
+    </ReactRoutes>
+  );
 }

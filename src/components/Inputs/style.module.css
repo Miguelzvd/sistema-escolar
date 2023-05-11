@@ -1,0 +1,13 @@
+.input-style {
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 10px 8px 10px 8px;
+  box-sizing: border-box;
+  border: none;
+  -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  background-color: #f5f0f0;
+}
