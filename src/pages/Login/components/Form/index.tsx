@@ -4,7 +4,9 @@ import style from "./style.module.css";
 export default function Form() {
   return (
     <>
-      <div className={style.container}>
+      <div className={style.desktop}>
+        <div className="logo">Logo</div>
+
         <form className={style.form} action="">
           <Input
             text="Tipo de usuário"
@@ -13,19 +15,20 @@ export default function Form() {
           />
 
           <Input
-            text="CPF"
+            text="Tipo de usuário"
             htmlForText="tipo-usuário"
             inputType="text"
           />
 
           <Input
-            text="Senha"
+            text="Tipo de usuário"
             htmlForText="tipo-usuário"
-            inputType="password"
+            inputType="text"
           />
 
-          <button className={style.button}>Entrar</button>
-
+          <div>
+            <button></button>
+          </div>
         </form>
       </div>
     </>

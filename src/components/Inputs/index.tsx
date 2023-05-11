@@ -9,7 +9,7 @@ interface inputProps{
 export function Input({text, htmlForText, inputType}: inputProps) {
   return (
     <>
-      <div className={style.container}>
+      <div>
         <label htmlFor={ htmlForText }>{ text }</label>
         <input className={style['input-style']} type={ inputType } />
       </div>
