@@ -1,11 +1,12 @@
 import style from './style.module.css'
-
+import { Link as LinkItem } from "react-router-dom"
 interface linkProps{
     link:string;
+    text:string;
 }
 
-export function Link({link}:linkProps){
+export function Link({text, link}:linkProps){
     return(
-        <a href="" className={style['nav-item']}>{link}</a>
+        <LinkItem to={link} className={style['nav-item']}>{text}</LinkItem>
     );
 }

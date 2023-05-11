@@ -6,11 +6,11 @@ export function Header() {
   return (
     <>
       <div className={style.container}>
-        <img src={logo} alt="" />
+        <img src={logo} alt=""/>
         <nav className={style.nav}>
-          <Link link="Níveis de ensino"></Link>
-          <Link link="Sistema"></Link>
-          <Link link="Login"></Link>
+          <Link text="Níveis de ensino" link="#"></Link>
+          <Link text="Sistema" link="#"></Link>
+          <Link text="Login" link="sign-up"></Link>
         </nav>
       </div>
     </>
