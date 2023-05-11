@@ -44,7 +44,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px;
-  background-color: #07416B;
+  background-color: #07416b;
   position: relative;
   width: 100%;
   height: 100%;
@@ -69,23 +69,7 @@
   flex-grow: 0;
 }
 
-
-
-input{
-    width: 100%;
-    height: fit-content;
-    margin-top: 10px;
-    border-radius: 4px;
-    padding: 10px 8px 10px 8px;
-    box-sizing: border-box;
-    border: none;
-    -webkit-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
-    -moz-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
-    box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
-    background-color: #f5f0f0;
-}
-
-.b{
+input {
   width: 100%;
   height: fit-content;
   margin-top: 10px;
@@ -93,8 +77,23 @@ input{
   padding: 10px 8px 10px 8px;
   box-sizing: border-box;
   border: none;
+  -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.37);
+  background-color: #f5f0f0;
+}
+
+.b {
+  background-color: #057cdde5;
+  color: #fcfdfd;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 8px 10px 8px;
+  box-sizing: border-box;
+  border: none;
   -webkit-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
   -moz-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
   box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.37);
-  background-color: #07416B;
 }

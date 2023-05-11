@@ -7,7 +7,6 @@ export default function Form() {
         <div className="logo">Logo</div>
 
         <form className={style.form} action="">
-
           <div>
             <label htmlFor="tipo-usuário">Tipo de usuário</label>
             <input type="text"/>
