@@ -1,12 +1,12 @@
 
-interface inputProps {
+type Props = {
   text: string;
   name: string;
   inputType: string;
   placeHolder?: string;
 }
 
-export function Input({ text, name, inputType, placeHolder }: inputProps) {
+export function Input({ text, name, inputType, placeHolder }: Props) {
   return (
     <>
       <label className="w-full block">
@@ -14,8 +14,8 @@ export function Input({ text, name, inputType, placeHolder }: inputProps) {
           {text}
         </span>
         <input
-          type={inputType}
-          name={name}
+          type={ inputType }
+          name={ name }
           className="
             mt-1
             px-3
