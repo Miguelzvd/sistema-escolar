@@ -8,19 +8,19 @@ export default function Form() {
         <form className={style.form} action="">
           <Input
             text="Tipo de usuário"
-            htmlForText="tipo-usuário"
+            name="tipo-usuário"
             inputType="text"
           />
 
           <Input
             text="CPF"
-            htmlForText="tipo-usuário"
+            name="tipo-usuário"
             inputType="text"
           />
 
           <Input
             text="Senha"
-            htmlForText="tipo-usuário"
+            name="tipo-usuário"
             inputType="password"
           />
 
