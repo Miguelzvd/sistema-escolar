@@ -5,7 +5,7 @@ export default function Form() {
   return (
     <>
 
-        <form className="flex flex-col justify-center items-center h-full w-full bg-white px-4 gap-y-5 " action="">
+        <form className="flex flex-col justify-center items-center h-full w-full bg-white px-4 gap-y-8 " action="">
           <Input
             text="CPF"
             name="tipo-usuário"

@@ -7,12 +7,13 @@ export function LoginCopy() {
       <div className="flex flex-row w-full justify-between h-screen bg-blue">
         
         <div className="w-full h-full flex flex-row justify-center items-center">
-          <h1>Logo</h1>
+          <Logo></Logo>
         </div>
 
-        <div className="">
+        <div className="w-96">
           <Form />
         </div>
+        
       </div>
     </>
   );

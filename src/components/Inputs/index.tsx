@@ -1,5 +1,3 @@
-import style from "./style.module.css";
-
 interface inputProps {
   text: string;
   name: string;
