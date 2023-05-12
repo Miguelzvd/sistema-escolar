@@ -1,3 +1,4 @@
+
 interface inputProps {
   text: string;
   name: string;
@@ -9,7 +10,7 @@ export function Input({ text, name, inputType, placeHolder }: inputProps) {
   return (
     <>
       <label className="w-full block">
-        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium text-slate-700">
+        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
         </span>
         <input

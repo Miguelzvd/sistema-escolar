@@ -5,9 +5,7 @@ import './style.css'
 export function Logo() {
   return (
     <>
-      <div className="tam">
-        <img className="w-full h-full" src={logo} alt="logo" />
-      </div>
+        <img className="w-128 h-full" src={logo} alt="logo" />
     </>
   );
 }
