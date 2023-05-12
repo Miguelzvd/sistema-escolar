@@ -1,11 +1,11 @@
 import logo from "../../../../assets/logo-login.svg"
-
+import './style.css'
 
 
 export function Logo() {
   return (
     <>
-      <div className="w-96">
+      <div className="tam">
         <img className="w-full h-full" src={logo} alt="logo" />
       </div>
     </>

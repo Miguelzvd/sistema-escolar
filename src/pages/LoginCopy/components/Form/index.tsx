@@ -20,7 +20,7 @@ export default function Form() {
             placeHolder="Digite sua senha"
           />
 
-          <button className="btn btn-blue">Entrar</button>
+          <button className="btn btn-blue w-full">Entrar</button>
         </form>
 
     </>

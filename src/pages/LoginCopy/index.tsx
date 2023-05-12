@@ -6,11 +6,11 @@ export function LoginCopy() {
     <>
       <div className="flex flex-row w-full justify-between h-screen bg-blue">
         
-        <div className="w-1/2 h-full">
-          <Logo />
+        <div className="w-full h-full flex flex-row justify-center items-center">
+          <h1>Logo</h1>
         </div>
 
-        <div className="w-1/4">
+        <div className="">
           <Form />
         </div>
       </div>
