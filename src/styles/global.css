@@ -3,19 +3,23 @@
 @tailwind utilities;
 
 .btn {
-  @apply font-bold py-2 px-4 rounded;
+  @apply font-bold py-2 px-4 rounded drop-shadow-md;
 }
+
 .btn-blue {
   @apply bg-blue-500 text-white;
 }
+
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
 }
