@@ -1,4 +1,4 @@
-import { AppContext } from "./context";
+import { AppContext } from "./contexts";
 import { Routes } from "./routes";
 import { BrowserRouter } from "react-router-dom";
 

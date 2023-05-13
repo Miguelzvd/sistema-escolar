@@ -1,10 +1,12 @@
-import { CostumLink } from "../CostumLink";
 import logo from "../../assets/icone.svg";
-import { NavMobileItem } from "./NavMobileItem";
-import { NavLinks } from "./NavLinks";
-import { HamburgerMenu } from "./HamburguerMenu";
+import { CostumLink, HamburgerMenu, NavLinks, NavMobileItem } from "..";
+import { useNavMobileContext } from "../../contexts/NavMobileContext";
+
+import { GiHamburgerMenu } from "react-icons/Gi";
 
 export function Nav() {
+  const { isVisible, setIsVisible } = useNavMobileContext;
+
   return (
     <>
       <nav
@@ -40,13 +42,20 @@ export function Nav() {
             <CostumLink text="Login" link="sign-up" />
           </li>
         </ul>
-        <HamburgerMenu/>
-        
-      </nav>
+        <div className="lg:hidden flex">
+          <button onClick={() => setIsVisible((prev) => !prev) }>
+            {isVisible ? (
+              <span className="font-bold text-3xl text-white">X</span>
+            ) : (
+              <GiHamburgerMenu size={40} color={"#FFFFFF"} />
+            )}
+          </button>
+        </div>
+        {/* hamburger itmes */}
 
-      {/* hamburger itmes */}
-      <div
-        className="
+      {isVisible && (
+        <div
+          className="
         w-full
         h-[calc(100vh-5.0625rem)]
         fixed
@@ -54,21 +63,29 @@ export function Nav() {
         left-0
        bg-white border-2
        "
-      >
-        <NavLinks>
-          <CostumLink link="sign-up-copy" textColor="text-black" variant="hover">
-            <NavMobileItem>Níveis de ensino</NavMobileItem>
-          </CostumLink>
+        >
+          <NavLinks>
+            <CostumLink
+              link="sign-up-copy"
+              textColor="text-black"
+              variant="hover"
+            >
+              <NavMobileItem>Níveis de ensino</NavMobileItem>
+            </CostumLink>
 
-          <CostumLink link="#" textColor="text-black" variant="hover">
-            <NavMobileItem>Sistema</NavMobileItem>
-          </CostumLink>
+            <CostumLink link="#" textColor="text-black" variant="hover">
+              <NavMobileItem>Sistema</NavMobileItem>
+            </CostumLink>
 
-          <CostumLink link="/sign-up" textColor="text-black" variant="hover">
-            <NavMobileItem>Login</NavMobileItem>
-          </CostumLink>
-        </NavLinks>
-      </div>
+            <CostumLink link="/sign-up" textColor="text-black" variant="hover">
+              <NavMobileItem>Login</NavMobileItem>
+            </CostumLink>
+          </NavLinks>
+        </div>
+      )}
+      </nav>
+
+      
     </>
   );
 }

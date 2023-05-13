@@ -2,6 +2,7 @@
 import { GiHamburgerMenu } from "react-icons/Gi";
 
 export function HamburgerMenu(){
+    
     return(
         <>
         <div className="lg:hidden flex">
