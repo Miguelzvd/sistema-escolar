@@ -16,6 +16,7 @@ export function Input({ text, name, inputType, placeHolder }: Props) {
         <input
           type={ inputType }
           name={ name }
+          placeholder={placeHolder}
           className="
             mt-1
             px-3
@@ -33,7 +34,6 @@ export function Input({ text, name, inputType, placeHolder }: Props) {
             sm:text-sm
             focus:ring-1
             drop-shadow-md"
-          placeholder={placeHolder}
         />
       </label>
     </>

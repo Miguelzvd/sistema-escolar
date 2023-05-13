@@ -1,6 +1,8 @@
-import { Link } from "../Link";
+import { CostumLink } from "../CostumLink";
 import logo from "../../assets/icone.svg";
 import { GiHamburgerMenu } from "react-icons/Gi";
+import { NavMobileItem } from "./NavMobileItem";
+import { Link } from "react-router-dom";
 
 export function Nav() {
   return (
@@ -27,15 +29,15 @@ export function Nav() {
           "
         >
           <li className="my-6 md:my-0">
-            <Link text="Níveis de ensino" link="#"></Link>
+            <CostumLink text="Níveis de ensino" link="#" />
           </li>
 
           <li className="my-6 md:my-0">
-            <Link text="Sistema" link="#"></Link>
+            <CostumLink text="Sistema" link="#" />
           </li>
 
           <li className="my-6 md:my-0">
-            <Link text="Login" link="sign-up"></Link>
+            <CostumLink text="Login" link="sign-up" />
           </li>
         </ul>
         <div className="lg:hidden flex">
@@ -60,29 +62,16 @@ export function Nav() {
        bg-white border-2
        "
       >
-        <ul
-          className="
-            flex
-            flex-col
-            items-center
-            justify-center
-          "
-        >
-          <li className="my-6 md:my-0">
-            <Link
-              text="Níveis de ensino"
-              link="#"
-              textColor="text-black"
-            ></Link>
-          </li>
-
-          <li className="my-6 md:my-0">
-            <Link text="Sistema" link="#" textColor="text-black"></Link>
-          </li>
-
-          <li className="my-6 md:my-0">
-            <Link text="Login" link="sign-up" textColor="text-black"></Link>
-          </li>
+        <ul className="flex flex-col items-stretch justify-center">
+          <CostumLink link="sign-up" >
+            <NavMobileItem>Níveis de ensino</NavMobileItem>
+          </CostumLink>
+          <Link to="#">
+            <NavMobileItem>Sistema</NavMobileItem>
+          </Link>
+          <Link to="/sign-up">
+            <NavMobileItem>Login</NavMobileItem>
+          </Link>
         </ul>
       </div>
     </>
