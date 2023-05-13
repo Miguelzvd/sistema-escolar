@@ -1,8 +1,8 @@
 import { CostumLink } from "../CostumLink";
 import logo from "../../assets/icone.svg";
-import { GiHamburgerMenu } from "react-icons/Gi";
 import { NavMobileItem } from "./NavMobileItem";
 import { NavLinks } from "./NavLinks";
+import { HamburgerMenu } from "./HamburguerMenu";
 
 export function Nav() {
   return (
@@ -40,15 +40,8 @@ export function Nav() {
             <CostumLink text="Login" link="sign-up" />
           </li>
         </ul>
-        <div className="lg:hidden flex">
-          <button
-            onClick={() => {
-              console.log("Botao funcionando");
-            }}
-          >
-            <GiHamburgerMenu size={40} color={"#FFFFFF"} />
-          </button>
-        </div>
+        <HamburgerMenu/>
+        
       </nav>
 
       {/* hamburger itmes */}
@@ -63,15 +56,15 @@ export function Nav() {
        "
       >
         <NavLinks>
-          <CostumLink link="sign-up" textColor="text-black">
+          <CostumLink link="sign-up-copy" textColor="text-black" variant="hover">
             <NavMobileItem>Níveis de ensino</NavMobileItem>
           </CostumLink>
 
-          <CostumLink link="#" textColor="text-black">
+          <CostumLink link="#" textColor="text-black" variant="hover">
             <NavMobileItem>Sistema</NavMobileItem>
           </CostumLink>
 
-          <CostumLink link="/sign-up" textColor="text-black">
+          <CostumLink link="/sign-up" textColor="text-black" variant="hover">
             <NavMobileItem>Login</NavMobileItem>
           </CostumLink>
         </NavLinks>

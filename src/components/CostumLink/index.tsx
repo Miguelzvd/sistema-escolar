@@ -10,11 +10,10 @@ type Props = {
 };
 
 export function CostumLink({variant, text, link, textColor = "text-white", children}: Props) {
-  let hoverBg = "";
-  let hoverTxt = "";
+  let hover = "";
   if(variant === "hover" ){
-    hoverBg = "hover:bg-slate-100";
-    hoverTxt = "hover:text-slate-900";
+    hover = 
+    "hover:bg-gray-100 hover:text-slate-900 active:bg-gray-200";
   }
   return (
     <>
@@ -24,7 +23,7 @@ export function CostumLink({variant, text, link, textColor = "text-white", child
            font-bold
            px-3 py-2
            text-xl
-           ${classnames(hoverBg, hoverTxt)}
+           ${classnames(hover)}
            ${textColor}
            rounded-lg
            duration-200
