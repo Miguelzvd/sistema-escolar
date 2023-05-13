@@ -2,7 +2,7 @@ import { CostumLink } from "../CostumLink";
 import logo from "../../assets/icone.svg";
 import { GiHamburgerMenu } from "react-icons/Gi";
 import { NavMobileItem } from "./NavMobileItem";
-import { Link } from "react-router-dom";
+import { NavLinks } from "./NavLinks";
 
 export function Nav() {
   return (
@@ -62,17 +62,19 @@ export function Nav() {
        bg-white border-2
        "
       >
-        <ul className="flex flex-col items-stretch justify-center">
-          <CostumLink link="sign-up" >
+        <NavLinks>
+          <CostumLink link="sign-up" textColor="text-black">
             <NavMobileItem>Níveis de ensino</NavMobileItem>
           </CostumLink>
-          <Link to="#">
+
+          <CostumLink link="#" textColor="text-black">
             <NavMobileItem>Sistema</NavMobileItem>
-          </Link>
-          <Link to="/sign-up">
+          </CostumLink>
+
+          <CostumLink link="/sign-up" textColor="text-black">
             <NavMobileItem>Login</NavMobileItem>
-          </Link>
-        </ul>
+          </CostumLink>
+        </NavLinks>
       </div>
     </>
   );

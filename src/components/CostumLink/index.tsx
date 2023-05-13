@@ -1,5 +1,5 @@
 import { Link as LinkItem } from "react-router-dom";
-
+import classnames from "classnames";
 
 type Props = {
   variant?: "default" | "hover";
@@ -24,6 +24,7 @@ export function CostumLink({variant, text, link, textColor = "text-white", child
            font-bold
            px-3 py-2
            text-xl
+           ${classnames(hoverBg, hoverTxt)}
            ${textColor}
            rounded-lg
            duration-200
