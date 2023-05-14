@@ -1,4 +1,3 @@
-export * from "./CostumLink"
-export * from "./Inputs"
-export * from "./Nav"
-
+export * from "./CostumLink";
+export * from "./CostumInput";
+export * from "./Nav";

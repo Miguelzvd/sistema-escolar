@@ -1,33 +1,36 @@
-import { Input } from "../../../../components/Inputs";
-import style from "./style.module.css";
+import { Input } from "../../../../components/CostumInput";
 
 export default function Form() {
   return (
     <>
-      <div className={style.container}>
-        <form className={style.form} action="">
-          <Input
-            text="Tipo de usuário"
-            name="tipo-usuário"
-            inputType="text"
-          />
+      <form
+        className="flex flex-col justify-center items-center h-full w-full bg-white px-4 gap-y-8 "
+        action=""
+      >
+        <Input
+          text="CPF"
+          name="tipo-usuário"
+          inputType="text"
+          placeHolder="Digite seu CPF"
+        />
+        <Input
+          text="CPF"
+          name="tipo-usuário"
+          inputType="text"
+          placeHolder="Digite seu CPF"
+        />
 
-          <Input
-            text="CPF"
-            name="tipo-usuário"
-            inputType="text"
-          />
+        <Input
+          text="Senha"
+          name="tipo-usuário"
+          inputType="password"
+          placeHolder="Digite sua senha"
+        />
 
-          <Input
-            text="Senha"
-            name="tipo-usuário"
-            inputType="password"
-          />
-
-          <button className={style.button}>Entrar</button>
-
-        </form>
-      </div>
+        <button className="drop-shadow-md border-b btn btn-blue w-full">
+          Entrar
+        </button>
+      </form>
     </>
   );
 }
