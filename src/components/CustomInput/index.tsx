@@ -31,7 +31,7 @@ export function CustomInput({ text, name, inputType = "text", placeHolder }: Pro
             focus:ring-sky-500 block
             w-full
             rounded-md
-            sm:text-sm
+            text-sm
             focus:ring-1
             drop-shadow-md
             "

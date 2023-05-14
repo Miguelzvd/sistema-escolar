@@ -6,7 +6,20 @@ export default function Form() {
   return (
     <>
       <form
-        className="flex flex-col justify-center items-center h-full w-full bg-white px-4 gap-y-8 "
+        className="
+        flex 
+        flex-col
+        justify-center
+        items-center
+        h-full
+        w-full
+        bg-white
+        lg:px-4
+        md:p-10
+        p-10
+        gap-y-8 
+        rounded-lg
+        lg:rounded-none"
         action=""
       >
 
@@ -27,7 +40,7 @@ export default function Form() {
           placeHolder="Digite sua senha"
         />
 
-        <button className="drop-shadow-md border-b btn btn-blue w-full">
+        <button className="drop-shadow-lg border-b border-black btn btn-blue w-full">
           Entrar
         </button>
       </form>

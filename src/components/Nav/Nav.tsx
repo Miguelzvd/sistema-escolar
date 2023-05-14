@@ -8,6 +8,7 @@ export function Nav() {
     <>
       <nav
         className="
+        fixed
       bg-primary
         px-5
         w-full 

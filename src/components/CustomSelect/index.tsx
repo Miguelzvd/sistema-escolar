@@ -32,7 +32,7 @@ export function CustomSelect({ text, name, children, id = "default"}: Props) {
         focus:ring-sky-500 block
         w-full
         rounded-md
-        sm:text-sm
+        text-sm
         focus:ring-1
         drop-shadow-md
         hover:cursor-pointer"
