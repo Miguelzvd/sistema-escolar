@@ -7,7 +7,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function CostumSelect({ text, name, children, id = "default"}: Props) {
+export function CustomSelect({ text, name, children, id = "default"}: Props) {
   return (
     <>
       <label className="w-full block">

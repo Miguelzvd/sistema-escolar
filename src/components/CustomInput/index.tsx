@@ -5,7 +5,7 @@ type Props = {
   placeHolder?: string;
 }
 
-export function CostumInput({ text, name, inputType = "text", placeHolder }: Props) {
+export function CustomInput({ text, name, inputType = "text", placeHolder }: Props) {
   return (
     <>
       <label className="w-full block">

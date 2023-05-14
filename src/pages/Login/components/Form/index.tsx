@@ -1,4 +1,4 @@
-import { CostumInput, CostumSelect } from "../../../../components";
+import { CustomInput, CustomSelect } from "../../../../components";
 
 
 
@@ -10,17 +10,17 @@ export default function Form() {
         action=""
       >
 
-        <CostumSelect name="user-type" text="Tipo de acesso">
-        </CostumSelect>
+        <CustomSelect name="user-type" text="Tipo de acesso">
+        </CustomSelect>
         
-        <CostumInput
+        <CustomInput
           text="CPF"
           name="tipo-usuário"
           inputType="text"
           placeHolder="Digite seu CPF"
         />
 
-        <CostumInput
+        <CustomInput
           text="Senha"
           name="tipo-usuário"
           inputType="password"

@@ -1,4 +1,4 @@
-import { CostumLink } from "../..";
+import { CustomLink } from "../..";
 
 interface Props {
   text: string;
@@ -10,7 +10,7 @@ export function NavLink({ text, link, variant }: Props) {
   return (
     <>
       <li className="my-6 md:my-0">
-        <CostumLink text={text} link={link} variant={variant} />
+        <CustomLink text={text} link={link} variant={variant} />
       </li>
     </>
   );

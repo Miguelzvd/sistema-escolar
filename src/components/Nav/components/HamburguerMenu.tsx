@@ -1,8 +1,15 @@
 /* eslint-disable no-constant-condition */
 import { GiHamburgerMenu } from "react-icons/Gi";
-import { useNavMobileContext } from "../../contexts";
+import { useNavMobileContext } from "../../../contexts";
+import { NavMobileLinkList } from "../index";
 
-export function HamburgerMenu() {
+type Props = {
+  children: React.ReactNode;
+}
+
+
+export function HamburgerMenu({children}: Props) {
+  const { isVisible, setIsVisible } = useNavMobileContext();
   return (
     <div className="lg:hidden flex">
       <button onClick={() => setIsVisible((prev) => !prev)}>
@@ -12,6 +19,24 @@ export function HamburgerMenu() {
           <GiHamburgerMenu size={40} color={"#FFFFFF"} />
         )}
       </button>
+
+      {/* hamburger itmes */}
+      {isVisible && (
+          <div
+            className="
+            w-full
+            h-[calc(100vh-5.0625rem)]
+            fixed
+            top-20
+            left-0
+            bg-white 
+          "
+          >
+            <NavMobileLinkList>
+              { children }
+            </NavMobileLinkList>
+          </div>
+        )}
     </div>
   );
 }

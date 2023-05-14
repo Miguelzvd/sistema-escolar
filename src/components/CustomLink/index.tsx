@@ -9,7 +9,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function CostumLink({variant, text, link, textColor = "text-white", children}: Props) {
+export function CustomLink({variant, text, link, textColor = "text-white", children}: Props) {
   let hover = "";
   if(variant === "hover" ){
     hover = 
