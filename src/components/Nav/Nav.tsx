@@ -1,6 +1,6 @@
 /* eslint-disable no-constant-condition */
 import { GiHamburgerMenu } from "react-icons/Gi";
-import { NavMobileLink, NavMobileLinkList, NavLink} from "./index";
+import { NavMobileLink, NavMobileLinkList, NavLink, NavLinkList} from "./index";
 import { useNavMobileContext } from "../../contexts";
 import logo from "../../assets/icone.svg";
 
@@ -21,18 +21,11 @@ export function Nav() {
         "
       >
         <img className="inline ml-4" src={logo} alt="Logo da escola" />
-        <ul
-          className=" 
-          hidden
-          lg:flex 
-          md:items-center
-          gap-10
-          "
-        >
+        <NavLinkList>
           <NavLink text = "Níveis de ensino" link = "#" variant = "hover"/>
           <NavLink text = "Sistema" link = "#" variant = "hover"/>
           <NavLink text = "Login" link = "sign-up" variant = "hover"/>
-        </ul>
+        </NavLinkList>
 
         <div className="lg:hidden flex">
           <button onClick={() => setIsVisible((prev) => !prev)}>

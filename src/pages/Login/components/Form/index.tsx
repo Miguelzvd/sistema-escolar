@@ -1,4 +1,6 @@
-import { Input } from "../../../../components/CostumInput";
+import { CostumInput, CostumSelect } from "../../../../components";
+
+
 
 export default function Form() {
   return (
@@ -7,20 +9,18 @@ export default function Form() {
         className="flex flex-col justify-center items-center h-full w-full bg-white px-4 gap-y-8 "
         action=""
       >
-        <Input
-          text="CPF"
-          name="tipo-usuário"
-          inputType="text"
-          placeHolder="Digite seu CPF"
-        />
-        <Input
+
+        <CostumSelect name="user-type" text="Tipo de acesso">
+        </CostumSelect>
+        
+        <CostumInput
           text="CPF"
           name="tipo-usuário"
           inputType="text"
           placeHolder="Digite seu CPF"
         />
 
-        <Input
+        <CostumInput
           text="Senha"
           name="tipo-usuário"
           inputType="password"

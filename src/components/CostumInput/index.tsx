@@ -1,17 +1,18 @@
 type Props = {
   text: string;
   name: string;
-  inputType: string;
+  inputType?: string;
   placeHolder?: string;
 }
 
-export function Input({ text, name, inputType, placeHolder }: Props) {
+export function CostumInput({ text, name, inputType = "text", placeHolder }: Props) {
   return (
     <>
       <label className="w-full block">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
         </span>
+        
         <input
           type={ inputType }
           name={ name }
@@ -32,7 +33,8 @@ export function Input({ text, name, inputType, placeHolder }: Props) {
             rounded-md
             sm:text-sm
             focus:ring-1
-            drop-shadow-md"
+            drop-shadow-md
+            "
         />
       </label>
     </>
