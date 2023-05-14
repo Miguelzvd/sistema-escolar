@@ -1,5 +1,4 @@
 import logo from "../../../../assets/logo-login.svg"
-import './style.css'
 
 
 export function Logo() {

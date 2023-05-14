@@ -52,30 +52,24 @@ export function Nav() {
             fixed
             top-20
             left-0
-          bg-white border-2
+            bg-white 
           "
           >
             <NavMobileLinkList>
               <NavMobileLink
-                link="/sign-up-copy"
-                textColor="text-black"
-                variant="hover"
+                to="/sign-up-teacher"
               >
                 Níveis de ensino
               </NavMobileLink>
 
               <NavMobileLink 
-                link="#" 
-                textColor="text-black"
-                variant="hover"
+                to="/sign-up-student" 
               >
                 Sistema
               </NavMobileLink>
 
               <NavMobileLink
-                link="/sign-up"
-                textColor="text-black"
-                variant="hover"
+                to="/sign-up"
               >
                 Login
               </NavMobileLink>

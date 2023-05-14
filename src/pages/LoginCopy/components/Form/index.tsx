@@ -27,7 +27,7 @@ export default function Form() {
           placeHolder="Digite sua senha"
         />
 
-        <button className="drop-shadow-md btn btn-blue w-full">Entrar</button>
+        <button className="drop-shadow-md border-b btn btn-blue w-full">Entrar</button>
       </form>
     </>
   );
