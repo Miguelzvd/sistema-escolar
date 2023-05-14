@@ -1,14 +1,11 @@
-import { AppContext } from "./contexts";
-import { Routes } from "./routes";
-import { BrowserRouter } from "react-router-dom";
+import { AppContexts } from "./contexts";
+import { AppRoutes } from "./routes";
 
 function App() {
   return (
-    <AppContext>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </AppContext>
+    <AppContexts>
+        <AppRoutes />
+    </AppContexts>
   );
 }
 

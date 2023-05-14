@@ -1,12 +1,14 @@
-import React, { createContext, useState, useContext } from "react";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
+import React, { createContext, useContext , useState } from "react";
 import { INavMobileContext } from "../interfaces";
 
-// Criando Contexto
-const NavMobileContext = createContext<INavMobileContext>(null!);
+const NavMobileContext = createContext<INavMobileContext | undefined>(undefined);
 
-// Componente que vai prover o contexto
 export function NavMobileProvider({ children }: { children: React.ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
+
   return (
     <NavMobileContext.Provider value={{ isVisible, setIsVisible }}>
       {children}
@@ -14,6 +16,6 @@ export function NavMobileProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useNavMobileContext() {
-  return useContext(NavMobileContext);
+export function useNavMobileContext(){
+    return useContext(NavMobileContext)!;
 }

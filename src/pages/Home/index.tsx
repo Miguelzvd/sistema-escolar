@@ -4,7 +4,7 @@ export function Home() {
   return (
     <>
       <header>
-        <Nav />
+        <Nav/>
       </header>
     </>
   );

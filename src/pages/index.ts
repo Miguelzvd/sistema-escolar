@@ -1,0 +1,5 @@
+export * from "./Home"
+export * from "./Login"
+export * from "./LoginCopy"
+export * from "./LoginAluno"
+export * from "./LoginProfessor"
