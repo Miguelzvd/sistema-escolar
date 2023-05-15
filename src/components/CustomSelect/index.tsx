@@ -7,18 +7,15 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function CustomSelect({ text, name, children, id = "default" }: Props) {
+export function CustomSelect({ text, name, children, id = "default"}: Props) {
   return (
-    <div className="w-full">
-      <label className="w-full">
-        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 text-gray-700 font-medium ">
+    <>
+      <label className="w-full block">
+        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
         </span>
-      </label>
-
       <select
-        name={name}
-        id={id}
+        name={ name }
         placeholder="Tipo"
         className="
         mt-1
@@ -31,24 +28,20 @@ export function CustomSelect({ text, name, children, id = "default" }: Props) {
         placeholder-slate-400
         focus:outline-none
         focus:border-sky-500
-        focus:ring-sky-500 
+        focus:ring-sky-500 block
         w-full
         rounded-md
         text-sm
         focus:ring-1
         drop-shadow-md
-        hover:cursor-pointer
-        hover:bg-slate-100"
+        hover:cursor-pointer"
       >
-        <option
-          selected
-          className="text-slate-400 hover:cursor-pointer"
-          value=""
-        >
-          Selecione uma opção
+        <option className="text-slate-400 hover:cursor-pointer" value="">
+          Escolha o tipo de usuario
         </option>
         {children}
       </select>
-    </div>
+      </label>
+    </>
   );
 }

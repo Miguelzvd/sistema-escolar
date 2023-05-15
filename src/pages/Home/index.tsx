@@ -6,6 +6,8 @@ export function Home() {
       <header>
         <Nav/>
       </header>
+      {console.log(import.meta.env.VITE_APP_API)}
+
     </>
   );
 }

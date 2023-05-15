@@ -27,6 +27,7 @@ export function CustomLink({variant, text, link, textColor = "text-white", child
            ${textColor}
            rounded-lg
            duration-200
+           ring-1
           `}
       >
         {text}

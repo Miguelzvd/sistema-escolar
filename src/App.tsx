@@ -1,11 +1,14 @@
 import { NavMobileContext } from "./contexts/";
+import { AuthProvider } from "./contexts/Auth";
 import { AppRoutes } from "./routes";
 
 function App() {
   return (
-    <NavMobileContext>
-      <AppRoutes />
-    </NavMobileContext>
+    <AuthProvider>
+      <NavMobileContext>
+        <AppRoutes />
+      </NavMobileContext>
+    </AuthProvider>
   );
 }
 
