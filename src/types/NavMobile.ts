@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-export type INavMobileContext = {
+export type NavMobile = {
     isVisible: boolean;
     setIsVisible: Dispatch<SetStateAction<boolean>> ;
 }

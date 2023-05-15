@@ -1,4 +1,4 @@
-import { CustomLink } from "../..";
+import { CustomLink } from "../../CustomLink";
 
 interface Props {
   text: string;
