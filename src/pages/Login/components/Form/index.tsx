@@ -15,8 +15,7 @@ export default function Form() {
         w-full
         bg-white
         lg:px-4
-        md:p-10
-        p-10
+        p-[2rem]
         gap-y-8 
         rounded-lg
         lg:rounded-none"
@@ -24,6 +23,9 @@ export default function Form() {
       >
 
         <CustomSelect name="user-type" text="Tipo de acesso">
+            <option value={"student"}>Aluno</option>
+            <option value={"teacher"}>Professor</option>
+            <option value={"parent"}>Resposável</option>
         </CustomSelect>
         
         <CustomInput

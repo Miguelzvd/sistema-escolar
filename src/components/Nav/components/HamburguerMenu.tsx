@@ -5,13 +5,12 @@ import { NavMobileLinkList } from "../index";
 
 type Props = {
   children: React.ReactNode;
-}
+};
 
-
-export function HamburgerMenu({children}: Props) {
+export function HamburgerMenu({ children }: Props) {
   const { isVisible, setIsVisible } = useNavMobileContext();
   return (
-    <div className="lg:hidden flex">
+    <div className="md:hidden flex">
       <button onClick={() => setIsVisible((prev) => !prev)}>
         {isVisible ? (
           <span className="font-bold text-3xl text-white">X</span>
@@ -22,8 +21,8 @@ export function HamburgerMenu({children}: Props) {
 
       {/* hamburger itmes */}
       {isVisible && (
-          <div
-            className="
+        <div
+          className="
             w-full
             h-[calc(100vh-5.0625rem)]
             fixed
@@ -31,12 +30,10 @@ export function HamburgerMenu({children}: Props) {
             left-0
             bg-white 
           "
-          >
-            <NavMobileLinkList>
-              { children }
-            </NavMobileLinkList>
-          </div>
-        )}
+        >
+          <NavMobileLinkList>{children}</NavMobileLinkList>
+        </div>
+      )}
     </div>
   );
 }

@@ -11,7 +11,7 @@ export function Login() {
         </div>
 
         <div className="lg:w-140 w-full flex justify-center lg:my-0 my-4">
-          <div className="lg:w-140 lg:h-full flex flex-row justify-center">
+          <div className="lg:w-140 lg:h-full md:w-96 w-80 flex flex-row justify-center">
             <Form />
           </div>
         </div>

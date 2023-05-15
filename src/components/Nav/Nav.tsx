@@ -12,7 +12,8 @@ export function Nav() {
       bg-primary
         px-5
         w-full 
-        h-20 flex border-b 
+        h-20 flex 
+        border-b 
         border-gray-200 
         items-center 
         justify-between

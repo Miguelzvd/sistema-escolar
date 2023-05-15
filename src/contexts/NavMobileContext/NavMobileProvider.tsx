@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import React, { createContext, useContext , useState } from "react";
-import { INavMobileContext } from "../interfaces";
+import { INavMobileContext } from "../../interfaces";
 
 const NavMobileContext = createContext<INavMobileContext | undefined>(undefined);
 

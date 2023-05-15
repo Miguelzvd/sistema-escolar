@@ -5,7 +5,7 @@ type Props = {
 export function NavMobileLinkList({ children }:Props){
     return(
         <>
-            <ul className="lg:hidden flex flex-col items-stretch justify-center">
+            <ul className="md:hidden flex flex-col items-stretch justify-center">
                 {children}
             </ul>
         </>

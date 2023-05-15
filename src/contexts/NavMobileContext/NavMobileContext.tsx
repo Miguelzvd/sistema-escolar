@@ -1,10 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 import React from "react";
-import { NavMobileProvider } from "../contexts";
+import { NavMobileProvider } from "./NavMobileProvider";
 
-export * from "./NavMobileContext"
 
-export function AppContexts({ children }: { children: React.ReactNode }) {
+export function NavMobileContext({ children }: { children: React.ReactNode }) {
   return (
     <>
       <NavMobileProvider>{children}</NavMobileProvider>

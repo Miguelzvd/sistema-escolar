@@ -1,11 +1,11 @@
-import { AppContexts } from "./contexts";
+import { NavMobileContext } from "./contexts/";
 import { AppRoutes } from "./routes";
 
 function App() {
   return (
-    <AppContexts>
-        <AppRoutes />
-    </AppContexts>
+    <NavMobileContext>
+      <AppRoutes />
+    </NavMobileContext>
   );
 }
 

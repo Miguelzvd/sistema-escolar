@@ -9,7 +9,7 @@ export function NavLinkList({ children }: Props) {
     <ul
       className=" 
       hidden
-      lg:flex 
+      md:flex 
       md:items-center
       gap-10
       "

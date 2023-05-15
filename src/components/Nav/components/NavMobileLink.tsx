@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
-import { useNavMobileContext } from "../../../contexts";
+import { useNavMobileContext } from "../../../contexts/";
 
 type Props = {
   to: string;
