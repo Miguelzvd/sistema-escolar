@@ -12,6 +12,7 @@ export const useApi = () => ({
     signin: async (matricula:string, password:string) => {
         //A response utiliza o metodo post para enviar os dados da api e recebe um objeto como resposta se o usuario é ou nao valido 
         const response = await api.post("/signin", {matricula, password});
+        
         //O "data" se refere a resposta da requisicao 
         return response.data; 
     },

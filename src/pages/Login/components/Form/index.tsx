@@ -1,11 +1,37 @@
+import { ChangeEvent, useState, useContext } from "react";
 import { CustomInput, CustomSelect } from "../../../../components";
-
-
+import { AuthContext } from "../../../../contexts";
+import { useNavigate } from "react-router-dom";
 
 export default function Form() {
+  const navigate = useNavigate();
+  const auth = useContext(AuthContext);
+  const [matricula, setMatricula] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleMatriculaInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setMatricula(e.target.value);
+  };
+
+  const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async () => {
+    if (matricula && password) {
+      const isLogged = await auth.signin(matricula, password);
+      if (isLogged) {
+        navigate("/");
+      }
+      else{
+        alert("Deu erro")
+      }
+    }
+  };
+
   return (
     <>
-      <form
+      <div
         className="
         flex 
         flex-col
@@ -19,33 +45,38 @@ export default function Form() {
         gap-y-8 
         rounded-lg
         lg:rounded-none"
-        action=""
       >
-
         <CustomSelect name="user-type" text="Tipo de acesso">
-            <option value={"student"}>Aluno</option>
-            <option value={"teacher"}>Professor</option>
-            <option value={"parent"}>Resposável</option>
+          <option value={"student"}>Aluno</option>
+          <option value={"teacher"}>Professor</option>
+          <option value={"parent"}>Resposável</option>
         </CustomSelect>
-        
+
         <CustomInput
-          text="CPF"
-          name="tipo-usuário"
+          value={matricula}
+          text="Matricula"
+          onChange={handleMatriculaInput}
+          name="matricula"
           inputType="text"
-          placeHolder="Digite seu CPF"
+          placeHolder="Digite sua senha"
         />
 
         <CustomInput
+          value={password}
           text="Senha"
-          name="tipo-usuário"
+          onChange={handlePasswordInput}
+          name="senha"
           inputType="password"
           placeHolder="Digite sua senha"
         />
 
-        <button className="drop-shadow-lg border-b border-black btn btn-blue w-full">
+        <button
+          onClick={handleLogin}
+          className="drop-shadow-lg border-b border-black btn btn-blue w-full"
+        >
           Entrar
         </button>
-      </form>
+      </div>
     </>
   );
 }

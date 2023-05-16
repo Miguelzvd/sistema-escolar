@@ -1,11 +1,15 @@
+import React from 'react';
+
 type Props = {
   text: string;
   name: string;
-  inputType?: string;
+  value: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  inputType: "text" | "number" | "email" | "password";
   placeHolder?: string;
 }
 
-export function CustomInput({ text, name, inputType = "text", placeHolder }: Props) {
+export function CustomInput({ text, name, value, onChange, inputType = "text", placeHolder }: Props) {
   return (
     <div className="w-full">
       <label className="w-full">
@@ -14,14 +18,16 @@ export function CustomInput({ text, name, inputType = "text", placeHolder }: Pro
         </span>
         </label>  
         <input
-          type={ inputType }
-          name={ name }
+          onChange={onChange}
+          value={value}
+          type={inputType}
+          name={name}
           placeholder={placeHolder}
           className="
             mt-1
             px-3
             py-3
-            bg-gray
+            bg-gray-100
             border
             shadow-sm
             border-slate-300
@@ -37,7 +43,6 @@ export function CustomInput({ text, name, inputType = "text", placeHolder }: Pro
             hover:bg-slate-100
             "
         />
-      
     </div>
   );
 }

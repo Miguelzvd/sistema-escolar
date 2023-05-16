@@ -9,11 +9,16 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function CustomLink({variant, text, link, textColor = "text-white", children}: Props) {
+export function CustomLink({
+  variant,
+  text,
+  link,
+  textColor = "text-white",
+  children,
+}: Props) {
   let hover = "";
-  if(variant === "hover" ){
-    hover = 
-    "hover:bg-gray-100 hover:text-slate-900 active:bg-gray-200";
+  if (variant === "hover") {
+    hover = "hover:bg-gray-100 hover:text-slate-900 active:bg-gray-200";
   }
   return (
     <>
@@ -27,7 +32,9 @@ export function CustomLink({variant, text, link, textColor = "text-white", child
            ${textColor}
            rounded-lg
            duration-200
-           ring-1 
+           ring-1 ring-blue-500
+           shadow-sm
+           drop-shadow-md
           `}
       >
         {text}
