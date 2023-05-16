@@ -46,11 +46,11 @@ export default function Form() {
         rounded-lg
         lg:rounded-none"
       >
-        <CustomSelect name="user-type" text="Tipo de acesso">
+        {/* <CustomSelect name="user-type" text="Tipo de acesso">
           <option value={"student"}>Aluno</option>
           <option value={"teacher"}>Professor</option>
           <option value={"parent"}>Resposável</option>
-        </CustomSelect>
+        </CustomSelect> */}
 
         <CustomInput
           value={matricula}
