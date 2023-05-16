@@ -7,7 +7,6 @@ const api = axios.create({
 export const useApi = () => ({
 
     validateToken: async (token: string) => {
-        console.log("rodando validateToken")
         return {
             user: {id: 3, name: "miguel", matricula:"341242144"},
         };
@@ -22,16 +21,13 @@ export const useApi = () => ({
             token: "1231243"
         };
         const response = await api.post("/signin", {matricula, password});
-        
         //O "data" se refere a resposta da requisicao 
-        return response.data; 
-
-        
+        return response.data;
     },
-    logout: async () => {
-        return { status:true };
-        const response = await api.post("/logou");
-        return response.data; 
 
+    logout: async () => {
+        return { status: true }
+        const response = await api.post("/logout");
+        return response.data; 
     }
 });

@@ -9,31 +9,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const validateToken = async () => {
-      console.log("rodando");
-      //Captura o dado do localStorage
+      //captura o valor do localstorage
       const storageData = localStorage.getItem("authToken");
-      //Verfica se tem algum dado
+
+      //verifica se tem dado no localStorage
       if (storageData) {
-        //verifica se é um token válido
+        //caso exista dado é guardada a informação
         const data = await api.validateToken(storageData);
         if (data.user) {
           setUser(data.user);
-          return true;
         }
-        return false;
       }
-      return;
     };
     validateToken();
   }, [api]);
 
   //função para realizar o login do usário
   const signin = async (matricula: string, password: string) => {
+    console.log("signin esta sendo executado");
+  
     const data = await api.signin(matricula, password);
     if (data.user && data.token) {
       //Salva o usuário
       setUser(data.user);
-
       //Salva o token no localStorage
       setToken(data.token);
       return true;

@@ -18,10 +18,11 @@ export default function Form() {
   };
 
   const handleLogin = async () => {
+    console.log("login esta sendo executado")
     if (matricula && password) {
       const isLogged = await auth.signin(matricula, password);
       if (isLogged) {
-        navigate("/");
+        window.location.href = window.location.href;
       }
       else{
         alert("Deu erro")
