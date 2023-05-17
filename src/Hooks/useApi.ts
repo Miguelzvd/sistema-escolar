@@ -1,12 +1,9 @@
-import axios from "axios";
-
-const api = axios.create({
-  baseURL: import.meta.env.VITE_APP_API,
-});
+import { api } from "../service/api";
 
 export const useApi = () => ({
 
     validateToken: async (token: string) => {
+        console.log("rodando token")
         return {
             user: {id: 3, name: "miguel", matricula:"341242144"},
         };

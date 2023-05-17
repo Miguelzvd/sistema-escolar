@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { AuthContext } from ".";
 import { User } from "../../types";
@@ -22,7 +23,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     };
     validateToken();
-  }, [api]);
+  }, []);
 
   //função para realizar o login do usário
   const signin = async (matricula: string, password: string) => {

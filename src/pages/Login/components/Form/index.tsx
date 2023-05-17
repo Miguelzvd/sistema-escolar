@@ -22,7 +22,7 @@ export default function Form() {
     if (matricula && password) {
       const isLogged = await auth.signin(matricula, password);
       if (isLogged) {
-        window.location.href = window.location.href;
+        navigate("/private");
       }
       else{
         alert("Deu erro")
@@ -41,18 +41,19 @@ export default function Form() {
         h-full
         w-full
         bg-white
-        lg:px-4
-        p-[2rem]
+        md:p-8
+        p-[1rem]
         gap-y-8 
         rounded-lg
         lg:rounded-none"
       >
-        {/* <CustomSelect name="user-type" text="Tipo de acesso">
+        <CustomSelect name="user-type" text="Tipo de acesso">
           <option value={"student"}>Aluno</option>
           <option value={"teacher"}>Professor</option>
           <option value={"parent"}>Resposável</option>
-        </CustomSelect> */}
+        </CustomSelect>
 
+        {/*CPF PARA TODOS OS CADASTROS*/}
         <CustomInput
           value={matricula}
           text="Matricula"
