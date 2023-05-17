@@ -11,7 +11,7 @@ type Props = {
 
 export function CustomInput({ text, name, value, onChange, inputType = "text", placeHolder }: Props) {
   return (
-    <div className="w-full">
+    <div className="w-40 sm:w-full">
       <label className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
           {text}
@@ -25,8 +25,9 @@ export function CustomInput({ text, name, value, onChange, inputType = "text", p
           placeholder={placeHolder}
           className="
             mt-1
-            px-3
-            py-3
+            p-2
+            sm:p-3
+            w-full
             bg-gray-100
             border
             shadow-sm
@@ -35,12 +36,11 @@ export function CustomInput({ text, name, value, onChange, inputType = "text", p
             focus:outline-none
             focus:border-sky-500
             focus:ring-sky-500
-            w-full
             rounded-md
             text-sm
             focus:ring-1
             drop-shadow-md
-            hover:bg-slate-100
+            hover:bg-slate-200
             "
         />
     </div>

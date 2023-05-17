@@ -4,17 +4,19 @@ import { Logo } from "./components/Logo";
 export function Login() {
   return (
     <>
-      <div className="fixed top-0 left-0 flex lg:flex-row flex-col w-full h-full overflow-x-auto justify-center bg-primary drop-shadow-lg">
-        <div className="lg:w-full lg:h-full flex flex-row justify-center">
-          <Logo />
-        </div>
+        <div className="w-full h-screen sm:h-full md:h-screen bg-primary flex flex-col gap-10 md:flex-row  scroll-auto justify-between items-center">
+          <div className="w-full h-full flex justify-center items-center">
+            <div className="w-48 mt-6 sm:w-60">
+              <Logo />
+            </div>
+          </div>
 
-        <div className="lg:w-140 w-full flex justify-center lg:my-0 my-4">
-          <div className="lg:w-full lg:h-full md:w-96 w-80">
-            <Form />
+          <div className="w-full h-full flex justify-center items-center">
+            <div className="bg-white rounded-md h-fit mb-6 p-0 sm:p-4 flex flex-col items-center justify-center">
+              <Form />
+            </div>
           </div>
         </div>
-      </div>
     </>
   );
 }

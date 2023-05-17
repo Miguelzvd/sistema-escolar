@@ -18,14 +18,13 @@ export default function Form() {
   };
 
   const handleLogin = async () => {
-    console.log("login esta sendo executado")
+    console.log("login esta sendo executado");
     if (matricula && password) {
       const isLogged = await auth.signin(matricula, password);
       if (isLogged) {
         navigate("/private");
-      }
-      else{
-        alert("Deu erro")
+      } else {
+        alert("Deu erro");
       }
     }
   };
@@ -35,17 +34,11 @@ export default function Form() {
       <div
         className="
         flex 
-        flex-col
-        justify-center
-        items-center
-        h-full
-        w-full
-        bg-white
-        md:p-8
-        p-[1rem]
-        gap-y-8 
-        rounded-lg
-        lg:rounded-none"
+        flex-col 
+        gap-1 
+        sm:gap-2
+        
+        "
       >
         <CustomSelect name="user-type" text="Tipo de acesso">
           <option value={"student"}>Aluno</option>
@@ -74,7 +67,15 @@ export default function Form() {
 
         <button
           onClick={handleLogin}
-          className="drop-shadow-lg border-b border-black btn btn-blue w-full"
+          className=" 
+          w-full
+          sm:p-2
+          drop-shadow-lg
+          shadow-md
+          bg-primaryLight
+          rounded
+          text-white
+          font-semibold"
         >
           Entrar
         </button>
