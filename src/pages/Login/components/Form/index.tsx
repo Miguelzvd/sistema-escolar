@@ -33,11 +33,20 @@ export default function Form() {
     <>
       <div
         className="
+        w-80
+        p-4
+        rounded-md
+        sm:w-96
+        sm:h-128
+        md:rounded-none
+        md:w-full
+        md:h-full
+        md:px-4
         flex 
         flex-col 
-        gap-1 
-        sm:gap-2
-        
+        justify-center
+        gap-4
+        bg-white
         "
       >
         <CustomSelect name="user-type" text="Tipo de acesso">
@@ -69,7 +78,8 @@ export default function Form() {
           onClick={handleLogin}
           className=" 
           w-full
-          sm:p-2
+          p-2
+          sm:p-3
           drop-shadow-lg
           shadow-md
           bg-primaryLight

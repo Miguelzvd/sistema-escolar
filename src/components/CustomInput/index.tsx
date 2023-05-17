@@ -11,7 +11,7 @@ type Props = {
 
 export function CustomInput({ text, name, value, onChange, inputType = "text", placeHolder }: Props) {
   return (
-    <div className="w-40 sm:w-full">
+    <div className="w-full">
       <label className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
           {text}

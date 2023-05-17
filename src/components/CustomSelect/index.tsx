@@ -10,7 +10,7 @@ type Props = {
 export function CustomSelect({ text, name, children, id = "default" }: Props) {
   return (
     <>
-      <label className="w-40 sm:w-full">
+      <label className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
         </span>
