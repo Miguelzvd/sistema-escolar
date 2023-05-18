@@ -21,8 +21,8 @@ export function Nav() {
         <img className="inline ml-4" src={logo} alt="Logo da escola" />
 
         <NavLinkList>
-          <NavLink text="Níveis de ensino" link="/private" variant="hover" />
-          <NavLink text="Sistema" link="/" variant="hover" />
+          <NavLink text="Private" link="/private" variant="hover" />
+          <NavLink text="Home" link="/" variant="hover" />
           <NavLink text="Login" link="/sign-up" variant="hover" />
         </NavLinkList>
 

@@ -25,8 +25,7 @@ export function CustomInput({ text, name, value, onChange, inputType = "text", p
           placeholder={placeHolder}
           className="
             mt-1
-            p-2
-            sm:p-3
+            p-3
             w-full
             bg-gray-100
             border

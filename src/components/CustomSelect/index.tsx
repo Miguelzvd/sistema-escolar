@@ -7,7 +7,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function CustomSelect({ text, name, children, id = "default" }: Props) {
+export function CustomSelect({ text, name, children}: Props) {
   return (
     <>
       <label className="w-full">
@@ -18,8 +18,7 @@ export function CustomSelect({ text, name, children, id = "default" }: Props) {
           name={name}
           className="
           mt-1
-          p-2
-          sm:p-3
+          p-3
           w-full
           bg-gray-100
           border
@@ -37,7 +36,7 @@ export function CustomSelect({ text, name, children, id = "default" }: Props) {
           hover:cursor-pointer"
         >
           <option className="text-slate-400" value="">
-            Escolha o tipo de usuario
+            Escolha o tipo de usuário
           </option>
           {children}
         </select>

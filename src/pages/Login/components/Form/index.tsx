@@ -22,7 +22,7 @@ export default function Form() {
     if (matricula && password) {
       const isLogged = await auth.signin(matricula, password);
       if (isLogged) {
-        navigate("/private");
+        navigate("/signin-student");
       } else {
         alert("Deu erro");
       }
@@ -36,8 +36,7 @@ export default function Form() {
         w-80
         p-4
         rounded-md
-        sm:w-96
-        sm:h-128
+        sm:w-[55%]
         md:rounded-none
         md:w-full
         md:h-full
@@ -46,6 +45,7 @@ export default function Form() {
         flex-col 
         justify-center
         gap-4
+        lg:gap-6
         bg-white
         "
       >
@@ -78,8 +78,7 @@ export default function Form() {
           onClick={handleLogin}
           className=" 
           w-full
-          p-2
-          sm:p-3
+          p-3
           drop-shadow-lg
           shadow-md
           bg-primaryLight

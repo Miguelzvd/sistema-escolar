@@ -8,8 +8,8 @@ export function AppRoutes() {
       <ReactRoutes>
         <Route index element={<Home />} />
         <Route path="/sign-up" element={<Login />} />
-        <Route path="/sign-up-student" element={ <LoginAluno /> } />
-        <Route path="/sign-up-teacher" element={ <LoginProfessor /> } />
+        <Route path="/signin-student" element={ <LoginAluno /> } />
+        <Route path="/signin-teacher" element={ <LoginProfessor /> } />
         <Route path="/private" element={ <RequireAuth> <Private/> </RequireAuth> } />
       </ReactRoutes>
     </Router>

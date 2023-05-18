@@ -32,7 +32,6 @@ export function CustomLink({
            ${textColor}
            rounded-lg
            duration-200
-           ring-2 ring-slate-500
            shadow-sm
            drop-shadow-md
           `}
