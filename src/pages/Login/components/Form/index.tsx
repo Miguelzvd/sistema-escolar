@@ -2,6 +2,7 @@ import { ChangeEvent, useState, useContext } from "react";
 import { CustomInput, CustomSelect } from "../../../../components";
 import { AuthContext } from "../../../../contexts";
 import { useNavigate } from "react-router-dom";
+import Button from "../../../../components/Button";
 
 export default function Form() {
   const navigate = useNavigate();
@@ -74,20 +75,10 @@ export default function Form() {
           placeHolder="Digite sua senha"
         />
 
-        <button
-          onClick={handleLogin}
-          className=" 
-          w-full
-          p-3
-          drop-shadow-lg
-          shadow-md
-          bg-primaryLight
-          rounded
-          text-white
-          font-semibold"
-        >
-          Entrar
-        </button>
+        <Button
+        text="Entrar"
+        onClick={handleLogin}
+        />
       </div>
     </>
   );

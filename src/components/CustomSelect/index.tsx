@@ -10,6 +10,7 @@ type Props = {
 export function CustomSelect({ text, name, children}: Props) {
   return (
     <>
+        <div className="w-full">
       <label className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
@@ -41,6 +42,7 @@ export function CustomSelect({ text, name, children}: Props) {
           {children}
         </select>
       </label>
+      </div>
     </>
   );
 }
