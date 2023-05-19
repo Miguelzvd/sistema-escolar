@@ -1,9 +1,9 @@
 export function LoginAluno() {
   return (
     <>
-      <div className="flex flex-row">
-        <div className="bg-primaryDark h-screen w-40"></div>
-        <div className="bg-black w-5 h-screen"></div>
+      <div className="grid-flow-row ">
+        <div className="bg-primaryDark min-h-screen w-64"></div>
+        <div className="bg-black h-screen w-8 "></div>
       </div>
     </>
   );

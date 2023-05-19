@@ -25,6 +25,7 @@ export function HamburgerMenu({ children }: Props) {
           className="
             w-full
             h-[calc(100vh-5.0625rem)]
+            transition-all ease-in
             fixed
             top-20
             left-0
