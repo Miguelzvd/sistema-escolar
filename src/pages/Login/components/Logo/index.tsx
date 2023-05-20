@@ -1,4 +1,4 @@
-import logo from "../../../../assets/logo-login.svg"
+import logo from "../../../../assets/Global/iconeLogin.svg"
 
 
 export function Logo() {

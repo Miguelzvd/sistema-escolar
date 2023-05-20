@@ -1,7 +1,7 @@
 /* eslint-disable no-constant-condition */
 import { NavMobileLink, NavLink, NavLinkList, HamburgerMenu } from "./index";
 
-import logo from "../../assets/icone.svg";
+import logo from "../../assets/Global/iconeHome.svg";
 
 export function Nav() {
   return (
