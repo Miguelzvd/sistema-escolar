@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button";
 
 export default function Form() {
+  
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
   const [matricula, setMatricula] = useState("");

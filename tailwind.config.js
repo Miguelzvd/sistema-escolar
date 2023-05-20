@@ -7,6 +7,7 @@ export default {
         primaryLight: "hsl(205, 88%, 30%)",
         primary: "hsl(205, 88%, 22%)",
         primaryDark: "hsl(205, 88%, 16%)",
+        secundary: "#07416B",
       },
       width: {
         128: "32rem",
@@ -22,16 +23,16 @@ export default {
         224: "56rem",
       },
       screens: {
-        "sm": "576px",
+        sm: "576px",
         // => @media (min-width: 576px) { ... }
 
-        "tablet": '640px',
+        tablet: "640px",
         // => @media (min-width: 640px) { ... }
 
-        "md": "960px",
+        md: "960px",
         // => @media (min-width: 960px) { ... }
 
-        "lg": "1440px",
+        lg: "1440px",
         // => @media (min-width: 1440px) { ... }
       },
     },
