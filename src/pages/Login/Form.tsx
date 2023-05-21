@@ -1,11 +1,10 @@
 import { ChangeEvent, useState, useContext } from "react";
-import { CustomInput, CustomSelect } from "../../../../components";
-import { AuthContext } from "../../../../contexts";
+import { CustomInput, CustomSelect } from "../../components";
+import { AuthContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
-import Button from "../../../../components/Button";
+import Button from "../../components/Button";
 
 export default function Form() {
-  
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
   const [matricula, setMatricula] = useState("");
@@ -76,10 +75,7 @@ export default function Form() {
           placeHolder="Digite sua senha"
         />
 
-        <Button
-        text="Entrar"
-        onClick={handleLogin}
-        />
+        <Button text="Entrar" onClick={handleLogin} />
       </div>
     </>
   );

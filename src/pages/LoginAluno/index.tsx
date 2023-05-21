@@ -5,10 +5,9 @@ export function LoginAluno() {
   return (
     <>
       {/* SIDE MENU */}
-      <div className="flex">
-        <SideMenu></SideMenu>
-
-        <Boletim />
+      <div className="flex flex-row overflow-auto min-h-screen w-full ">
+        <SideMenu/>
+        <Boletim/>
       </div>
     </>
   );
