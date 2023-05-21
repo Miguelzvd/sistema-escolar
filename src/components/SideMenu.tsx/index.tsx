@@ -10,39 +10,42 @@ import {
   DadosPessoais,
   Relatorio,
   Sair,
-} from "../../../iconComponents";
+} from "../../iconComponents";
+
 
 export function SideMenu() {
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
+  
   const MenuItems = [
-    { 
-      Icon: Boletim,
-      title: "Boletim",
-      link:"/boletim" 
-    },
-    { 
-      Icon: DiarioDeClasse,
-      title: "Diário de Classe",
-      link:"/boletim"
-     },
-    { 
-      Icon: DadosPessoais,
-      title: "Dados Pessoais",
-      link: "/boletim" 
-    },
-    { 
-      Icon: Relatorio,
-      title: "Relatório da Disciplina",
-      link:"/boletim"
-    },
-    { 
-      Icon: Sair,
-      title: "Sair",
-      spacing:true,
-      link: "/boletim"
-    },
+      {
+        Icon: Boletim,
+        title: "Digitação de Notas",
+        link: "/boletim",
+      },
+      {
+        Icon: DiarioDeClasse,
+        title: "Diário de Classe",
+        link: "/boletim",
+      },
+      {
+        Icon: DadosPessoais,
+        title: "Dados Pessoais",
+        link: "/boletim",
+      },
+      {
+        Icon: Relatorio,
+        title: "Relatório da Disciplina",
+        link: "/boletim",
+      },
+      {
+        Icon: Sair,
+        title: "Sair",
+        spacing: true,
+        link: "/boletim",
+      },
   ];
+  
 
   return (
     <div className="flex flex-row min-h-screen w-fit">
@@ -60,11 +63,10 @@ export function SideMenu() {
           <EscolaMHR className="w-40 h-40 text-white" />
         </div>
         <div className="flex flex-col h-full w-full justify-center gap-16">
-          
-          <div className={`ml-1 flex flex-row gap-4 text-white items-center 
-          ${ !open ? "justify-center" : "justify-start" } `}
+          <div
+            className={`ml-1 flex flex-row gap-4 text-white items-center 
+          ${!open ? "justify-center" : "justify-start"} `}
           >
-
             <HiOutlineUserCircle size="2rem" color="white" />
             <span className={`${!open ? "hidden" : "inline"}`}>
               Usuário: {}
@@ -72,20 +74,21 @@ export function SideMenu() {
           </div>
 
           {/* Opcoes do menu */}
-          <ul className=" w-full flex flex-col gap-8">
+          <ul className="w-full flex flex-col gap-8">
             {MenuItems.map((item, index) => (
-              
               <MenuItem
                 key={index}
                 Icon={item.Icon}
                 title={item.title}
-                onClick={()=>{navigate(item.link)}}
+                onClick={() => {
+                  navigate(item.link);
+                }}
                 open={open}
-                mlClosed={item.spacing? "ml-2": "ml-0"}
-                mlOpened={item.spacing? "ml-3": "ml-2"}
-                />
-
+                mlClosed={item.spacing ? "ml-2" : "ml-0"}
+                mlOpened={item.spacing ? "ml-3" : "ml-2"}
+              />
             ))}
+            
           </ul>
         </div>
       </div>

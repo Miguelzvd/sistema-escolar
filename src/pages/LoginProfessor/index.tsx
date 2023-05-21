@@ -1,6 +1,8 @@
 export function LoginProfessor() {
-    return (
+    
+  return (
       <>
+      
         <h1 className="text-8xl">LoginProfessor</h1>
       </>
     );
