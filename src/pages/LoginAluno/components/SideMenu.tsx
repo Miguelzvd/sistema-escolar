@@ -1,5 +1,6 @@
 import { HiOutlineUserCircle } from "react-icons/Hi";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import {
   Seta,
@@ -13,12 +14,34 @@ import {
 
 export function SideMenu() {
   const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
   const MenuItems = [
-    { Icon: Boletim, title: "Boletim" },
-    { Icon: DiarioDeClasse, title: "Diário de Classe" },
-    { Icon: DadosPessoais, title: "Dados Pessoais" },
-    { Icon: Relatorio, title: "Relatório da Disciplina" },
-    { Icon: Sair, title: "Sair", spacing:true },
+    { 
+      Icon: Boletim,
+      title: "Boletim",
+      link:"/boletim" 
+    },
+    { 
+      Icon: DiarioDeClasse,
+      title: "Diário de Classe",
+      link:"/boletim"
+     },
+    { 
+      Icon: DadosPessoais,
+      title: "Dados Pessoais",
+      link: "/boletim" 
+    },
+    { 
+      Icon: Relatorio,
+      title: "Relatório da Disciplina",
+      link:"/boletim"
+    },
+    { 
+      Icon: Sair,
+      title: "Sair",
+      spacing:true,
+      link: "/boletim"
+    },
   ];
 
   return (
@@ -37,34 +60,32 @@ export function SideMenu() {
           <EscolaMHR className="w-40 h-40 text-white" />
         </div>
         <div className="flex flex-col h-full w-full justify-center gap-16">
-          <div
-            className={`ml-1 flex flex-row gap-4 text-white items-center ${
-              !open ? "justify-center" : "justify-start"
-            }`}
+          
+          <div className={`ml-1 flex flex-row gap-4 text-white items-center 
+          ${ !open ? "justify-center" : "justify-start" } `}
           >
+
             <HiOutlineUserCircle size="2rem" color="white" />
             <span className={`${!open ? "hidden" : "inline"}`}>
               Usuário: {}
             </span>
           </div>
+
           {/* Opcoes do menu */}
           <ul className=" w-full flex flex-col gap-8">
             {MenuItems.map((item, index) => (
+              
               <MenuItem
                 key={index}
                 Icon={item.Icon}
                 title={item.title}
+                onClick={()=>{navigate(item.link)}}
                 open={open}
-              
-              ></MenuItem>
+                mlClosed={item.spacing? "ml-2": "ml-0"}
+                mlOpened={item.spacing? "ml-3": "ml-2"}
+                />
+
             ))}
-            <MenuItem
-              Icon={Sair}
-              title="Sair"
-              mlOpened="ml-3"
-              mlClosed="ml-2"
-              open={open}
-            />
           </ul>
         </div>
       </div>
