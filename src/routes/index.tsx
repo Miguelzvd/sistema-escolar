@@ -14,7 +14,7 @@ export function AppRoutes() {
         <Route path="/sign-up" element={<Login />} />
 
         <Route path="/student" element={<LoginAluno/>}>
-          
+          <Route index element={<Notas/>}/>
           <Route path="notas" element={<Notas/>}/>
           <Route path="diario-de-classe" element={<DiarioDeClasse/>}/>
         </Route>
