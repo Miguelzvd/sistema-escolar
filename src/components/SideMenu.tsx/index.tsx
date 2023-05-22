@@ -1,50 +1,25 @@
 import { HiOutlineUserCircle } from "react-icons/Hi";
-import { useState } from "react";
+import { SVGProps, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import {
   Seta,
-  Boletim,
-  DiarioDeClasse,
   EscolaMHR,
-  DadosPessoais,
-  Relatorio,
   Sair,
 } from "../../iconComponents";
 
 
-export function SideMenu() {
+type Props = {
+    menuItems: Array<{
+    title: string;
+    Icon:  React.FC<SVGProps<SVGSVGElement>>;
+    link: string;
+  }>;
+}
+
+export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
-  
-  const MenuItems = [
-      {
-        Icon: Boletim,
-        title: "Digitação de Notas",
-        link: "/boletim",
-      },
-      {
-        Icon: DiarioDeClasse,
-        title: "Diário de Classe",
-        link: "/boletim",
-      },
-      {
-        Icon: DadosPessoais,
-        title: "Dados Pessoais",
-        link: "/boletim",
-      },
-      {
-        Icon: Relatorio,
-        title: "Relatório da Disciplina",
-        link: "/boletim",
-      },
-      {
-        Icon: Sair,
-        title: "Sair",
-        spacing: true,
-        link: "/boletim",
-      },
-  ];
   
 
   return (
@@ -75,20 +50,18 @@ export function SideMenu() {
 
           {/* Opcoes do menu */}
           <ul className="w-full flex flex-col gap-8">
-            {MenuItems.map((item, index) => (
+            {menuItems.map((item, index) => (
               <MenuItem
                 key={index}
                 Icon={item.Icon}
                 title={item.title}
-                onClick={() => {
-                  navigate(item.link);
-                }}
+                onClick={() => navigate(item.link)} 
                 open={open}
-                mlClosed={item.spacing ? "ml-2" : "ml-0"}
-                mlOpened={item.spacing ? "ml-3" : "ml-2"}
+                mlClosed="ml-0"
+                mlOpened="ml-2"
               />
             ))}
-            
+            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" />
           </ul>
         </div>
       </div>
