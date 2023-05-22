@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import { SideMenu } from "../../components";
 import {
   Boletim,
@@ -5,6 +6,7 @@ import {
   DadosPessoais,
   Relatorio,
 } from "../../iconComponents";
+import LoginPages from "./components/LoginPages";
 
 type Props = { children: React.ReactNode }
 export function LoginAluno({children}: Props) {
@@ -35,10 +37,13 @@ export function LoginAluno({children}: Props) {
   return (
     <>
       {/* SIDE MENU */}
+      <BrowserRouter>
       <div className="flex flex-row overflow-auto min-h-screen w-full ">
         <SideMenu menuItems={MenuItems}/>    
-        {children}
+        <LoginPages></LoginPages>
       </div>
+      </BrowserRouter>
+
     </>
   );
 }
