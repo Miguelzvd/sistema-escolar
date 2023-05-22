@@ -55,13 +55,13 @@ export function SideMenu({ menuItems }: Props) {
                 key={index}
                 Icon={item.Icon}
                 title={item.title}
-                onClick={() => navigate(item.link)} 
+                link={item.link}
                 open={open}
                 mlClosed="ml-0"
                 mlOpened="ml-2"
               />
             ))}
-            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" />
+            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" link="/sair" />
           </ul>
         </div>
       </div>
