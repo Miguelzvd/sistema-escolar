@@ -1,6 +1,5 @@
 import { HiOutlineUserCircle } from "react-icons/Hi";
 import { SVGProps, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import {
   Seta,
@@ -19,8 +18,6 @@ type Props = {
 
 export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(true);
-  const navigate = useNavigate();
-  
 
   return (
     <div className="flex flex-row min-h-screen w-fit">

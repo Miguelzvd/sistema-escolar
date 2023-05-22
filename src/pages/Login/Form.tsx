@@ -23,7 +23,7 @@ export default function Form() {
     if (matricula && password) {
       const isLogged = await auth.signin(matricula, password);
       if (isLogged) {
-        navigate("/signin-student");
+        navigate("/student");
       } else {
         alert("Deu erro");
       }

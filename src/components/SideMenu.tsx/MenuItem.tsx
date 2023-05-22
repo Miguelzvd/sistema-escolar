@@ -7,7 +7,6 @@ type Props = {
   mlOpened?: string;
   Icon: React.FC<SVGProps<SVGSVGElement>>;
   open: boolean;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   link:string;
 };
 
@@ -17,7 +16,6 @@ export default function MenuItem({
   mlOpened = "ml-0",
   mlClosed = "ml-0",
   open,
-  onClick,
   link
 }: Props) {
   return (

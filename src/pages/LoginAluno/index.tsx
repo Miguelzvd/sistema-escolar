@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { SideMenu } from "../../components";
 import {
   Boletim,
@@ -6,8 +6,6 @@ import {
   DadosPessoais,
   Relatorio,
 } from "../../iconComponents";
-import LoginPages from "./components/LoginPages";
-
 
 export function LoginAluno() {
 
@@ -15,34 +13,32 @@ export function LoginAluno() {
     {
       Icon: Boletim,
       title: "Digitação de Notas",
-      link: "/notas",
+      link: "notas",
     },
     {
       Icon: DiarioDeClasse,
       title: "Diário de Classe",
-      link: "/diario-classe",
+      link: "diario-classe",
     },
     {
       Icon: DadosPessoais,
       title: "Dados Pessoais",
-      link: "/dados",
+      link: "dados",
     },
     {
       Icon: Relatorio,
       title: "Relatório da Disciplina",
-      link: "/boletim",
+      link: "boletim",
     },
 ];
 
   return (
     <>
       {/* SIDE MENU */}
-      <BrowserRouter>
       <div className="flex flex-row overflow-auto min-h-screen w-full ">
         <SideMenu menuItems={MenuItems}/>    
-        <LoginPages/>
+        <Outlet/>
       </div>
-      </BrowserRouter>
 
     </>
   );
