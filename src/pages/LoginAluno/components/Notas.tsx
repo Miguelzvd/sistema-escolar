@@ -1,4 +1,4 @@
-export function Boletim() {
+export function Notas() {
   return (
     <>
       <div className="min-h-screen w-full flex flex-row justify-center items-center">
@@ -7,7 +7,7 @@ export function Boletim() {
             rounded-md
             border-slate-300">
               {/* TITULO */}
-              <h1 className="text-secundary font-extrabold text-2xl">BOLETIM</h1>
+              <h1 className="text-secundary font-extrabold text-2xl">Notas</h1>
               
             </div>
       </div>

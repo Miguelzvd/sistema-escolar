@@ -6,24 +6,24 @@ import {
   Relatorio,
 } from "../../iconComponents";
 
-export function LoginAluno() {
-
+type Props = { children: React.ReactNode }
+export function LoginAluno({children}: Props) {
 
   const MenuItems = [
     {
       Icon: Boletim,
       title: "Digitação de Notas",
-      link: "/boletim",
+      link: "/notas",
     },
     {
       Icon: DiarioDeClasse,
       title: "Diário de Classe",
-      link: "/boletim",
+      link: "/diario-classe",
     },
     {
       Icon: DadosPessoais,
       title: "Dados Pessoais",
-      link: "/boletim",
+      link: "/dados",
     },
     {
       Icon: Relatorio,
@@ -37,6 +37,7 @@ export function LoginAluno() {
       {/* SIDE MENU */}
       <div className="flex flex-row overflow-auto min-h-screen w-full ">
         <SideMenu menuItems={MenuItems}/>    
+        {children}
       </div>
     </>
   );
