@@ -35,6 +35,9 @@ export default {
         lg: "1440px",
         // => @media (min-width: 1440px) { ... }
       },
+      fontFamily:{
+        roboto:[ "Roboto" ]
+      },
     },
   },
 };

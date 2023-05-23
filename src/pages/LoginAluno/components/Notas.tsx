@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 export function Notas() {
   const disciplines = [
     {
@@ -49,24 +51,25 @@ export function Notas() {
       nota3: 10,
       media: 10,
     },
+    {
+      title: "Biologia",
+      nota1: 10,
+      nota2: 10,
+      nota3: 10,
+      media: 10,
+    },
+    {
+      title: "Historia",
+      nota1: 10,
+      nota2: 10,
+      nota3: 10,
+      media: 10,
+    },
   ];
 
   return (
-      <div className="min-h-screen bg-black flex flex-row items-center m-auto">
-        <div
-          className=" 
-          bg-slate-200 
-          w-128 h-fit
-          gap-4
-          md:w-224
-          py-8
-          mx-2
-          flex flex-col
-          items-center
-          border rounded-md border-slate-300
-          shadow-sm drop-shadow-md
-          "
-        >
+        
+        <Card>
           {/* TITULO */}
           <header>
             <h1 className="text-secundary font-extrabold text-2xl">
@@ -80,11 +83,11 @@ export function Notas() {
 
             <thead className="flex flex-col items-center w-full">
               <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
-                  <th className=" w-[20%]">Disciplina</th>
+              <th className="w-[20%] text-left"> <span className="ml-3">Disciplina </span> </th>
                 <section className="flex flex-row justify-around rounded-md w-[80%]">
-                  <th >Nota1</th>
-                  <th >Nota2</th>
-                  <th >Nota3</th>
+                  <th >Nota 1</th>
+                  <th >Nota 2</th>
+                  <th >Nota 3</th>
                   <th >Media</th>
                 </section>
               </tr>
@@ -94,7 +97,7 @@ export function Notas() {
               {disciplines.map((discipline, index) => (
                 <tr key={index} className=" w-[95%] py-1 flex flex-row justify-around rounded-md bg-neutral-400"
                 >
-                  <th className="w-[20%]"> {discipline.title}</th>
+                  <th className="w-[20%] text-left"> <span className="ml-3"> {discipline.title} </span></th>
                   <section className="flex flex-row justify-around rounded-md w-[80%]">
                     <td >{discipline.nota1}</td>
                     <td >{discipline.nota2}</td>
@@ -105,9 +108,7 @@ export function Notas() {
               ))}
             </tbody>
 
-          </main>
-
-        </div>
-      </div>
+            </main>
+          </Card>
   );
 }

@@ -1,7 +1,7 @@
 import { Route, Routes as ReactRoutes, BrowserRouter as Router } from "react-router-dom";
 import { Home, Login, LoginAluno, LoginProfessor, Private } from "../pages"
 import { RequireAuth } from "../contexts";
-import { DiarioDeClasse, Notas } from "../pages/LoginAluno/components";
+import { DadosPessoais, DiarioDeClasse, Notas, Relatorio } from "../pages/LoginAluno/components";
 
 
 
@@ -16,7 +16,9 @@ export function AppRoutes() {
         <Route path="/student" element={<LoginAluno/>}>
           <Route index element={<Notas/>}/>
           <Route path="notas" element={<Notas/>}/>
-          <Route path="diario-de-classe" element={<DiarioDeClasse/>}/>
+          <Route path="diario-classe" element={<DiarioDeClasse/>}/>
+          <Route path="dados-pessoais" element={<DadosPessoais/>}/>
+          <Route path="relatorio-disciplina" element={<Relatorio/>}/>
         </Route>
 
         <Route path="/signin-teacher" element={ <LoginProfessor /> } />

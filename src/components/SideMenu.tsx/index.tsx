@@ -6,7 +6,8 @@ import {
   EscolaMHR,
   Sair,
 } from "../../iconComponents";
-
+import { AuthContext } from "../../contexts";
+import { useContext } from "react";
 
 type Props = {
     menuItems: Array<{
@@ -18,6 +19,11 @@ type Props = {
 
 export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(true);
+  const auth = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    await auth.signout();
+  };
 
   return (
     <div className="flex flex-row min-h-screen w-fit">
@@ -60,7 +66,7 @@ export function SideMenu({ menuItems }: Props) {
                 mlOpened="ml-2"
               />
             ))}
-            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" link="/sair" />
+            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" handleClick={handleLogout} link="/"  />
           </ul>
         </div>
       </div>

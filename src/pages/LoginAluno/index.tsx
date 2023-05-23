@@ -9,7 +9,7 @@ import {
 
 export function LoginAluno() {
 
-  const MenuItems = [
+  const MenuData = [
     {
       Icon: Boletim,
       title: "Digitação de Notas",
@@ -23,12 +23,12 @@ export function LoginAluno() {
     {
       Icon: DadosPessoais,
       title: "Dados Pessoais",
-      link: "dados",
+      link: "dados-pessoais",
     },
     {
       Icon: Relatorio,
       title: "Relatório da Disciplina",
-      link: "boletim",
+      link: "relatorio-disciplina",
     },
 ];
 
@@ -36,7 +36,7 @@ export function LoginAluno() {
     <>
       {/* SIDE MENU */}
       <div className="flex flex-row overflow-auto min-h-screen w-full ">
-        <SideMenu menuItems={MenuItems}/>    
+        <SideMenu menuItems={MenuData}/>    
         <Outlet/>
       </div>
 
