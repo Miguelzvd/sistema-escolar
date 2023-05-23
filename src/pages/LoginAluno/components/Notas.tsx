@@ -52,9 +52,8 @@ export function Notas() {
   ];
 
   return (
-    <>
-      <main className="min-h-screen w-224 flex flex-row items-center m-auto">
-        <div
+      <div className="min-h-screen w-224 flex flex-row items-center m-auto">
+        <main
           className=" 
           bg-slate-200 
           w-128 h-fit
@@ -108,8 +107,7 @@ export function Notas() {
 
           </table>
 
-        </div>
-      </main>
-    </>
+        </main>
+      </div>
   );
 }
