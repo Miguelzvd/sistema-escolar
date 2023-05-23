@@ -53,13 +53,14 @@ export function Notas() {
 
   return (
     <>
-      <main className="min-h-screen w-full flex flex-row justify-center items-center">
+      <main className="min-h-screen w-224 flex flex-row items-center m-auto">
         <div
           className=" 
           bg-slate-200 
-          w-224 h-fit
+          w-128 h-fit
+          md:w-224
           gap-4
-          py-2
+          py-8
           mx-2
           flex flex-col
           items-center
@@ -69,36 +70,44 @@ export function Notas() {
         >
           {/* TITULO */}
           <header>
-            <h1 className="text-secundary font-extrabold text-2xl text-center">
-              Notas
+            <h1 className="text-secundary font-extrabold text-2xl">
+              NOTAS
             </h1>
           </header>
+
           {/* TABELA */}
 
-          <table className="w-full flex flex-col items-center gap-4">
-            <thead className="text-white py-1 grid grid-flow-col grid-rows-1 justify-evenly w-[95%] rounded-md bg-neutral-500">
-              <th>Disciplina</th>
-              <th>Nota1</th>
-              <th>Nota2</th>
-              <th>Nota3</th>
-              <th>Media</th>
+          <table className="text-white w-full flex flex-col items-center gap-4">
+
+            <thead className="flex flex-col items-center w-full">
+              <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
+                  <th className=" w-[20%]">Disciplina</th>
+                <section className="flex flex-row justify-around rounded-md w-[80%]">
+                  <th >Nota1</th>
+                  <th >Nota2</th>
+                  <th >Nota3</th>
+                  <th >Media</th>
+                </section>
+              </tr>
             </thead>
 
-            <tbody className="py-1 flex flex-col w-[95%] gap-4">
+            <tbody className="flex flex-col items-center w-full gap-4">
               {disciplines.map((discipline, index) => (
-                <tr
-                  key={index}
-                  className="text-white py-1 grid grid-flow-col grid-rows-1 justify-evenly rounded-md bg-neutral-400"
+                <tr key={index} className=" w-[95%] py-1 flex flex-row justify-around rounded-md bg-neutral-400"
                 >
-                  <td>{discipline.title}</td>
-                  <td>{discipline.nota1}</td>
-                  <td>{discipline.nota2}</td>
-                  <td>{discipline.nota3}</td>
-                  <td>{discipline.media}</td>
+                  <th className="w-[20%]"> {discipline.title}</th>
+                  <section className="flex flex-row justify-around rounded-md w-[80%]">
+                    <td >{discipline.nota1}</td>
+                    <td >{discipline.nota2}</td>
+                    <td >{discipline.nota3}</td>
+                    <td >{discipline.media}</td>
+                  </section>
                 </tr>
               ))}
             </tbody>
+
           </table>
+
         </div>
       </main>
     </>

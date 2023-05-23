@@ -34,6 +34,8 @@ export function SideMenu({ menuItems }: Props) {
         >
           <EscolaMHR className="w-40 h-40 text-white" />
         </div>
+
+        {/* MENU */}
         <div className="flex flex-col h-full w-full justify-center gap-16">
           <div
             className={`ml-1 flex flex-row gap-4 text-white items-center 
@@ -46,7 +48,7 @@ export function SideMenu({ menuItems }: Props) {
           </div>
 
           {/* Opcoes do menu */}
-          <ul className="w-full flex flex-col gap-8">
+          <ul className="w-full flex flex-col gap-8 whitespace-nowrap overflow-hidden">
             {menuItems.map((item, index) => (
               <MenuItem
                 key={index}
