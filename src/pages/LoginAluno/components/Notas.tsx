@@ -52,13 +52,13 @@ export function Notas() {
   ];
 
   return (
-      <div className="min-h-screen w-224 flex flex-row items-center m-auto">
-        <main
+      <div className="min-h-screen bg-black flex flex-row items-center m-auto">
+        <div
           className=" 
           bg-slate-200 
           w-128 h-fit
-          md:w-224
           gap-4
+          md:w-224
           py-8
           mx-2
           flex flex-col
@@ -76,7 +76,7 @@ export function Notas() {
 
           {/* TABELA */}
 
-          <table className="text-white w-full flex flex-col items-center gap-4">
+          <main className="text-white w-full flex flex-col items-center gap-4">
 
             <thead className="flex flex-col items-center w-full">
               <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
@@ -105,9 +105,9 @@ export function Notas() {
               ))}
             </tbody>
 
-          </table>
+          </main>
 
-        </main>
+        </div>
       </div>
   );
 }
