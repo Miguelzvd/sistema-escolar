@@ -25,7 +25,7 @@ export default function MenuItem({
     <button onClick={handleClick}>
       <NavLink to={link}>
         <li
-          className={`hover:bg-white/25 hover:cursor-pointer hover:text-secundary duration-150 h-10 flex items-center gap-4 font-bold text-white ${
+          className={`hover:bg-white/25 hover:cursor-pointer hover:text-secundary h-10 inline-flex items-center gap-4 font-bold text-white ${
             !open ? "justify-center" : ""
           }`}
         >
@@ -35,7 +35,7 @@ export default function MenuItem({
             height="1.5rem"
           />
           <span
-            className={!open ? "hidden" : "inline overflow-x-hidden-hidden"}
+            className={!open ? "hidden" : "w-60 truncate flex flex-row"}
           >
             {title}
           </span>

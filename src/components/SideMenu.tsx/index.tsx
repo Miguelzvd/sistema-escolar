@@ -30,7 +30,7 @@ export function SideMenu({ menuItems }: Props) {
       <div
         className={`bg-secundary h-full flex flex-col ${
           open ? "w-72" : "w-12 flex flex-col justify-center"
-        } duration-200`}
+        } duration-150`}
       >
         {/* Icone Escola */}
         <div
@@ -44,17 +44,19 @@ export function SideMenu({ menuItems }: Props) {
         {/* MENU */}
         <div className="flex flex-col h-full w-full justify-center gap-16">
           <div
-            className={`ml-1 flex flex-row gap-4 text-white items-center 
+            className={`ml-1 inline-flex gap-4 text-white items-center 
           ${!open ? "justify-center" : "justify-start"} `}
           >
-            <HiOutlineUserCircle size="2rem" color="white" />
-            <span className={`${!open ? "hidden" : "inline"}`}>
+            <div className="block">
+              <HiOutlineUserCircle size="2rem" color="white" />
+            </div>
+            <span className={`${!open ? "hidden" : "w-60 truncate flex flex-row"}`}>
               Usuário: {}
             </span>
           </div>
 
           {/* Opcoes do menu */}
-          <ul className="w-full flex flex-col gap-8 whitespace-nowrap overflow-hidden">
+          <ul className="w-full flex flex-col gap-8 whitespace-nowrap">
             {menuItems.map((item, index) => (
               <MenuItem
                 key={index}

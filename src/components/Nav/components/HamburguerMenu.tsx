@@ -1,7 +1,7 @@
 /* eslint-disable no-constant-condition */
 import { GiHamburgerMenu } from "react-icons/Gi";
 import { useNavMobileContext } from "../../../contexts";
-import { NavMobileLinkList } from "../index";
+import { NavMobileLinkList } from "./index";
 
 type Props = {
   children: React.ReactNode;

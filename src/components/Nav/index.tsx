@@ -1,5 +1,10 @@
 /* eslint-disable no-constant-condition */
-import { NavMobileLink, NavLink, NavLinkList, HamburgerMenu } from "./index";
+import {
+  NavMobileLink,
+  NavLink,
+  NavLinkList,
+  HamburgerMenu,
+} from "./components/index";
 import IconeSite from "../../iconComponents/General/IconeSite";
 
 export function Nav() {
@@ -17,7 +22,7 @@ export function Nav() {
         justify-between
         "
       >
-        <IconeSite className="text-white ml-4 w-16 h-16"/>
+        <IconeSite className="text-white ml-4 w-16 h-16" />
 
         <NavLinkList>
           <NavLink text="Private" link="/private" variant="hover" />
