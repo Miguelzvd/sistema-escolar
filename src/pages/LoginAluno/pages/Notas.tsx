@@ -7,9 +7,9 @@ export function Notas() {
 
       {/* TABELA */}
 
-      <main className="text-white w-full flex flex-col items-center gap-4">
+      <main className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
         
-        <thead className="flex flex-col items-center w-full">
+        <thead className="flex flex-col items-center w-full ">
           <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
             <th className="w-[20%] text-left">
               <span className="ml-3">Disciplina </span>

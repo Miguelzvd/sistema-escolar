@@ -8,11 +8,16 @@ export function Card({ children, title }: Props) {
     <div className="min-h-screen flex flex-row items-center m-auto">
       <div
         className=" 
-      bg-slate-200 
+        bg-slate-200 
         w-128 
+        md:w-[40rem]
+        xl:w-[60rem]
+        lg:w-[72rem]
+        2xl:w-[80rem]
         h-fit
+        m-5
+        md:mx-5
         gap-4
-        md:w-[80rem]
         py-8
         mx-2
         flex flex-col
@@ -21,6 +26,7 @@ export function Card({ children, title }: Props) {
         rounded-md 
         border-slate-300
         shadow-sm drop-shadow-md
+        duration-300
         "
       >
         <header>

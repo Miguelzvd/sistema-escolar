@@ -1,21 +1,17 @@
 import { HiOutlineUserCircle } from "react-icons/Hi";
 import { SVGProps, useState } from "react";
 import MenuItem from "./MenuItem";
-import {
-  Seta,
-  EscolaMHR,
-  Sair,
-} from "../../iconComponents";
+import { Seta, EscolaMHR, Sair } from "../../iconComponents";
 import { AuthContext } from "../../contexts";
 import { useContext } from "react";
 
 type Props = {
-    menuItems: Array<{
+  menuItems: Array<{
     title: string;
-    Icon:  React.FC<SVGProps<SVGSVGElement>>;
+    Icon: React.FC<SVGProps<SVGSVGElement>>;
     link: string;
   }>;
-}
+};
 
 export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(true);
@@ -30,7 +26,7 @@ export function SideMenu({ menuItems }: Props) {
       <div
         className={`bg-secundary h-full flex flex-col ${
           open ? "w-72" : "w-12 flex flex-col justify-center"
-        } duration-150`}
+        } duration-500`}
       >
         {/* Icone Escola */}
         <div
@@ -50,7 +46,9 @@ export function SideMenu({ menuItems }: Props) {
             <div className="block">
               <HiOutlineUserCircle size="2rem" color="white" />
             </div>
-            <span className={`${!open ? "hidden" : "w-60 truncate flex flex-row"}`}>
+            <span
+              className={`${!open ? "hidden" : "flex flex-row"}`}
+            >
               Usuário: {}
             </span>
           </div>
@@ -68,7 +66,15 @@ export function SideMenu({ menuItems }: Props) {
                 mlOpened="ml-2"
               />
             ))}
-            <MenuItem Icon={Sair} title="Sair" open={open} mlClosed="ml-2" mlOpened="ml-3" handleClick={handleLogout} link="/"  />
+            <MenuItem
+              Icon={Sair}
+              title="Sair"
+              open={open}
+              mlClosed="ml-2"
+              mlOpened="ml-3"
+              handleClick={handleLogout}
+              link="/"
+            />
           </ul>
         </div>
       </div>

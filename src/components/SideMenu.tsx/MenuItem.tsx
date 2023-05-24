@@ -35,7 +35,7 @@ export default function MenuItem({
             height="1.5rem"
           />
           <span
-            className={!open ? "hidden" : "w-60 truncate flex flex-row"}
+            className={!open ? "hidden" : "w-60 flex flex-row"}
           >
             {title}
           </span>

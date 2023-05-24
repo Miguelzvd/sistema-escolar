@@ -21,7 +21,7 @@ export default function Button({
       <button
         onClick={onClick}
         className={classNames(
-          "w-full p-3 drop-shadow-lg shadow-md rounded font-semibold",
+          "w-full p-3 drop-shadow-lg shadow-md rounded hover:bg-secundary duration-200 font-semibold",
           textColor,
           color
         )}
