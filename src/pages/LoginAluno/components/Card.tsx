@@ -1,8 +1,9 @@
 type Props = {
   children: React.ReactNode;
+  title: string;
 };
 
-export function Card({ children }: Props) {
+export function Card({ children, title }: Props) {
   return (
     <div className="min-h-screen flex flex-row items-center m-auto">
       <div
@@ -22,6 +23,10 @@ export function Card({ children }: Props) {
         shadow-sm drop-shadow-md
         "
       >
+        <header>
+          <h1 className="text-secundary font-roboto font-bold text-3xl">{ title }</h1>
+        </header>
+
         {children}
       </div>
     </div>
