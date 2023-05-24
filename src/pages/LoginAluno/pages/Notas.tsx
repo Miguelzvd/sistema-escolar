@@ -12,7 +12,6 @@ export function Notas() {
         <thead className="flex flex-col items-center w-full">
           <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
             <th className="w-[20%] text-left">
-              
               <span className="ml-3">Disciplina </span>
             </th>
             <section className="flex flex-row justify-around rounded-md w-[80%]">

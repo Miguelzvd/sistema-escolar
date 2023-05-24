@@ -4,7 +4,7 @@ import {
   NavLink,
   NavLinkList,
   HamburgerMenu,
-} from "./components/index";
+} from "./components";
 import IconeSite from "../../iconComponents/General/IconeSite";
 
 export function Nav() {
