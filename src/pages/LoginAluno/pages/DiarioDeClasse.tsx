@@ -1,4 +1,4 @@
-import Card from "./Card";
+import { Card } from "../components";
 
 export function DiarioDeClasse() {
   return (
@@ -11,9 +11,7 @@ export function DiarioDeClasse() {
       </header>
 
       {/* CONTEUDO DO CARD */}
-      <main className="text-white w-full flex flex-col items-center gap-4">
-        
-      </main>
+      <main className="text-white w-full flex flex-col items-center gap-4"></main>
     </Card>
   );
 }

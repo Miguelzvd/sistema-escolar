@@ -1,71 +1,8 @@
-import Card from "./Card";
+import { Card } from "../components";
+import {Disciplines} from "../../../constants"
+
 
 export function Notas() {
-  const disciplines = [
-    {
-      title: "Portugues",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Redação",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Ingles",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Matematica",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Geografia",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Quimica",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Filosofia",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Biologia",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-    {
-      title: "Historia",
-      nota1: 10,
-      nota2: 10,
-      nota3: 10,
-      media: 10,
-    },
-  ];
 
   return (
         
@@ -94,10 +31,10 @@ export function Notas() {
             </thead>
 
             <tbody className="flex flex-col items-center w-full gap-4">
-              {disciplines.map((discipline, index) => (
+              {Disciplines.map((discipline, index) => (
                 <tr key={index} className=" w-[95%] py-1 flex flex-row justify-around rounded-md bg-neutral-400"
                 >
-                  <th className="w-[20%] text-left"> <span className="ml-3"> {discipline.title} </span></th>
+                  <th className="w-[20%] text-left"> <span className="ml-3"> {discipline.title} </span> </th>
                   <section className="flex flex-row justify-around rounded-md w-[80%]">
                     <td >{discipline.nota1}</td>
                     <td >{discipline.nota2}</td>

@@ -1,7 +1,7 @@
 import { Route, Routes as ReactRoutes, BrowserRouter as Router } from "react-router-dom";
 import { Home, Login, LoginAluno, LoginProfessor, Private } from "../pages"
 import { RequireAuth } from "../contexts";
-import { DadosPessoais, DiarioDeClasse, Notas, Relatorio } from "../pages/LoginAluno/components";
+import { DadosPessoais, DiarioDeClasse, Notas, Relatorio } from "../pages/LoginAluno/pages";
 
 
 
