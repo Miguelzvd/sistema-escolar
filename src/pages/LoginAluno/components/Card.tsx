@@ -10,10 +10,10 @@ export function Card({ children, title }: Props) {
         className=" 
         bg-slate-200 
         w-[40rem]
-        md:w-[65rem]
-        xl:w-[68rem]
-        lg:w-[72rem]
-        2xl:w-[84rem]
+        md:w-[62rem]
+        xl:w-[64rem]
+        lg:w-[68rem]
+        2xl:w-[70rem]
         h-fit
         m-5
         md:mx-5

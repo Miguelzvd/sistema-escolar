@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card } from "../components";
-import Button from "../../../components/Button/index";
+// import Button from "../../../components/Button/index";
 import { useState } from "react";
 
 
@@ -39,9 +39,9 @@ export function DadosPessoais() {
           )}
         </section>
         <div className="flex flex-row w-full justify-center">
-          <div className="w-60">
+          {/* <div className="w-60">
             <Button text="Editar" />
-          </div>
+          </div> */}
         </div>
       </main>
     </Card>

@@ -31,7 +31,7 @@ export function SideMenu({ menuItems }: Props) {
               link={item.link}
               open={open}
               mlClosed="ml-0"
-              mlOpened="ml-2"
+              mlOpened="ml-4"
             />
           ))}
         </Menu>
