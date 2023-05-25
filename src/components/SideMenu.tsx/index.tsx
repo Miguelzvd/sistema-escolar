@@ -22,12 +22,12 @@ export function SideMenu({ menuItems }: Props) {
   };
 
   return (
-    <main className="flex flex-row min-h-screen w-fit">
+    <main className="flex flex-row min-h-screen w-fit ">
 
       <div
-        className={`bg-secundary h-full flex flex-col ${
-          open ? "w-72" : "w-0 md:w-12 sm:flex flex-col justify-center"
-        } duration-500`}
+        className={`bg-secundary h-full flex flex-col justify-center duration-300 ${
+          open ? "w-60 sm:w-72" : "w-0 md:w-12"
+        }`}
       >
 
         {/* Icone Escola */}
@@ -40,12 +40,12 @@ export function SideMenu({ menuItems }: Props) {
         </section>
 
         {/* MENU */}
-        <section className="flex flex-col h-full w-full justify-center gap-16">
+        <section className="flex flex-col  h-140 w-full justify-center gap-16">
           <div
             className={`ml-1 inline-flex gap-4 text-white items-center 
           ${!open ? "justify-center" : "justify-start"} `}
           >
-            <div className="block">
+            <div className={`${!open ? "hidden md:block" : "block"} `}>
               <HiOutlineUserCircle size="2rem" color="white" />
             </div>
             <span
