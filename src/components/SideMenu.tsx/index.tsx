@@ -22,23 +22,25 @@ export function SideMenu({ menuItems }: Props) {
   };
 
   return (
-    <div className="flex flex-row min-h-screen w-fit">
+    <main className="flex flex-row min-h-screen w-fit">
+
       <div
         className={`bg-secundary h-full flex flex-col ${
-          open ? "w-72" : "w-12 flex flex-col justify-center"
+          open ? "w-72" : "w-0 md:w-12 sm:flex flex-col justify-center"
         } duration-500`}
       >
+
         {/* Icone Escola */}
-        <div
+        <section
           className={`${
             !open ? "hidden" : "w-full h-fit flex justify-center mt-4"
           }`}
         >
           <EscolaMHR className="w-40 h-40 text-white" />
-        </div>
+        </section>
 
         {/* MENU */}
-        <div className="flex flex-col h-full w-full justify-center gap-16">
+        <section className="flex flex-col h-full w-full justify-center gap-16">
           <div
             className={`ml-1 inline-flex gap-4 text-white items-center 
           ${!open ? "justify-center" : "justify-start"} `}
@@ -76,7 +78,7 @@ export function SideMenu({ menuItems }: Props) {
               link="/"
             />
           </ul>
-        </div>
+        </section>
       </div>
 
       <div
@@ -85,6 +87,6 @@ export function SideMenu({ menuItems }: Props) {
       >
         <Seta className={`${!open ? "rotate-180 bg" : "rotate-0"}`} />
       </div>
-    </div>
+    </main>
   );
 }

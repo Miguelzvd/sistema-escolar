@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card } from "../components";
 import Button from "../../../components/Button/index";
 import { useState } from "react";
@@ -26,7 +27,7 @@ export function DadosPessoais() {
   return (
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
-        <section className="w-full grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
+        <section className="w-full grid grid-flow-row grid-cols-2 md:grid-cols-3 gap-4">
           {data.map((data, index) => 
             (
               <div key={index} className="border-b border-black">

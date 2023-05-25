@@ -9,11 +9,12 @@ export function Card({ children, title }: Props) {
       <div
         className=" 
         bg-slate-200 
-        w-128 
-        md:w-[40rem]
-        xl:w-[60rem]
+        w-[60rem]
+        md:w-[65rem]
+        xl:w-[68rem]
         lg:w-[72rem]
-        2xl:w-[80rem]
+        2xl:w-[84rem]
+        
         h-fit
         m-5
         md:mx-5
