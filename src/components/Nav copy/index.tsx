@@ -1,7 +1,9 @@
 /* eslint-disable no-constant-condition */
 import {
+  NavMobileLink,
   NavLink,
   NavLinkList,
+  HamburgerMenu,
 } from "./components";
 import IconeSite from "../../iconComponents/General/IconeSite";
 
@@ -18,7 +20,6 @@ export function Nav() {
         border-gray-200 
         items-center 
         justify-between
-        duration-200
         "
       >
         <IconeSite className="text-white ml-4 w-16 h-16" />
@@ -29,6 +30,13 @@ export function Nav() {
           <NavLink text="Login" link="/sign-up" variant="hover" />
         </NavLinkList>
 
+        <HamburgerMenu>
+          <NavMobileLink to="/sign-up-teacher">Níveis de ensino</NavMobileLink>
+
+          <NavMobileLink to="/sign-up-student">Sistema</NavMobileLink>
+
+          <NavMobileLink to="/sign-up">Login</NavMobileLink>
+        </HamburgerMenu>
       </nav>
     </>
   );
