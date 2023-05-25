@@ -7,7 +7,8 @@ import { useState } from "react";
 
 export function DadosPessoais() {
   
-  const [data, setData] = useState([
+  // setData a ser inserido na const
+  const [data] = useState([
     { label: "Nome", value: "fasdf" },
     { label: "Telefone", value: "(XX)-XXXXX-XXXX" },
     { label: "E-mail", value: "fulano@gmail.com" },
