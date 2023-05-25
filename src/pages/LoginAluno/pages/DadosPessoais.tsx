@@ -14,7 +14,7 @@ export function DadosPessoais() {
     { label: "E-mail", value: "fulano@gmail.com" },
     { label: "Matricula", value: "XXXXXXXXXXXXXXXXX" },
     { label: "Turma", value: "Turma X" },
-    { label: "Ano", value: "9° ano" },
+    { label: "Série", value: "9° ano" },
     { label: "Turno", value: "Matutino" },
     { label: "Responsável", value: "Cicrano" },
     { label: "Pai", value: "Joaozinho Da Silva Junior" },
