@@ -1,26 +1,23 @@
 /* eslint-disable no-constant-condition */
-import { GiHamburgerMenu } from "react-icons/Gi";
-import { useNavMobileContext } from "../../../contexts";
+import { IoClose, IoMenu } from "react-icons/io5";
 import { NavMobileLinkList } from "./index";
+import { useState } from "react";
 
 type Props = {
   children: React.ReactNode;
 };
 
 export function HamburgerMenu({ children }: Props) {
-  const { isVisible, setIsVisible } = useNavMobileContext();
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="md:hidden flex">
-      <button onClick={() => setIsVisible((prev) => !prev)}>
-        {isVisible ? (
-          <span className="font-bold text-3xl text-white">X</span>
-        ) : (
-          <GiHamburgerMenu size={40} color={"#FFFFFF"} />
-        )}
+      <button onClick={() => setOpen(!open)}>
+        {open ? <IoClose size={40} color={"#FFFFFF"} /> :  <IoMenu size={40} color={"#FFFFFF"} /> }
       </button>
 
       {/* hamburger itmes */}
-      {isVisible && (
+      {open && (
         <div
           className="
             w-full

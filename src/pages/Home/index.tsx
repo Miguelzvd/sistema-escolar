@@ -1,28 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import { Nav } from "../../components";
-import { AuthContext } from "../../contexts";
-import { useContext } from "react";
+import Hero from "../../components/Hero/Hero";
+import { Nav } from "../../components/Nav"
 
 export function Home() {
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    await auth.signout();
-    navigate("/");
-  };
 
   return (
     <>
-      <header>
-        <Nav />
-      </header>
-      <div className="flex flex-col text-center">
-        <h1 className="font-bold">Home</h1>
-        {
-          //verifica se o usuário está logado, se estiver logado, ele renderiza o que está depois do "&&"
-          auth.user && <button onClick={handleLogout}>Sair</button>
-        }
-      </div>
+      <Nav />
+      <Hero />
     </>
   );
 }

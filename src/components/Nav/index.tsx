@@ -1,9 +1,10 @@
 /* eslint-disable no-constant-condition */
 import {
-  NavLink,
+  HamburgerMenu,
   NavLinkList,
 } from "./components";
 import IconeSite from "../../iconComponents/General/IconeSite";
+import { CustomLink } from "..";
 
 export function Nav() {
   return (
@@ -24,10 +25,16 @@ export function Nav() {
         <IconeSite className="text-white ml-4 w-16 h-16" />
 
         <NavLinkList>
-          <NavLink text="Private" link="/private" variant="hover" />
-          <NavLink text="Home" link="/" variant="hover" />
-          <NavLink text="Login" link="/sign-up" variant="hover" />
+          <CustomLink text="Private" link="/private" variant="hover" roundend="rounded-lg" />
+          <CustomLink text="Home" link="/" variant="hover" roundend="rounded-lg" />
+          <CustomLink text="Login" link="/sign-up" variant="hover" roundend="rounded-lg" />
         </NavLinkList>
+
+        <HamburgerMenu>
+          <CustomLink text="Private" link="/private" textColor="black" variant="hover" py="py-4" />
+          <CustomLink text="Home" textColor="black" link="/" variant="hover" py="py-4" />
+          <CustomLink text="Login" link="/sign-up" textColor="black" variant="hover" py="py-4" />
+        </HamburgerMenu>
 
       </nav>
     </>

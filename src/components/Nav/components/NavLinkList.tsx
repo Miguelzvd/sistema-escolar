@@ -8,10 +8,8 @@ export function NavLinkList({ children }: Props) {
   return (
     <ul
       className=" 
-      scale-0
-      md:scale-100
-      duration-300
-      flex 
+      hidden
+      md:flex 
       items-center
       gap-10
       "
