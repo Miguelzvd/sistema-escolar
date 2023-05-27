@@ -5,8 +5,11 @@ export function Home() {
 
   return (
     <>
+      <div className="bg-home min-h-screen w-full">
+
       <Nav />
       <Hero />
+      </div>
     </>
   );
 }

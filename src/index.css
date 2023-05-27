@@ -14,6 +14,15 @@
   .btn-blue:hover {
     @apply bg-primary transition-colors;
   }
+  .link{
+    @apply w-full h-full p-4;
+  }
+  .link-default{
+    @apply w-full h-full px-3 py-2;
+  }
+  .link:hover, .link-default:hover {
+    @apply   text-sky-500  ;
+  }
 }
 
 * {

@@ -1,41 +1,60 @@
-/* eslint-disable no-constant-condition */
-import {
-  HamburgerMenu,
-  NavLinkList,
-} from "./components";
+import { Link as LinkItem } from "react-router-dom";
 import IconeSite from "../../iconComponents/General/IconeSite";
-import { CustomLink } from "..";
+import { IoMenu, IoClose } from "react-icons/io5"
+import { useState } from "react";
 
 export function Nav() {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => { setOpen(!open) }
+
   return (
     <>
       <nav
         className="
-      bg-primary
-        px-5
-        w-full 
-        h-20 flex 
-        border-b 
-        border-gray-200 
+        max-w-[1240px]
+        mx-auto
+        h-24 
+        flex 
+        flex-row
         items-center 
         justify-between
-        duration-200
+        gap-5
         "
       >
-        <IconeSite className="text-white ml-4 w-16 h-16" />
 
-        <NavLinkList>
-          <CustomLink text="Private" link="/private" variant="hover" roundend="rounded-lg" />
-          <CustomLink text="Home" link="/" variant="hover" roundend="rounded-lg" />
-          <CustomLink text="Login" link="/sign-up" variant="hover" roundend="rounded-lg" />
-        </NavLinkList>
+        <div className="w-full ml-4">
+            <IconeSite className="text-white w-16 h-16" />
+        </div>
 
-        <HamburgerMenu>
-          <CustomLink text="Private" link="/private" textColor="black" variant="hover" py="py-4" />
-          <CustomLink text="Home" textColor="black" link="/" variant="hover" py="py-4" />
-          <CustomLink text="Login" link="/sign-up" textColor="black" variant="hover" py="py-4" />
-        </HamburgerMenu>
+        <ul className="hidden md:flex flex-row gap-4 font-roboto font-bold text-lg text-white mr-2">
+          <LinkItem to={"#"} className="link-default rounded-md"> Tecnologias</LinkItem>
+          <LinkItem to={"#"} className="link-default rounded-md"> Contato</LinkItem>
+          <LinkItem to={"#"} className="link-default rounded-md"> Sobre</LinkItem>
+          <LinkItem to={"signin"} className="link-default rounded-md"> Login</LinkItem>
+        </ul>
 
+        <div className="md:hidden hover:cursor-pointer text-white mr-4" onClick={handleOpen}>
+          {open ? <IoMenu size={40} /> :  <IoClose size={40} />   }
+        </div>
+
+        {/* MOBILE */}
+        <div className={`fixed md:hidden ${!open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-gray-500 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
+          <div className="mt-4 flex flex-col">
+
+            <div className="ml-1">
+              <IconeSite className="text-white w-24 h-24 drop-shadow-xl" />
+            </div>
+
+            <ul className="pt-10 w-full uppercase divide-y text-white font-bold font-roboto divide-gray-400 flex flex-col">
+              <LinkItem to={"signin"} className="link"> Login</LinkItem>
+              <LinkItem to={"#"} className="link"> Tecnologias</LinkItem>
+              <LinkItem to={"#"} className="link"> Contato</LinkItem>
+              <LinkItem to={"#"} className="link"> Sobre</LinkItem>
+            </ul>
+
+          </div>
+        </div>
+{/*  */}
       </nav>
     </>
   );

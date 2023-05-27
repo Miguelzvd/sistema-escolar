@@ -1,11 +1,10 @@
 export default function Hero() {
   return (
-    <main className="text-black bg-slate-500 mx-auto mt-52 max-w-[800px] w-full h-screen flex flex-col text-center">
-        <p className="text-primaryDark font-bold p-2">ESCOLA MHR</p> 
-        <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold">Uma escola que se preocupa com seu filho.</h1>
-        <div>
-            <p>Escola qualifica para o</p>
-        </div>
+    <main className="text-black bg-slate-500 max-w-[850px] w-full mt-[100px] h-screen mx-auto flex text-center flex-col justify-start">
+      <div className="font-bold text-white">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl p-4">Sistema de Gerenciamento Escolar</h1>
+        <p className="text-xl sm:text-2xl md:text-3xl">Desenvolvido por: <span>asdfnoniadopsnfiads</span></p>
+      </div>
     </main>
-  )
+  );
 }
