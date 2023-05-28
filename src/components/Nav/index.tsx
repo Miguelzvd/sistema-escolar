@@ -4,7 +4,7 @@ import { IoMenu, IoClose } from "react-icons/io5"
 import { useState } from "react";
 
 export function Nav() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const handleOpen = () => { setOpen(!open) }
 
   return (
@@ -34,11 +34,11 @@ export function Nav() {
         </ul>
 
         <div className="md:hidden hover:cursor-pointer text-white mr-4" onClick={handleOpen}>
-          {open ? <IoMenu size={40} /> :  <IoClose size={40} />   }
+          {!open ? <IoMenu size={40} /> :  <IoClose size={40} />   }
         </div>
 
         {/* MOBILE */}
-        <div className={`fixed md:hidden ${!open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
+        <div className={`fixed md:hidden ${open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
           <div className="mt-4 flex flex-col">
 
             <div className="ml-1">

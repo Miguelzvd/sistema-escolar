@@ -9,13 +9,13 @@ export const VitejsIcon = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <linearGradient id="a" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%">
-      <stop offset="0" stop-color="#41d1ff" />
-      <stop offset="1" stop-color="#bd34fe" />
+      <stop offset="0" stopColor="#41d1ff" />
+      <stop offset="1" stopColor="#bd34fe" />
     </linearGradient>
     <linearGradient id="b" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%">
-      <stop offset="0" stop-color="#ffea83" />
-      <stop offset=".083" stop-color="#ffdd35" />
-      <stop offset="1" stop-color="#ffa800" />
+      <stop offset="0" stopColor="#ffea83" />
+      <stop offset=".083" stopColor="#ffdd35" />
+      <stop offset="1" stopColor="#ffa800" />
     </linearGradient>
     <path
       d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62z"
