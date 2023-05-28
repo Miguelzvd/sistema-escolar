@@ -4,7 +4,7 @@ import { IoMenu, IoClose } from "react-icons/io5"
 import { useState } from "react";
 
 export function Nav() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const handleOpen = () => { setOpen(!open) }
 
   return (
@@ -38,7 +38,7 @@ export function Nav() {
         </div>
 
         {/* MOBILE */}
-        <div className={`fixed md:hidden ${!open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-gray-500 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
+        <div className={`fixed md:hidden ${!open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
           <div className="mt-4 flex flex-col">
 
             <div className="ml-1">
@@ -46,15 +46,14 @@ export function Nav() {
             </div>
 
             <ul className="pt-10 w-full uppercase divide-y text-white font-bold font-roboto divide-gray-400 flex flex-col">
-              <LinkItem to={"signin"} className="link"> Login</LinkItem>
-              <LinkItem to={"#"} className="link"> Tecnologias</LinkItem>
-              <LinkItem to={"#"} className="link"> Contato</LinkItem>
-              <LinkItem to={"#"} className="link"> Sobre</LinkItem>
+              <LinkItem to={"signin"} className="link p-4"> Login</LinkItem>
+              <LinkItem to={"#"} className="link p-4"> Tecnologias</LinkItem>
+              <LinkItem to={"#"} className="link p-4"> Contato</LinkItem>
+              <LinkItem to={"#"} className="link p-4"> Sobre</LinkItem>
             </ul>
 
           </div>
         </div>
-{/*  */}
       </nav>
     </>
   );

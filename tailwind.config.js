@@ -9,6 +9,7 @@ export default {
         primaryDark: "hsl(205, 88%, 16%)",
         secundary: "#07416B",
         home: "hsl(220, 13%, 18%)",
+        green: "hsl(122, 70%, 65%)",
       },
       width: {
         128: "32rem",

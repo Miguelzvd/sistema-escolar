@@ -15,13 +15,13 @@
     @apply bg-primary transition-colors;
   }
   .link{
-    @apply w-full h-full p-4;
+    @apply w-full h-full;
   }
   .link-default{
-    @apply w-full h-full px-3 py-2;
+    @apply w-full h-full mx-3 my-2;
   }
   .link:hover, .link-default:hover {
-    @apply   text-sky-500  ;
+    @apply text-sky-500 duration-300;
   }
 }
 
