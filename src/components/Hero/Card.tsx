@@ -9,7 +9,7 @@ type Props = {
 
 export function Card({ Icon, text, title, Shadowcolor }: Props) {
   return (
-    <div className= {`w-full sm:w-fit h-70 p-4 bg-[#353536] rounded-lg shadow-2xl cursor-default duration-300 ${Shadowcolor}`}>
+    <div className= {`w-full md:w-fit h-70 p-4 bg-[#353536] rounded-lg shadow-2xl cursor-default duration-300 ${Shadowcolor}`}>
       <div className="flex flex-col text-justify gap-4">
         
         {/* Logo and title */}
