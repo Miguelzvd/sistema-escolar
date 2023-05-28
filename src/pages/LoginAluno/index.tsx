@@ -9,7 +9,8 @@ export function LoginAluno() {
     <>
       {/* SIDE MENU */}
       <div className="flex flex-row overflow-auto min-h-screen w-full ">
-        <SideMenu menuItems={SideMenuDataStudent}/>    
+
+        <SideMenu menuItems={SideMenuDataStudent}/>   
         <Outlet/>
       </div>
 

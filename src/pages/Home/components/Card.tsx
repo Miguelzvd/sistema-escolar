@@ -9,7 +9,7 @@ type Props = {
 
 export function Card({ Icon, text, title, Shadowcolor }: Props) {
   return (
-    <div className="relative w-full  md:w-fit h-70 select-none">
+    <div className="relative w-full md:w-fit h-72 select-none">
       <div className={`absolute inset-1 h-[98%] md:w-[98%] m-auto blur-md animate-pulse opacity-5 ${Shadowcolor}`}/>
       {/* CARD */}
       <div

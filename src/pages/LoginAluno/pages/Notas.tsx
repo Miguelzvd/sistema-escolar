@@ -1,13 +1,12 @@
-import { Card } from "../components";
+import { Card } from "../../../components/Card";
 import { Disciplines } from "../../../constants";
 
 export function Notas() {
   return (
-    <Card title="NOTAS">
-
+    <Card title="NOTAS" >
       {/* TABELA */}
 
-      <main className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
+      <table className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
         
         <thead className="flex flex-col items-center w-full ">
           <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
@@ -29,7 +28,7 @@ export function Notas() {
               key={index}
               className=" w-[95%] py-1 flex flex-row justify-around rounded-md bg-neutral-400"
             >
-              <th className="w-[20%] text-left">
+              <th scope="row" className="w-[20%] text-left">
                 
                 <span className="ml-3"> {discipline.title} </span>
               </th>
@@ -42,8 +41,46 @@ export function Notas() {
             </tr>
           ))}
         </tbody>
+      </table>
 
-      </main>
+      {/* <table className="w-full text-sm text-left text-white font-roboto">
+        <thead className="text-md md:text-lg uppercase bg-neutral-500">
+          <tr className="border-b">
+            <th scope="col" className="px-10 py-3">
+              Disciplina
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Nota 1
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Nota 2
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Nota 3
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Média
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {Disciplines.map((discipline, index) => (
+            <tr key={index} className="border-b  bg-zinc-400">
+              <th
+                scope="row"
+                className="px-10 py-4 font-medium whitespace-nowrap"
+              >
+                {discipline.title}
+              </th>
+              <td className="px-10 py-4">{discipline.nota1}</td>
+              <td className="px-10 py-4">{discipline.nota2}</td>
+              <td className="px-10 py-4">{discipline.nota3}</td>
+              <td className="px-10 py-4">{discipline.media}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table> */}
+      
     </Card>
   );
 }

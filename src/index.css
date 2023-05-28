@@ -24,6 +24,9 @@
     @apply text-sky-500 duration-300;
   }
 
+  body{
+    @apply scrollbar-thin scrollbar-thumb-zinc-700;
+  }
   
 
 }
@@ -36,4 +39,5 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+
 }

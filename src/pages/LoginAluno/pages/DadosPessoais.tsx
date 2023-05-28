@@ -1,12 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Card } from "../components";
+import { Card } from "../../../components/Card";
 // import Button from "../../../components/Button/index";
 import { useState } from "react";
 
-
-
 export function DadosPessoais() {
-  
   // setData a ser inserido na const
   const [data] = useState([
     { label: "Nome", value: "fasdf" },
@@ -29,20 +26,20 @@ export function DadosPessoais() {
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
         <section className="w-full grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.map((data, index) => 
-            (
-              <div key={index} className="border-b border-black">
-                <p>{data.label}</p>
-                <p>{data.value}</p>
-              </div>
-            )
-          )}
+          {data.map((data, index) => (
+            <div key={index} className="border-b border-black">
+              <p>{data.label}</p>
+              <p>{data.value}</p>
+            </div>
+          ))}
         </section>
+        {/*
         <div className="flex flex-row w-full justify-center">
-          {/* <div className="w-60">
+           <div className="w-60">
             <Button text="Editar" />
-          </div> */}
+          </div> 
         </div>
+        */}
       </main>
     </Card>
   );
