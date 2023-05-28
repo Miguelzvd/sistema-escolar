@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="mt-32 8 w-full h-fit flex flex-col items-center gap-12 ">
+      <section className="mt-32 8 w-full h-fit flex flex-col items-center gap-12 mb-24">
         <h1 className="text-3xl md:text-4xl font-bold font-roboto text-white">
           Tecnologias utilizadas
         </h1>
@@ -43,6 +43,17 @@ export default function Hero() {
           ))}
         </div>
       </section>
+       
+      <div className="bg-black h-[2px] w-full"/>
+
+      <section className="mt-24">
+      <h1 className="text-3xl md:text-4xl font-bold font-roboto text-white">
+          Sobre
+        </h1>
+        {/* Conteudo */}
+        <div className="w-full h-screen"></div>
+      </section>
+
     </main>
   );
 }
