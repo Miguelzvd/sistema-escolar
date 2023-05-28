@@ -23,6 +23,9 @@
   .link:hover, .link-default:hover {
     @apply text-sky-500 duration-300;
   }
+
+  
+
 }
 
 * {
