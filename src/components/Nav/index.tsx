@@ -33,12 +33,12 @@ export function Nav() {
           <LinkItem to={"signin"} className="link-default rounded-md"> Login</LinkItem>
         </ul>
 
-        <div className="md:hidden hover:cursor-pointer text-white mr-4" onClick={handleOpen}>
-          {!open ? <IoMenu size={40} /> :  <IoClose size={40} />   }
+        <div className={`md:hidden hover:cursor-pointer text-white mr-4 ${open && "fixed right-0 z-10"}`} onClick={handleOpen}>
+          {!open ? <IoMenu size={40} /> :  <IoClose size={40} />  }
         </div>
 
         {/* MOBILE */}
-        <div className={`fixed md:hidden ${open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
+        <div className={`fixed z-10 md:hidden ${open ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500" : "fixed left-[-100%]"} `}>
           <div className="mt-4 flex flex-col">
 
             <div className="ml-1">
