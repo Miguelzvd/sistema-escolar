@@ -6,7 +6,7 @@ import { HeroCardsData, HeroCardsData2 } from "../../constants/HeroCardsData";
 export default function Hero() {
   return (
     <main className="text-black max-w-[850px] w-full mt-[100px] h-full mx-auto flex text-center flex-col justify-start">
-      <section className="h-[70vh] flex flex-col justify-center font-bold text-white mb-24">
+      <section className="h-[55vh] flex flex-col justify-center font-bold text-white mb-[20rem]">
         <h1 className="text-4xl md:text-5xl p-4">
           Sistema de Gerenciamento Escolar
         </h1>
