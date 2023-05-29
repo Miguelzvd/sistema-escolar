@@ -1,21 +1,25 @@
-import React from "react";
+
 
 type Props = {
   text: string;
   name: string;
   id?: string;
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  htmlFor?: string | undefined;
   children?: React.ReactNode;
 };
 
-export function CustomSelect({ text, name, children}: Props) {
+export function CustomSelect({ text, name, htmlFor, children, onChange}: Props) {
   return (
     <>
         <div className="w-full">
-      <label className="w-full">
+      <label htmlFor={htmlFor} className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-gray-700 font-medium ">
           {text}
         </span>
+      </label>
         <select
+          onChange = {onChange}
           name={name}
           className="
           mt-1
@@ -41,7 +45,7 @@ export function CustomSelect({ text, name, children}: Props) {
           </option>
           {children}
         </select>
-      </label>
+      
       </div>
     </>
   );

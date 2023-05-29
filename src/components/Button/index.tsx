@@ -5,7 +5,8 @@ type Props = {
   text: string;
   textColor?: string;
   color?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  type?:  "button" | "submit" | "reset" | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   children?: React.ReactNode;
 };
 
@@ -15,10 +16,12 @@ export default function Button({
   textColor = "text-white",
   color = "bg-primaryLight",
   children,
+  type
 }: Props) {
   return (
     <>
       <button
+        type={type}
         onClick={onClick}
         className={classNames(
           "w-full p-3 drop-shadow-lg shadow-md rounded hover:bg-secundary duration-200 font-semibold",

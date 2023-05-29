@@ -10,7 +10,7 @@ export function AppRoutes() {
         <Route index element={<Home />} />
         <Route path="signin" element={<Login />} />
 
-        <Route path="student" element={<LoginAluno/>}>
+        <Route path="student" element={ <RequireAuth> <LoginAluno/></RequireAuth>}>
           <Route index element={<Notas/>}/>
           <Route path="notas" element={<Notas/>}/>
           <Route path="diario-classe" element={<DiarioDeClasse/>}/>

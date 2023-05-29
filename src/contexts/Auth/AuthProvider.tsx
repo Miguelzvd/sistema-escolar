@@ -26,10 +26,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   //função para realizar o login do usário
-  const signin = async (matricula: string, password: string) => {
+  const signin = async (matricula: string, password: string, userType: string) => {
     console.log("signin esta sendo executado");
   
-    const data = await api.signin(matricula, password);
+    const data = await api.signin(matricula, password, userType);
     if (data.user && data.token) {
       //Salva o usuário
       setUser(data.user);

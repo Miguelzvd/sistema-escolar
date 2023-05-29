@@ -4,7 +4,7 @@ import { createContext } from "react";
 
 export type AuthContextType = {
     user: User | null;
-    signin: (matricula: string, password:string) => Promise<boolean>;
+    signin: (matricula: string, password:string, userType:string) => Promise<boolean>;
     signout: () => void;
 };
 

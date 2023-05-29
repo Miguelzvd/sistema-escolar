@@ -8,11 +8,16 @@ export default function Form() {
   
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  const [matricula, setMatricula] = useState("");
-  const [password, setPassword] = useState("");
+  const [cpf, setcpf] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [userType, setuserType] = useState<string>("");
 
-  const handleMatriculaInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setMatricula(e.target.value);
+  const handleUserType = (e: ChangeEvent<HTMLInputElement>) => {
+    setuserType(e.target.value);
+  };
+
+  const handleCPFInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setcpf(e.target.value);
   };
 
   const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +26,11 @@ export default function Form() {
 
   const handleLogin = async () => {
     console.log("login esta sendo executado");
-    if (matricula && password) {
-      const isLogged = await auth.signin(matricula, password);
+    if (cpf && password && userType) {
+      const isLogged = await auth.signin(cpf, password, userType);
       if (isLogged) {
         navigate("/student");
+        console.log(cpf, password, userType)
       } else {
         alert("Deu erro");
       }
@@ -33,7 +39,8 @@ export default function Form() {
 
   return (
     <>
-      <div
+      <form
+        onSubmit={ handleLogin }
         className="
         w-80
         p-4
@@ -51,7 +58,8 @@ export default function Form() {
         bg-white
         "
       >
-        <CustomSelect name="user-type" text="Tipo de acesso">
+
+        <CustomSelect onChange={handleUserType} htmlFor="user-type" name="user-type" text="Tipo de acesso">
           <option value={"student"}>Aluno</option>
           <option value={"teacher"}>Professor</option>
           <option value={"parent"}>Resposável</option>
@@ -59,25 +67,29 @@ export default function Form() {
 
         {/*CPF PARA TODOS OS CADASTROS*/}
         <CustomInput
-          value={matricula}
-          text="Matricula"
-          onChange={handleMatriculaInput}
-          name="matricula"
+          value={cpf}
+          text="cpf"
+          onChange={handleCPFInput}
+          name="cpf"
           inputType="text"
-          placeHolder="Digite sua senha"
+          htmlFor="cpf"
+          id="cpf"
+          placeHolder="Digite seu CPF"
         />
 
         <CustomInput
           value={password}
           text="Senha"
           onChange={handlePasswordInput}
-          name="senha"
+          name="password"
           inputType="password"
+          htmlFor="password"
+          id="password"
           placeHolder="Digite sua senha"
         />
 
-        <Button text="Entrar" onClick={handleLogin} />
-      </div>
+        <Button text="Entrar" type="submit" />
+      </form>
     </>
   );
 }

@@ -7,6 +7,8 @@ type Props = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   inputType: "text" | "number" | "email" | "password";
   placeHolder?: string;
+  htmlFor?: string | undefined;
+  id?: string;
 };
 
 export function CustomInput({
@@ -16,10 +18,12 @@ export function CustomInput({
   onChange,
   inputType = "text",
   placeHolder,
+  htmlFor,
+  id
 }: Props) {
   return (
     <div className="w-full">
-      <label className="w-full">
+      <label htmlFor={htmlFor} className="w-full">
         <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
           {text}
         </span>
@@ -30,6 +34,7 @@ export function CustomInput({
         type={inputType}
         name={name}
         placeholder={placeHolder}
+        id={id}
         className="
             mt-1
             p-3
