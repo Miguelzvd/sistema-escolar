@@ -9,7 +9,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function Button({
+export default function Button({
   text,
   onClick,
   textColor = "text-white",
