@@ -68,6 +68,13 @@ export function DadosPessoais() {
               </div>
             ))
           )}
+
+        {/* {data.map((data, index) => (
+            <div key={index} className="border-b border-black">
+              <p>{data.label}</p>
+              <p>{data.value}</p>
+            </div>
+        ))} */}
         </section>
         {/*
         <div className="flex flex-row w-full justify-center">
