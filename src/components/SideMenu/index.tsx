@@ -16,10 +16,10 @@ export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(true);
 
   return (
-    <main className="z-10 flex flex-row min-h-screen w-fit">
+    <main className="flex flex-row min-h-screen w-fit ">
       <div
         className={`bg-secundary h-full flex flex-col justify-center duration-300 ${
-          open ? "w-60 sm:w-72 " : "w-0 lg:w-12"
+          open ? "w-72" : "w-0 md:w-12"
         }`}
       >
         <Menu open={open}>
@@ -38,10 +38,11 @@ export function SideMenu({ menuItems }: Props) {
       </div>
 
       <div
-        className="w-6 flex items-center bg-gradient-to-r from-gray-400/50 to-gray-100/10 hover:cursor-pointer hover:from-gray-400/70"
+        className="w-6 flex flex-col justify-center bg-gradient-to-r from-gray-400/50 to-gray-100/10 hover:cursor-pointer hover:from-gray-400/70"
         onClick={() => setOpen(!open)}
       >
-        <Seta className={`${!open ? "rotate-180 bottom-72 sm:bottom-80 " : "rotate-0 top-[22rem] sm:top-[30rem] "}`} />
+        <Seta className={`${!open ? "rotate-180" : "rotate-0"} `} />
+
       </div>
     </main>
   );

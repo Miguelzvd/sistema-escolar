@@ -22,7 +22,7 @@ export default function MenuItem({
   handleClick,
 }: Props) {
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className="overflow-x-hidden">
       <NavLink to={link}>
         <li
           className={`hover:bg-white/25 hover:cursor-pointer hover:text-secundary h-10 items-center gap-4 font-bold text-white ${
