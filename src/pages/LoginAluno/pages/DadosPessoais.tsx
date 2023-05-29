@@ -21,53 +21,44 @@ export function DadosPessoais() {
   //   { label: "Complemento", value: "XXXXXXXXXXXX" },
   // ]);
 
-  interface Data { 
-    nome:string;
-    Periodo: string;
-    nomeSerie: string;
-    nomeCurso: string;
-    nomeTurma: string;
-    SiglaTurma: string;
-    matricula: string;
-    StAlunoTurma: string;
+  interface Data {
+    label: string;
+    value: string;
   }
   const [data, setData] = useState([]);
-  
-   const  getData = async () => {
-  
-      try {
-        const response = await axios.get("http://localhost:3000/api/alunos/");
-        console.log(response.data);
-        setData(response.data.result);
-      }
-      catch (error) {
-        console.log(error);
-      }
-    };
-   
-    useEffect(() => {
-      getData();
-    }, []);
+
+  const getData = async () => {
+    
+    try {
+      const response = await axios.get("http://localhost:3000/api/alunos/");
+      console.log(response.data);
+      setData(response.data.result);
+    } 
+    catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
         <section className="w-full grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.length === 0 ? <p>Carregando..</p> : (
-            data.map((data:Data, index) => (
-              <div key={index}>
-                <h2>{data.Periodo}</h2>
-                <h2>{data.nomeSerie}</h2>
-                <h2>{data.nomeCurso}</h2>
-                <h2>{data.nomeTurma}</h2>
-                <h2>{data.SiglaTurma}</h2>
-                <h2>{data.nome}</h2>
-                <h2>{data.StAlunoTurma}</h2>
+          {data.length === 0 ? (
+            <p>Carregando..</p>
+          ) : (
+            data.map((data: Data, index) => (
+              <div key={index} className="border-b border-black">
+                <p>{data.label}</p>
+                <p>{data.value}</p>
               </div>
             ))
           )}
 
-        {/* {data.map((data, index) => (
+          {/* {data.map((data, index) => (
             <div key={index} className="border-b border-black">
               <p>{data.label}</p>
               <p>{data.value}</p>
