@@ -21,33 +21,60 @@ export function DadosPessoais() {
   //   { label: "Complemento", value: "XXXXXXXXXXXX" },
   // ]);
 
-  interface Data {
-    label: string;
-    value: string;
+  interface Data { 
+    NomeAluno:string;
+    NomePeriodo: string;
+    NomeSerie: string;
+    NomeCurso: string;
+    NomeTurma: string;
+    SiglaTurma: string;
+    Matricula: string;
+    StAlunoTurma: string;
   }
+  // Comentado para aprovação com Miguel para alteração
+  // interface Data {
+  //   label: string;
+  //   value: string;
+  // }
   const [data, setData] = useState([]);
-
-  const getData = async () => {
-    
-    try {
-      const response = await axios.get("http://localhost:3000/api/alunos/");
-      console.log(response.data);
-      setData(response.data.result);
-    } 
-    catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  
+   const  getData = async () => {
+  
+      try {
+        const response = await axios.get("http://localhost:3000/api/alunos/");
+        console.log(response.data);
+        setData(response.data.result);
+      }
+      catch (error) {
+        console.log(error);
+      }
+    };
+   
+    useEffect(() => {
+      getData();
+    }, []);
 
   return (
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
         <section className="w-full grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.length === 0 ? (
+          {data.length === 0 ? <p>Carregando..</p> : (
+            data.map((data:Data, index) => (
+              <div key={index}>
+                <h2>{data.NomePeriodo}</h2>
+                <h2>{data.NomeSerie}</h2>
+                <h2>{data.NomeCurso}</h2>
+                <h2>{data.NomeTurma}</h2>
+                <h2>{data.SiglaTurma}</h2>
+                <h2>{data.Matricula}</h2>
+                <h2>{data.NomeAluno}</h2>
+                <h2>{data.StAlunoTurma}</h2>
+              </div>
+            ))
+          )}
+          
+          
+          {/* {data.length === 0 ? (    // Comentado para aprovação com Miguel para alteração
             <p>Carregando..</p>
           ) : (
             data.map((data: Data, index) => (
@@ -56,9 +83,10 @@ export function DadosPessoais() {
                 <p>{data.value}</p>
               </div>
             ))
-          )}
+          )} */}
 
-          {/* {data.map((data, index) => (
+
+        {/* {data.map((data, index) => (
             <div key={index} className="border-b border-black">
               <p>{data.label}</p>
               <p>{data.value}</p>
