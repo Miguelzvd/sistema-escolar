@@ -49,8 +49,6 @@ export function DadosPessoais() {
       getData();
     }, []);
 
-    
-
   return (
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
