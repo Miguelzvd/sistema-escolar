@@ -74,13 +74,6 @@ export function DadosPessoais() {
             </div>
         ))} */}
         </section>
-        {/*
-        <div className="flex flex-row w-full justify-center">
-           <div className="w-60">
-            <Button text="Editar" />
-          </div> 
-        </div>
-        */}
       </main>
     </Card>
   );
