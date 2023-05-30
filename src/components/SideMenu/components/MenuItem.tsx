@@ -25,7 +25,7 @@ export default function MenuItem({
     <button onClick={handleClick} className="overflow-x-hidden">
       <NavLink to={link}>
         <li
-          className={`hover:bg-white/25 hover:cursor-pointer hover:text-secundary h-10 items-center gap-4 font-bold text-white ${
+          className={`hover:bg-white/25 hover:cursor-pointer hover:text-sky-500 h-10 items-center gap-4 font-bold text-white ${
             !open ? "text-black w-full flex justify-center" : "inline-flex"
           }`}
         >

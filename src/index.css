@@ -25,7 +25,7 @@
   }
 
   body{
-    @apply scrollbar-thin scrollbar-thumb-zinc-700;
+    @apply scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-primary;
   }
   
 

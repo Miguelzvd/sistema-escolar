@@ -1,6 +1,7 @@
 export type User = {
     id: number;
     name: string;
-    matricula: number;
+    cpf: string;
+    userType: string;
     password?: string;
 }

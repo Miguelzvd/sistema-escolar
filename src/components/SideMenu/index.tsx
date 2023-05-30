@@ -18,7 +18,7 @@ export function SideMenu({ menuItems }: Props) {
   return (
     <main className="flex flex-row min-h-screen w-fit ">
       <div
-        className={`bg-secundary h-full flex flex-col justify-center duration-300 ${
+        className={`bg-secundaryDark h-full flex flex-col justify-center duration-300 ${
           open ? "w-72" : "w-0 md:w-12"
         }`}
       >

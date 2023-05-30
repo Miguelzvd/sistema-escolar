@@ -1,10 +1,11 @@
+import { ChangeEvent } from "react";
 
 
 type Props = {
   text: string;
   name: string;
   id?: string;
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
   htmlFor?: string | undefined;
   children?: React.ReactNode;
 };

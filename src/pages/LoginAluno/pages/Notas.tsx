@@ -42,8 +42,8 @@ export function Notas() {
           ))}
         </tbody>
       </table>
-
-      {/* <table className="w-full text-sm text-left text-white font-roboto">
+{/* 
+      <table className="w-full text-sm text-left text-white font-roboto">
         <thead className="text-md md:text-lg uppercase bg-neutral-500">
           <tr className="border-b">
             <th scope="col" className="px-10 py-3">

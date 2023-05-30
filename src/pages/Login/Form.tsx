@@ -12,7 +12,7 @@ export default function Form() {
   const [password, setPassword] = useState<string>("");
   const [userType, setuserType] = useState<string>("");
 
-  const handleUserType = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleUserType = (e: ChangeEvent<HTMLSelectElement>) => {
     setuserType(e.target.value);
   };
 

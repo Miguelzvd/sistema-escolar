@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryLight: "hsl(205, 88%, 30%)",
-        primary: "hsl(205, 88%, 22%)",
-        primaryDark: "hsl(205, 88%, 16%)",
-        secundary: "#07416B",
-        home: "#1E1E20",
+        secundaryDark: "hsl(240, 3%, 20%)",
+        secundary: "hsl(240, 3%, 25%)",
+        primaryLight: "hsl(240, 3%, 30%)",
+        primary: "hsl(240, 3%, 12%)",
+        primaryDark: "hsl(240, 3%, 9%)",
         green: "hsl(122, 70%, 65%)",
       },
       width: {
