@@ -21,7 +21,7 @@ export function DadosPessoais() {
   //   { label: "Complemento", value: "XXXXXXXXXXXX" },
   // ]);
 
-  // interface Data { 
+  // interface Data {
   //   NomeAluno:string;
   //   NomePeriodo: string;
   //   NomeSerie: string;
@@ -32,27 +32,25 @@ export function DadosPessoais() {
   //   StAlunoTurma: string;
   // }
   // Comentado para aprovação com Miguel para alteração
-   interface Data {
-     label: string;
-     value: string;
+  interface Data {
+    label: string;
+    value: string;
   }
   const [data, setData] = useState([]);
-  
-   const  getData = async () => {
-  
-      try {
-        const response = await axios.get("http://localhost:3000/api/alunos/");
-        console.log(response.data);
-        setData(response.data.result);
-      }
-      catch (error) {
-        console.log(error);
-      }
-    };
-   
-    useEffect(() => {
-      getData();
-    }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/api/alunos/");
+      console.log(response.data);
+      setData(response.data.result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Card title="DADOS PESSOAIS">
@@ -72,21 +70,19 @@ export function DadosPessoais() {
               </div>
             ))
           )} */}
-          
-          
-          {data.length === 0 ? (    // Comentado para aprovação com Miguel para alteração
-            <p>Carregando..</p>
+
+          {data.length === 0 ? ( // Comentado para aprovação com Miguel para alteração
+            <p className="animate-pulse">Carregando..</p>
           ) : (
             data.map((data: Data, index) => (
               <div key={index} className="border-b border-black">
-                <p>{data.label}</p>
+                <p className="font-bold">{data.label}</p>
                 <p>{data.value}</p>
               </div>
             ))
           )}
 
-
-        {/* {data.map((data, index) => (
+          {/* {data.map((data, index) => (
             <div key={index} className="border-b border-black">
               <p>{data.label}</p>
               <p>{data.value}</p>

@@ -17,7 +17,7 @@ export default function Menu({ children, open }: Props) {
 
   return (
     // MENU
-    <main className={`flex flex-col justify-start h-full gap-20 sm:gap-25 lg:gap-32 ${!open && "justify-center"}`}>  
+    <main className={`flex flex-col justify-start h-full gap-20 sm:gap-25 lg:gap-32  ${!open && "justify-center"}`}>  
 
       {/* Icone Escola */}
       <section
@@ -25,7 +25,7 @@ export default function Menu({ children, open }: Props) {
           !open ? "hidden" : "w-full h-fit flex justify-center mt-4"
         }`}
       >
-        <EscolaMHR className="w-20 h-20 sm:w-40 sm:h-40 text-white" />
+        <EscolaMHR className="w-40 h-40 text-white" />
       </section>
 
       <section className="flex flex-col h-fit w-full justify-center gap-16">

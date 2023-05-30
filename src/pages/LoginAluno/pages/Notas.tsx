@@ -7,6 +7,39 @@ export function Notas() {
       {/* TABELA */}
 
       <table className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
+        <thead className="flex flex-col items-center w-full ">
+          <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
+            <th className="w-[20%] text-left">
+              <span className="">Disciplina </span>
+            </th>
+
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+            <th>Media</th>
+          </tr>
+        </thead>
+
+        <tbody className="flex flex-col items-center w-full gap-4">
+          {Disciplines.map((discipline, index) => (
+            <tr
+              key={index}
+              className=" w-[95%] py-1 flex flex-row justify-around rounded-md bg-neutral-400"
+            >
+              <th scope="row" className="w-[20%] text-left">
+                <span className=""> {discipline.title} </span>
+              </th>
+
+              <td>{discipline.nota1}</td>
+              <td>{discipline.nota2}</td>
+              <td>{discipline.nota3}</td>
+              <td>{discipline.media}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* <table className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
         
         <thead className="flex flex-col items-center w-full ">
           <tr className="py-1 w-[95%] flex flex-row justify-around rounded-md bg-neutral-500">
@@ -41,8 +74,9 @@ export function Notas() {
             </tr>
           ))}
         </tbody>
-      </table>
-{/* 
+      </table> */}
+
+    {/* 
       <table className="w-full text-sm text-left text-white font-roboto">
         <thead className="text-md md:text-lg uppercase bg-neutral-500">
           <tr className="border-b">
