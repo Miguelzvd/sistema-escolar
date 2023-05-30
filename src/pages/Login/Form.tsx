@@ -17,12 +17,25 @@ export default function Form() {
   };
 
   const handleCPFInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setcpf(e.target.value);
+    const { value } = e.target;
+    setcpf(mask(value))
   };
 
   const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
+
+
+  const mask = (v: string) => {
+    v = v.replace(/\D/g, "");
+    v = v.substring(0, 11);
+    v = v.replace(/(\d{3})(\d)/, "$1.$2")
+    v = v.replace(/(\d{3})(\d)/, "$1.$2")
+    v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+    
+    return v
+  }
+  
 
   const handleLogin = async () => {
     console.log("login esta sendo executado");
@@ -68,7 +81,7 @@ export default function Form() {
         {/*CPF PARA TODOS OS CADASTROS*/}
         <CustomInput
           value={cpf}
-          text="cpf"
+          text="CPF"
           onChange={handleCPFInput}
           name="cpf"
           inputType="text"

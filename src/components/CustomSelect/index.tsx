@@ -20,6 +20,7 @@ export function CustomSelect({ text, name, htmlFor, children, onChange}: Props) 
         </span>
       </label>
         <select
+          required
           onChange = {onChange}
           name={name}
           className="

@@ -29,6 +29,7 @@ export function CustomInput({
         </span>
       </label>
       <input
+        required
         onChange={onChange}
         value={value}
         type={inputType}
