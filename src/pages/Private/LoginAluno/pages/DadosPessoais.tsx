@@ -71,21 +71,19 @@ export function DadosPessoais() {
                       <div className="h-2 bg-slate-700 rounded col-span-2"/>
                       <div className="h-2 bg-slate-700 rounded col-span-1"/>
                     </div>
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-4 gap-5">
                       <div className="h-2 bg-slate-700 rounded col-span-2"/>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
+                      <div className="h-2 bg-slate-700 rounded col-span-2"/>
                     </div>
                     <div className="grid grid-cols-4 gap-5">
                       <div className="h-2 bg-slate-700 rounded col-span-1"/>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
                       <div className="h-2 bg-slate-700 rounded col-span-2"/>
+                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
                     </div>
     
                     <div className="grid grid-cols-4 gap-5">
                       <div className="h-2 bg-slate-700 rounded col-span-2"/>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"/>
+                      <div className="h-2 bg-slate-700 rounded col-span-2"/>
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                       <div className="h-2 bg-slate-700 rounded col-span-1"/>
@@ -97,7 +95,7 @@ export function DadosPessoais() {
                       <div className="h-2 bg-slate-700 rounded col-span-1"/>
                       <div className="h-2 bg-slate-700 rounded col-span-1"/>
                     </div>
-                    {/* <div className="h-2 bg-slate-700 rounded"></div> */}
+                    <div className="h-2 bg-slate-700 rounded"></div>
                   </div>
                 </div>
               </div>
@@ -111,21 +109,6 @@ export function DadosPessoais() {
               </div>
             ))
           )}
-
-          {/* {data.length === 0 ? <p>Carregando..</p> : (
-            data.map((data:Data, index) => (
-              <div key={index}>
-                <h2>{data.NomePeriodo}</h2>
-                <h2>{data.NomeSerie}</h2>
-                <h2>{data.NomeCurso}</h2>
-                <h2>{data.NomeTurma}</h2>
-                <h2>{data.SiglaTurma}</h2>
-                <h2>{data.Matricula}</h2>
-                <h2>{data.NomeAluno}</h2>
-                <h2>{data.StAlunoTurma}</h2>
-              </div>
-            ))
-          )} */}
         </section>
       </main>
     </Card>
