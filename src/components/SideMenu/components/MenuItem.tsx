@@ -8,6 +8,7 @@ type Props = {
   Icon: React.FC<SVGProps<SVGSVGElement>>;
   open: boolean;
   link: string;
+  textColor?: string;
   handleClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
@@ -19,13 +20,14 @@ export default function MenuItem({
   mlClosed = "ml-0",
   open,
   link,
+  textColor = "hover:text-sky-500",
   handleClick,
 }: Props) {
   return (
     <button onClick={handleClick} className="overflow-x-hidden">
       <NavLink to={link}>
         <li
-          className={`hover:bg-white/25 hover:cursor-pointer hover:text-sky-500 h-10 items-center gap-4 font-bold text-white ${
+          className={`hover:bg-white/25 hover:cursor-pointer ${textColor}  h-10 items-center gap-4 font-bold text-white ${
             !open ? "text-black w-full flex justify-center" : "inline-flex"
           }`}
         >

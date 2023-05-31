@@ -76,7 +76,7 @@ export function DadosPessoais() {
           ) : (
             data.map((data: Data, index) => (
               <div key={index} className="border-b border-black">
-                <p className="font-bold">{data.label}</p>
+                <p className="font-bold">{data.label}:</p>
                 <p>{data.value}</p>
               </div>
             ))

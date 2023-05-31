@@ -17,15 +17,15 @@ export default function Menu({ children, open }: Props) {
 
   return (
     // MENU
-    <main className={`flex flex-col justify-start h-full gap-20 sm:gap-25 lg:gap-32  ${!open && "justify-center"}`}>  
+    <main className={`flex flex-col justify-start h-full gap-10 lg:gap-40  ${!open && "justify-center"}`}>  
 
       {/* Icone Escola */}
       <section
         className={`${
-          !open ? "hidden" : "w-full h-fit flex justify-center mt-4"
+          !open ? "hidden" : "w-full h-fit flex justify-center mt-8"
         }`}
       >
-        <EscolaMHR className="w-40 h-40 text-white" />
+        <EscolaMHR className="w-[8rem] sm:w-[10rem] h-[8rem] sm:h-[10rem] text-white" />
       </section>
 
       <section className="flex flex-col h-fit w-full justify-center gap-16">
@@ -35,7 +35,7 @@ export default function Menu({ children, open }: Props) {
           className={`ml-0  inline-flex gap-4 text-white items-center 
           ${!open ? "justify-center" : "ml-4"} `}
         >
-          <div className={`${!open ? "hidden lg:block" : "block"} `}>
+          <div>
             <HiOutlineUserCircle size="2rem" color="white" />
           </div>
           <span className={`${!open ? "hidden" : "flex flex-row"}`}>
@@ -44,7 +44,7 @@ export default function Menu({ children, open }: Props) {
         </div>
 
         {/* Opcoes do menu */}
-        <ul className="w-full flex flex-col gap-8">
+        <ul className="w-full flex flex-col  gap-8">
           {children}
           <MenuItem
             Icon={Sair}
@@ -54,6 +54,7 @@ export default function Menu({ children, open }: Props) {
             mlOpened="ml-5"
             handleClick={handleLogout}
             link="/"
+            textColor="hover:text-red-500"
           />
         </ul>
       </section>
