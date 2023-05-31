@@ -35,17 +35,21 @@ export default function Form() {
     
     return v
   }
-  
+    
 
   const handleLogin = async () => {
     console.log("login esta sendo executado");
     if (cpf && password && userType) {
       const isLogged = await auth.signin(cpf, password, userType);
+      console.log(cpf, password, userType)
       if (isLogged) {
-        navigate("/student");
-        console.log(cpf, password, userType)
+        if(["student", "teacher", "parent"].includes(userType)){
+          navigate("/"+userType);
+        } else {
+          alert("Tipo de usuário inexistente");
+        }
       } else {
-        alert("Deu erro");
+        alert("Algo deu errado");
       }
     }
   };

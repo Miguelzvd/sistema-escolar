@@ -18,7 +18,7 @@ export function SideMenu({ menuItems }: Props) {
   return (
     <main className="z-10 fixed md:static h-screen flex flex-row w-fit">
       <div
-        className={`bg-secundaryDark overflow-y-auto h-screen flex flex-col justify-center duration-300  ${
+        className={`bg-secundaryDark  flex flex-col overflow-auto overflow-x-hidden justify-center duration-300  ${
           open ? "w-60 md:w-72" : "w-0 md:w-12"
         }`}
       >

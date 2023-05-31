@@ -1,5 +1,5 @@
-import { Card } from "../../../components/Card";
-import { Disciplines } from "../../../constants";
+import { Card } from "../../../../components/Card";
+import { Disciplines } from "../../../../constants";
 
 export function Notas() {
   return (
@@ -68,7 +68,7 @@ export function Notas() {
                 {Disciplines.map((discipline, index) => (
                   <table
                     key={index}
-                    className="w-full bg-neutral-400 flex flex-row justify-around rounded-md"
+                    className="w-full bg-neutral-400 flex flex-row justify-around rounded-md py-1"
                   >
                     <thead className="w-[20%] ml-4">
                       <tr>
@@ -79,7 +79,7 @@ export function Notas() {
                     </thead>
 
                     <tbody className="w-[80%]">
-                      <tr className="flex flex-row justify-around">
+                      <tr className="flex flex-row justify-around ">
                         <td>{discipline.nota1}</td>
                         <td>{discipline.nota2}</td>
                         <td>{discipline.nota3}</td>
