@@ -25,19 +25,16 @@ export const HeroCardsData = [
       icon: TailwindIcon,
       Shadowcolor: "bg-purple-500",
     },
+    {
+      title: "Nodejs",
+      text: "Node.js é um interpretador JavaScript rápido e versátil, ideal para trabalhar com processos, arquivos, soquetes de rede e APIs de servidor.",
+      icon: NodejsIcon,
+      Shadowcolor: "bg-lime-400",
+    },
+    {
+      title: "MySQL",
+      text: "MySQL é um sistema de gerenciamento de banco de dados relacional, que oferece uma estrutura robusta e eficiente para armazenar e gerenciar dados em aplicações.",
+      icon: MySQLIcon,
+      Shadowcolor: "bg-sky-500",
+    },
   ];
-
-  export const HeroCardsData2 = [
-      {
-        title: "Nodejs",
-        text: "Node.js é um interpretador JavaScript rápido e versátil, ideal para trabalhar com processos, arquivos, soquetes de rede e APIs de servidor.",
-        icon: NodejsIcon,
-        Shadowcolor: "bg-lime-400",
-      },
-      {
-        title: "MySQL",
-        text: "MySQL é um sistema de gerenciamento de banco de dados relacional, que oferece uma estrutura robusta e eficiente para armazenar e gerenciar dados em aplicações.",
-        icon: MySQLIcon,
-        Shadowcolor: "bg-sky-500",
-      },
-    ]

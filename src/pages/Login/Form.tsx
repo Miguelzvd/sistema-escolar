@@ -3,12 +3,13 @@ import { CustomInput, CustomSelect } from "../../components";
 import { AuthContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
+import { mask } from "../../utils/inputMasks";
 
 export default function Form() {
-  
+
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  const [cpf, setcpf] = useState<string>("");
+  const [cpf, setCpf] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [userType, setuserType] = useState<string>("");
 
@@ -17,8 +18,9 @@ export default function Form() {
   };
 
   const handleCPFInput = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setcpf(mask(value))
+    e.currentTarget.maxLength = 14
+    e.currentTarget.minLength = 14
+    setCpf(mask(e.target.value))
   };
 
   const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,18 +28,8 @@ export default function Form() {
   };
 
 
-  const mask = (v: string) => {
-    v = v.replace(/\D/g, "");
-    v = v.substring(0, 11);
-    v = v.replace(/(\d{3})(\d)/, "$1.$2")
-    v = v.replace(/(\d{3})(\d)/, "$1.$2")
-    v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
-    
-    return v
-  }
-    
-
-  const handleLogin = async () => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log("login esta sendo executado");
     if (cpf && password && userType) {
       const isLogged = await auth.signin(cpf, password, userType);

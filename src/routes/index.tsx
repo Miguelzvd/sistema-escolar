@@ -1,4 +1,4 @@
-import { Route, Routes as ReactRoutes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes , BrowserRouter as Router } from "react-router-dom";
 import { Home, Login, LoginAluno, LoginProfessor,  } from "../pages"
 import { RequireAuth } from "../contexts";
 import { DadosPessoais, DiarioDeClasse, Notas, Relatorio } from "../pages/Private/LoginAluno/pages";
@@ -6,7 +6,7 @@ import { DadosPessoais, DiarioDeClasse, Notas, Relatorio } from "../pages/Privat
 export function AppRoutes() {
   return (
     <Router>
-      <ReactRoutes>
+      <Routes>
         <Route index element={<Home />} />
         <Route path="signin" element={<Login />} />
 
@@ -29,7 +29,7 @@ export function AppRoutes() {
           <Route index element={<Notas/>}/>
           
         </Route>
-      </ReactRoutes>
+      </Routes>
     </Router>
   );
 }
