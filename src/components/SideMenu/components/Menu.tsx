@@ -17,7 +17,7 @@ export default function Menu({ children, open }: Props) {
 
   return (
     // MENU
-    <main className={`flex flex-col justify-start h-full gap-10 sm:gap-10 lg:gap-36  ${!open && "justify-center"}`}>  
+    <main className={`flex flex-col justify-start h-full gap-10 sm:gap-10 lg:gap-36  ${!open && "justify-start mt-60"}`}>  
 
       {/* Icone Escola */}
       <section
@@ -32,7 +32,7 @@ export default function Menu({ children, open }: Props) {
       
         {/* USUARIO */}
         <div
-          className={`ml-0  inline-flex gap-4 text-white items-center 
+          className={`ml-0 inline-flex gap-4 text-white items-center 
           ${!open ? "justify-center" : "ml-4"} `}
         >
           <div>

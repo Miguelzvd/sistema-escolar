@@ -10,14 +10,60 @@ const diarioClasse = [
   },
   {
     materia: "Portugues",
-    data: "20/06/2023",
+    data: "12/06/2023",
     texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
   },
   {
     materia: "Geografia",
-    data: "20/06/2023",
+    data: "02/06/2023",
     texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
   },
+  {
+    materia: "Matematica",
+    data: "20/05/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Portugues",
+    data: "12/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Geografia",
+    data: "03/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Matematica",
+    data: "20/05/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Portugues",
+    data: "12/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Geografia",
+    data: "03/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Matematica",
+    data: "20/05/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Portugues",
+    data: "12/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  {
+    materia: "Geografia",
+    data: "03/06/2023",
+    texto:"Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto"
+  },
+  
 ]
 
 

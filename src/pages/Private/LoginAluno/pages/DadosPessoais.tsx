@@ -4,34 +4,6 @@ import { Card } from "../../../../components/Card";
 import { useEffect, useState } from "react";
 
 export function DadosPessoais() {
-  // setData a ser inserido na const
-  // const [data] = useState([
-  //   { label: "Nome", value: "fasdf" },
-  //   { label: "Telefone", value: "(XX)-XXXXX-XXXX" },
-  //   { label: "E-mail", value: "fulano@gmail.com" },
-  //   { label: "Matricula", value: "XXXXXXXXXXXXXXXXX" },
-  //   { label: "Turma", value: "Turma X" },
-  //   { label: "Série", value: "9° ano" },
-  //   { label: "Responsável", value: "Cicrano" },
-  //   { label: "Pai", value: "Joaozinho Da Silva Junior" },
-  //   { label: "Mãe", value: "Maria Da Silva" },
-  //   { label: "CEP", value: "XX.XXX-XXX" },
-  //   { label: "Número", value: "XXX" },
-  //   { label: "Endereço", value: "Rua XXXXXXXXXXXX" },
-  //   { label: "Complemento", value: "XXXXXXXXXXXX" },
-  // ]);
-
-  // interface Data {
-  //   NomeAluno:string;
-  //   NomePeriodo: string;
-  //   NomeSerie: string;
-  //   NomeCurso: string;
-  //   NomeTurma: string;
-  //   SiglaTurma: string;
-  //   Matricula: string;
-  //   StAlunoTurma: string;
-  // }
-  // Comentado para aprovação com Miguel para alteração
   interface Data {
     label: string;
     value: string;
@@ -102,7 +74,6 @@ export function DadosPessoais() {
                 </div>
               </div>
             </div>
-
           ) : (
             data.map((data: Data, index) => (
               <div key={index} className="border-b border-black">
