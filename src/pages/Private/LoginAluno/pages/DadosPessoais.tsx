@@ -40,7 +40,9 @@ export function DadosPessoais() {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/alunos/");
+      const response = await axios.get("http://localhost:3000/api/alunodados/");
+      //const response = await axios.get("http://localhost:3000/api/alunodados/" + matricula + "/" + nome);
+      // Verificar como pegar nome ou matricula via parametros
       console.log(response.data);
       setData(response.data.result);
     } catch (error) {
