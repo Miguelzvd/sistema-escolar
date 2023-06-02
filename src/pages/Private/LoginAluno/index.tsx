@@ -7,7 +7,7 @@ export function LoginAluno() {
 
   return (
     <>
-      <div className="flex flex-row overflow-auto min-h-screen w-full">
+      <div className="flex flex-row scrollbar-thin overflow-auto min-h-screen w-full">
         <SideMenu menuItems={SideMenuDataStudent}/>   
         <Outlet/>
       </div>

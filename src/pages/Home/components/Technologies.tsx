@@ -6,7 +6,7 @@ import {
 
 export default function Technologies() {
   return (
-    <section className="mt-40 m-auto max-w-[850px] w-full p-5 flex flex-col items-center gap-24 mb-52">
+    <section className="mt-40 m-auto max-w-[850px] w-full p-5 flex flex-col items-center gap-16 mb-52">
       <h1 className="text-3xl md:text-4xl font-bold font-roboto text-white">
         Tecnologias utilizadas
       </h1>

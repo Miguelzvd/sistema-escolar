@@ -58,7 +58,7 @@ export function Nav() {
 
         {/* MOBILE */}
         <div
-          className={`fixed z-10 md:hidden overflow-y-auto ${
+          className={`fixed z-10 md:hidden overflow-y-auto scrollb ${
             open
               ? "left-0 top-0 w-[60%] h-full drop-shadow-lg bg-zinc-800 ease-in-out duration-500"
               : "fixed left-[-100%]"
