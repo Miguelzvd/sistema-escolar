@@ -28,6 +28,10 @@
     @apply scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-primary;
   }
 
+  .scrollw {
+    @apply scrollbar-thin scrollbar-thumb-zinc-500 scrollbar-track-gray-200;
+  }
+
   .arrowButton{
     @apply hover:cursor-pointer rounded-full w-6 h-6 bg-gray-200 hover:bg-gray-300 duration-200 flex flex-col justify-center items-center text-center shadow-sm active:shadow-inner shadow-zinc-500;
   }
