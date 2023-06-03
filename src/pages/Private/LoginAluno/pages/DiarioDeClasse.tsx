@@ -5,6 +5,7 @@ import { Modal } from "../../../../components";
 
 const PAGE_SIZE = 3;
 
+//O metodo Object.freeze() previne que um objeto seja modificado
 const diarioClasse = Object.freeze([
   {
     materia: "Matematica",
@@ -21,6 +22,12 @@ const diarioClasse = Object.freeze([
   {
     materia: "Geografia",
     data: "02/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Ingles",
+    data: "02/07/2023",
     texto:
       "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
   },
@@ -59,7 +66,7 @@ export function DiarioDeClasse() {
   return (
     <div className="w-full h-full flex justify-center items-center">
       <Card title="DIÁRIO DE CLASSE">
-        <main className="w-[95%] flex flex-col gap-4">
+        <main className="w-[95%] h-[25rem] select-none flex flex-col justify-between">
           {diarioClassePaginated.map((data, index) => (
             <section
               onClick={() => handleClickOpenModal(data)}
@@ -76,14 +83,14 @@ export function DiarioDeClasse() {
               </div>
             </section>
           ))}
-          <section className="flex flex-row w-full justify-center items-center gap-4 mt-4">
-            <div className="arrowButton" onClick={handleClickPrevious}>
+          <section className="flex flex-row w-full  justify-center items-center gap-4 mt-4">
+            <div className="Button" onClick={handleClickPrevious}>
               <IoCaretBack />
             </div>
-            <p className="font-bold select-none">
+            <p className="font-bold">
               {page} / {Math.ceil(diarioClasse.length / PAGE_SIZE)}
             </p>
-            <div className="arrowButton" onClick={handleClickNext}>
+            <div className="Button" onClick={handleClickNext}>
               <IoCaretForward />
             </div>
           </section>
@@ -92,7 +99,7 @@ export function DiarioDeClasse() {
 
       <Modal
         isOpen={openModal}
-        setModalOpen={() => setOpenModal(!openModal)}
+        setModalOpen={() => setOpenModal(false)}
         data={selectedData}
       />
     </div>
