@@ -64,7 +64,7 @@ export function DiarioDeClasse() {
   const diarioClassePaginated = diarioClasse.slice(startIndex, endIndex);
 
   return (
-    <div className="w-full h-full flex justify-center items-center">
+    < >
       <Card title="DIÁRIO DE CLASSE">
         <main className="w-[95%] h-[25rem] select-none flex flex-col justify-between">
           {diarioClassePaginated.map((data, index) => (
@@ -102,6 +102,6 @@ export function DiarioDeClasse() {
         setModalOpen={() => setOpenModal(false)}
         data={selectedData}
       />
-    </div>
+    </>
   );
 }

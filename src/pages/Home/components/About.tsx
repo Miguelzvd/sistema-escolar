@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <main className="mt-24 font-roboto h-screen max-w-[850px] w-full m-auto text-white p-5 grid grid-flow-row md:grid-cols-2 items-center gap-10">
+    <main className="mt-24 font-roboto h-80 max-w-[850px] w-full m-auto text-white p-5 gap-10">
       <section className="text-justify flex flex-col gap-4 ">
         <h1 className="text-3xl md:text-4xl font-bold">Sobre</h1>
         {/* Conteudo */}

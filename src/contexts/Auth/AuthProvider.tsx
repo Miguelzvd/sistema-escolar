@@ -25,6 +25,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     validateToken();
   }, []);
 
+  
   //função para realizar o login do usário
   const signin = async (cpf: string, password: string, userType: string) => {
     console.log("signin esta sendo executado");

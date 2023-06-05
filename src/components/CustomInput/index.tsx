@@ -1,25 +1,37 @@
-import React from "react";
+import { ReactNode } from "react";
+import { UseFormRegister } from "react-hook-form";
+
+type FormValues = {
+  userType: string;
+  cpf: string;
+  password: string;
+};
 
 type Props = {
   text: string;
-  name: string;
-  value: string;
+  name:  "cpf" | "password";
+  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   inputType: "text" | "number" | "email" | "password";
-  placeHolder?: string;
-  htmlFor?: string | undefined;
-  id?: string;
+  placeHolder: string;
+  htmlFor: string;
+  id: string;
+  children?: ReactNode;
+  register: UseFormRegister<FormValues>;
+  maxLength?: number;
 };
 
 export function CustomInput({
   text,
   name,
   value,
-  onChange,
   inputType = "text",
   placeHolder,
   htmlFor,
-  id
+  id,
+  children,
+  maxLength,
+  register
 }: Props) {
   return (
     <div className="w-full">
@@ -29,32 +41,15 @@ export function CustomInput({
         </span>
       </label>
       <input
-        required
-        onChange={onChange}
+        {...register(name)}
         value={value}
         type={inputType}
-        name={name}
         placeholder={placeHolder}
         id={id}
-        className="
-            mt-1
-            p-3
-            w-full
-            bg-gray-100
-            border
-            shadow-sm
-            drop-shadow-md
-            rounded-md
-            border-slate-300
-            placeholder-slate-400
-            focus:outline-none
-            focus:border-sky-500
-            focus:ring-sky-500
-            text-sm
-            focus:ring-1
-            hover:bg-slate-200
-            "
+        className="input"
+        maxLength={maxLength}
       />
+      { children }
     </div>
   );
 }

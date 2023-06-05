@@ -3,5 +3,5 @@ export type User = {
     name: string;
     cpf: string;
     userType: string;
-    password?: string;
+    password: string;
 }

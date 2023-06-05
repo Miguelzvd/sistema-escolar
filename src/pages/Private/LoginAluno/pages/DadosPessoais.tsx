@@ -13,8 +13,7 @@ export function DadosPessoais() {
   const getData = async () => {
     try {
       const response = await axios.get("http://localhost:3000/api/alunodados/");
-      //const response = await axios.get("http://localhost:3000/api/alunodados/" + matricula + "/" + nome);
-      // Verificar como pegar nome ou matricula via parametros
+ 
       console.log(response.data);
       setData(response.data.result);
     } catch (error) {
@@ -30,7 +29,7 @@ export function DadosPessoais() {
     <Card title="DADOS PESSOAIS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
         <section className="w-full grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.length === 0 ? ( // Comentado para aprovação com Miguel para alteração
+          {data.length === 0 ? (
             <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
               <div className="animate-pulse flex space-x-4">
                 <div className="flex-1 space-y-6 py-1">

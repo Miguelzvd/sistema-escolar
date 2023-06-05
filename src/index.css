@@ -14,13 +14,14 @@
   .btn-blue:hover {
     @apply bg-primary transition-colors;
   }
-  .link{
+  .link {
     @apply w-full h-full;
   }
-  .link-default{
+  .link-default {
     @apply w-full h-full mx-3 my-2;
   }
-  .link:hover, .link-default:hover {
+  .link:hover,
+  .link-default:hover {
     @apply text-sky-500 duration-300;
   }
 
@@ -32,16 +33,82 @@
     @apply scrollbar-thin scrollbar-thumb-zinc-500 scrollbar-track-gray-200;
   }
 
-  .Button{
-    @apply hover:cursor-pointer rounded-full w-6 h-6 bg-gray-200 hover:bg-gray-300 duration-200 flex flex-col justify-center items-center text-center shadow-md active:shadow-inner shadow-zinc-500;
+  .Button {
+    @apply hover:cursor-pointer
+    rounded-full 
+    w-6 h-6 bg-gray-200 
+    hover:bg-gray-300 
+    duration-200 
+    flex 
+    flex-col 
+    justify-center 
+    items-center 
+    text-center 
+    shadow-md 
+    active:shadow-inner 
+    shadow-zinc-500;
   }
 
-  body{
+  .input { @apply 
+    mt-1
+    p-3
+    w-full
+    bg-gray-100
+    border
+    shadow-sm
+    drop-shadow-md
+    rounded-md
+    border-slate-300
+    placeholder-slate-400
+    focus:outline-none
+    focus:border-sky-500
+    focus:ring-sky-500
+    text-sm
+    focus:ring-1
+    hover:bg-slate-200
+  }
+
+  .select{
+    @apply 
+    mt-1
+    p-3
+    w-full
+    bg-gray-100
+    border
+    shadow-sm
+    border-slate-300
+    placeholder-slate-400
+    focus:outline-none
+    focus:border-sky-500
+    focus:ring-sky-500
+    rounded-md
+    text-sm
+    focus:ring-1
+    drop-shadow-md
+    hover:bg-slate-200
+    hover:cursor-pointer
+  }
+
+  .form-login {
+    @apply w-80
+    p-4
+    rounded-md
+    sm:w-[55%]
+    md:rounded-none
+    md:w-full
+    md:h-full
+    md:px-4
+    flex 
+    flex-col 
+    justify-center
+    gap-4
+    lg:gap-6
+    bg-white;
+  }
+
+  body {
     @apply scrollb;
   }
-
-  
-
 }
 
 * {
@@ -52,5 +119,4 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-
 }

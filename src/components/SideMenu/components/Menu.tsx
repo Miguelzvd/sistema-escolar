@@ -10,15 +10,18 @@ type Props = {
 };
 
 export default function Menu({ children, open }: Props) {
-  const auth = useContext(AuthContext);
+  const user = useContext(AuthContext);
   const handleLogout = async () => {
-    await auth.signout();
+    await user.signout();
   };
 
   return (
     // MENU
-    <main className={`flex flex-col justify-start h-full gap-10 md:gap-20 ${!open && "justify-center"}`}>  
-
+    <main
+      className={`flex flex-col justify-start h-full gap-10 md:gap-20 ${
+        !open && "justify-center"
+      }`}
+    >
       {/* Icone Escola */}
       <section
         className={`${
@@ -29,18 +32,18 @@ export default function Menu({ children, open }: Props) {
       </section>
 
       <section className="flex flex-col h-fit w-full justify-center gap-16">
-      
         {/* USUARIO */}
         <div
           className={`ml-0 inline-flex gap-4 text-white items-center 
-          ${!open ? "justify-center" : "ml-4"} `}
+          ${!open ? "justify-center" : "pl-4"} `}
         >
-          <div>
+          <div className="">
             <HiOutlineUserCircle size="2rem" color="white" />
           </div>
-          <span className={`${!open ? "hidden" : "flex flex-row"}`}>
-            Usuário: {}
-          </span>
+          <div className={!open ? "hidden" : "flex flex-col"}>
+            <span className={!open ? "hidden" : "w-60"}>Usuário:</span>
+            <span className={!open ? "hidden" : "w-60"}>{user.user?.name}</span>
+          </div>
         </div>
 
         {/* Opcoes do menu */}

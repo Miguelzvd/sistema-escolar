@@ -16,7 +16,7 @@ export function SideMenu({ menuItems }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <main className="z-10 fixed md:static min-h-screen flex flex-row w-fit">
+    <main className="z-10 fixed md:static h-screen flex flex-row w-fit">
       <div
         className={`bg-secundaryDark  flex flex-col overflow-auto overflow-x-hidden scrollb justify-center duration-300  ${
           open ? "w-60 md:w-72" : "w-0 md:w-12"

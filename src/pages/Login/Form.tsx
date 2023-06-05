@@ -1,101 +1,135 @@
-import { ChangeEvent, useState, useContext } from "react";
-import { CustomInput, CustomSelect } from "../../components";
+import { Button, CustomInput, CustomSelect } from "../../components/index";
+import { useContext, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { AuthContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
-import { mask } from "../../utils/inputMasks";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod"; //Biblioteca de validacao
+import { cpfMask } from "../../utils/inputMasks";
 
-export default function Form() {
-
+export default function LoginForm() {
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  const [cpf, setCpf] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [userType, setuserType] = useState<string>("");
 
-  const handleUserType = (e: ChangeEvent<HTMLSelectElement>) => {
-    setuserType(e.target.value);
-  };
+  //Esquema/esqueleto do objeto usuario com a devidas validacoes
+  const Loginschema = z.object({
+    cpf: z
+      .string()
+      .nonempty("Campo obrigatório")
+      .max(14, "O campo CPF não pode exceder 14 caracteres")
+      .regex(/^(\d{3}).(\d{3}).(\d{3})-(\d{2})$/, "CPF inválido"),
 
-  const handleCPFInput = (e: ChangeEvent<HTMLInputElement>) => {
-    e.currentTarget.maxLength = 14
-    e.currentTarget.minLength = 14
-    setCpf(mask(e.target.value))
-  };
+    password: z.string().nonempty("Campo obrigatório"),
 
-  const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
+    userType: z.string().nonempty("Campo obrigatório"),
+  });
 
+  type FormLoginValues = z.infer<typeof Loginschema>;
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("login esta sendo executado");
-    if (cpf && password && userType) {
-      const isLogged = await auth.signin(cpf, password, userType);
-      console.log(cpf, password, userType)
-      if (isLogged) {
-        if(["student", "teacher", "parent"].includes(userType)){
-          navigate("/"+userType);
-        } else {
-          alert("Tipo de usuário inexistente");
-        }
+  const {
+    register,
+    handleSubmit, //Funcao de Login
+    watch, //Observa o valor do input especificado
+    setValue, //Altera o valor de input especificado
+    formState: { errors },
+  } = useForm<FormLoginValues>({
+    defaultValues: {
+      cpf: "",
+      password: "",
+      userType: "",
+    },
+    resolver: zodResolver(Loginschema),
+  });
+
+  const cpfValue = watch("cpf");
+
+  useEffect(() => {
+    setValue("cpf", cpfMask(cpfValue));
+  }, [cpfValue, setValue]);
+
+  const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
+  const User = Loginschema.parse(data);
+
+  if (User) {
+    const isLogged = await auth.signin(
+      User.cpf,
+      User.password,
+      User.userType
+    );
+
+    if (isLogged) {
+      const userType = User.userType;
+
+      if (["student", "teacher", "parent"].includes(userType)) {
+        navigate(`/${userType}`);
       } else {
-        alert("Algo deu errado");
+        alert("Tipo de usuário inexistente");
       }
+    } else {
+      alert("Algo deu errado");
     }
-  };
+  }
+};
+
 
   return (
     <>
       <form
-        onSubmit={ handleLogin }
-        className="
-        w-80
-        p-4
-        rounded-md
-        sm:w-[55%]
-        md:rounded-none
-        md:w-full
-        md:h-full
-        md:px-4
-        flex 
-        flex-col 
-        justify-center
-        gap-4
-        lg:gap-6
-        bg-white
-        "
+        onSubmit={handleSubmit(handleFormSubmit)} // calling the handleFormSubmit function instead of directly accessing it
+        className="form-login"
+        name="loginForm"
       >
+        <div>
+          <CustomSelect
+            id="userType"
+            htmlFor="userType"
+            text="Tipo de acesso"
+            register={register}
+            name="userType"
+          >
+            <option value={"student"}>Aluno</option>
+            <option value={"teacher"}>Professor</option>
+            <option value={"parent"}>Responsável</option>
+          </CustomSelect>
+          {errors.userType && (
+            <span className="ml-2 text-red-600 text-sm">
+              {errors.userType.message}
+            </span>
+          )}
+        </div>
 
-        <CustomSelect onChange={handleUserType} htmlFor="user-type" name="user-type" text="Tipo de acesso">
-          <option value={"student"}>Aluno</option>
-          <option value={"teacher"}>Professor</option>
-          <option value={"parent"}>Resposável</option>
-        </CustomSelect>
-
-        {/*CPF PARA TODOS OS CADASTROS*/}
         <CustomInput
-          value={cpf}
           text="CPF"
-          onChange={handleCPFInput}
-          name="cpf"
           inputType="text"
           htmlFor="cpf"
           id="cpf"
           placeHolder="Digite seu CPF"
-        />
+          name="cpf"
+          register={register}
+          maxLength={14}
+        >
+          {errors.cpf && (
+            <span className="ml-2 text-red-600 text-sm">
+              {errors.cpf.message}
+            </span>
+          )}
+        </CustomInput>
 
         <CustomInput
-          value={password}
           text="Senha"
-          onChange={handlePasswordInput}
-          name="password"
           inputType="password"
           htmlFor="password"
           id="password"
           placeHolder="Digite sua senha"
-        />
+          name="password"
+          register={register}
+        >
+          {errors.password && (
+            <span className="ml-2 text-red-600 text-sm">
+              {errors.password.message}
+            </span>
+          )}
+        </CustomInput>
 
         <Button text="Entrar" type="submit" />
       </form>
