@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export function DadosPessoais() {
   interface Data {
     label: string;
-    value: string;
+    value: string | number;
   }
   const [data, setData] = useState([]);
 

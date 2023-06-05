@@ -28,7 +28,7 @@ export default function LoginForm() {
 
   const {
     register,
-    handleSubmit, //Funcao de Login
+    handleSubmit, //Função de Login
     watch, //Observa o valor do input especificado
     setValue, //Altera o valor de input especificado
     formState: { errors },
@@ -41,15 +41,15 @@ export default function LoginForm() {
     resolver: zodResolver(Loginschema),
   });
 
-  const cpfValue = watch("cpf");
+  const cpfValue = watch("cpf");//Observando o input CPF
 
   useEffect(() => {
-    setValue("cpf", cpfMask(cpfValue));
+    setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
   }, [cpfValue, setValue]);
 
   const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
   const User = Loginschema.parse(data);
-
+  console.log(User)
   if (User) {
     const isLogged = await auth.signin(
       User.cpf,
