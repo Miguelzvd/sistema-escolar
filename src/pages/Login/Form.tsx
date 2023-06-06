@@ -17,7 +17,13 @@ export default function LoginForm() {
       .string()
       .nonempty("Campo obrigatório")
       .max(14, "O campo CPF não pode exceder 14 caracteres")
-      .regex(/^(\d{3}).(\d{3}).(\d{3})-(\d{2})$/, "CPF inválido"),
+      // .regex(/^(\d{3}).(\d{3}).(\d{3})-(\d{2})$/, "CPF inválido")
+      .transform((cpf: string) => {
+        cpf = cpf.replace(".", "");
+        cpf = cpf.replace(".", "");
+        cpf = cpf.replace(/-/g, "");
+        return cpf
+      }),
 
     password: z.string().nonempty("Campo obrigatório"),
 
@@ -50,6 +56,8 @@ export default function LoginForm() {
   const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
   const User = Loginschema.parse(data);
   console.log(User)
+
+  
   if (User) {
     const isLogged = await auth.signin(
       User.cpf,

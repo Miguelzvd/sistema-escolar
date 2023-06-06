@@ -1,7 +1,8 @@
  
 import axios from "axios";
 import { Card } from "../../../../components/Card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { AuthContext } from "../../../../contexts";
 
 export function DadosPessoais() {
   interface Data {
@@ -9,11 +10,11 @@ export function DadosPessoais() {
     value: string | number;
   }
   const [data, setData] = useState([]);
+  const user = useContext(AuthContext);
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/alunodados/");
- 
+      const response = await axios.get(`http://localhost:3000/api/alunodados/${user.user?.cpf}`);
       console.log(response.data);
       setData(response.data.result);
     } catch (error) {
