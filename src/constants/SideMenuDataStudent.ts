@@ -8,7 +8,7 @@ import {
 export const SideMenuDataStudent = [
     {
       Icon: Boletim,
-      title: "Digitação de Notas",
+      title: "Notas",
       link: "notas",
     },
     {

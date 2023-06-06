@@ -28,9 +28,9 @@ export default function LoginForm() {
 
   const {
     register,
-    handleSubmit, //Função de Login
-    watch, //Observa o valor do input especificado
-    setValue, //Altera o valor de input especificado
+    handleSubmit,//Função de Login
+    watch,//Observa o valor do input especificado
+    setValue,//Altera o valor de input especificado
     formState: { errors },
   } = useForm<FormLoginValues>({
     defaultValues: {
@@ -44,7 +44,7 @@ export default function LoginForm() {
   const cpfValue = watch("cpf");//Observando o input CPF
 
   useEffect(() => {
-    setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
+    setValue("cpf", cpfMask(cpfValue));//Alterando o valor do input CPF de acordo com a mascara criada
   }, [cpfValue, setValue]);
 
   const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
@@ -75,7 +75,7 @@ export default function LoginForm() {
   return (
     <>
       <form
-        onSubmit={handleSubmit(handleFormSubmit)} // calling the handleFormSubmit function instead of directly accessing it
+        onSubmit={handleSubmit(handleFormSubmit)}
         className="form-login"
         name="loginForm"
       >

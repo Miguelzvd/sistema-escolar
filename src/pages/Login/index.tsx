@@ -1,6 +1,5 @@
 import { IconeLogin } from "../../iconComponents/General";
 import Form from "./Form";
-// import Form from "./Form";
 
 export function Login() {
   return (
