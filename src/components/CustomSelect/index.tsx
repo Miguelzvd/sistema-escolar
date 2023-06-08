@@ -1,10 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {  UseFormRegister } from "react-hook-form";
-
-type FormValues = {
-  userType: string;
-  cpf: string;
-  password: string;
-};
 
 type Props = {
   text: string;
@@ -12,7 +7,7 @@ type Props = {
   name: "userType";
   htmlFor: string;
   children: React.ReactNode;
-  register: UseFormRegister<FormValues>;
+  register: UseFormRegister<any>;
 };
 
 export function CustomSelect({
