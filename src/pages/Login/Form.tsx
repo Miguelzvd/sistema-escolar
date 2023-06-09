@@ -68,7 +68,7 @@ export default function LoginForm() {
     if (isLogged) {
       const userType = User.userType;
 
-      if (["student", "teacher", "parent"].includes(userType)) {
+      if (["student", "teacher", "parent", "adm"].includes(userType)) {
         navigate(`/${userType}`);
       } else {
         alert("Tipo de usuário inexistente");
@@ -96,8 +96,9 @@ export default function LoginForm() {
             name="userType"
           >
             <option value={"student"}>Aluno</option>
-            <option value={"teacher"}>Professor</option>
             <option value={"parent"}>Responsável</option>
+            <option value={"teacher"}>Professor</option>
+            <option value={"adm"}>Administrador</option>
           </CustomSelect>
           {errors.userType && (
             <span className="ml-2 text-red-600 text-sm">

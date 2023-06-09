@@ -1,15 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import { UseFormRegister } from "react-hook-form";
 
-type FormValues = {
-  userType: string;
-  cpf: string;
-  password: string;
-};
-
 type Props = {
   text: string;
-  name:  "cpf" | "password";
+  name: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   inputType: "text" | "number" | "email" | "password";
@@ -17,7 +12,7 @@ type Props = {
   htmlFor: string;
   id: string;
   children?: ReactNode;
-  register: UseFormRegister<FormValues>;
+  register: UseFormRegister<any>;
   maxLength?: number;
 };
 
