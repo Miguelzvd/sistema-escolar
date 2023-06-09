@@ -7,7 +7,7 @@ export const api = axios.create({
 export const  getData = async () => {
 
   try {
-    const response = await axios.get("http://localhost:3000/api/loginAluno");
+    const response = await axios.get("http://localhost:3000/api/login");
     return response.data.result;
   }
   catch (error) {
