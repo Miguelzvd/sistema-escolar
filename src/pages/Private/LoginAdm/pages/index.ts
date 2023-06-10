@@ -1,3 +1,3 @@
-export * from "./Cadastro";
-export * from "./AtualizarCadastro";
+export * from "./Cadastrar";
+export * from "./Cadastros";
 export * from "./BemVindoAdm";

@@ -2,7 +2,8 @@ import { Route, Routes , BrowserRouter as Router } from "react-router-dom";
 import { Home, Login, LoginAluno, LoginProfessor, LoginAdm } from "../pages"
 import { RequireAuth } from "../contexts";
 import { DadosPessoais, DiarioDeClasse, Notas, Relatorio, BemVindoAluno} from "../pages/Private/LoginAluno/pages";
-import { Cadastro, AtualizarCadastro, BemVindoAdm } from "../pages/Private/LoginAdm/pages";
+import { Cadastros, Cadastrar, BemVindoAdm } from "../pages/Private/LoginAdm/pages";
+import { CadastroAluno, CadastroOptions, CadastroProfessor } from "../pages/Private/LoginAdm/pages/Cadastrar/components";
 
 export function AppRoutes() {
   return (
@@ -28,9 +29,15 @@ export function AppRoutes() {
         </Route>
 
         <Route path="adm" element={ <RequireAuth> <LoginAdm/></RequireAuth>}>
+         
           <Route index element={<BemVindoAdm/>}/>
-          <Route path="atualizar-cadastro" element={<Cadastro/>}/>
-          <Route path="cadastro" element={<AtualizarCadastro/>}/>
+          <Route path="records" element={<Cadastros/>}/>
+          
+          <Route path="register" element={<Cadastrar/>}>
+            <Route index element={<CadastroOptions/>}/>
+            <Route path="student" element={<CadastroAluno/>}/>
+            <Route path="teacher" element={<CadastroProfessor/>}/>
+          </Route>
         </Route>
 
         <Route path="teacher" element={ <RequireAuth> <LoginProfessor/></RequireAuth>}>

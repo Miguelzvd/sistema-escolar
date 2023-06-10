@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod"; //Biblioteca de validacao
 import { cpfMask } from "../../utils/inputMasks";
+import { validateCPF } from "../../utils/functions";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -17,12 +18,12 @@ export default function LoginForm() {
       .string()
       .nonempty("Campo obrigatório")
       .min(14, "CPF inválido")
-      .regex(/^(\d{3}).(\d{3}).(\d{3})-(\d{2})$/, "CPF inválido")
+      .refine((cpf) => validateCPF(cpf), "CPF inválido")
       .transform((cpf: string) => {
         cpf = cpf.replace(".", "");
         cpf = cpf.replace(".", "");
         cpf = cpf.replace(/-/g, "");
-        return cpf
+        return cpf;
       }),
 
     password: z.string().nonempty("Campo obrigatório"),
@@ -34,9 +35,9 @@ export default function LoginForm() {
 
   const {
     register,
-    handleSubmit,//Função de Login
-    watch,//Observa o valor do input especificado
-    setValue,//Altera o valor de input especificado
+    handleSubmit, //Função de Login
+    watch, //Observa o valor do input especificado
+    setValue, //Altera o valor de input especificado
     formState: { errors },
   } = useForm<FormLoginValues>({
     defaultValues: {
@@ -47,38 +48,35 @@ export default function LoginForm() {
     resolver: zodResolver(Loginschema),
   });
 
-  const cpfValue = watch("cpf");//Observando o input CPF
-
+  const cpfValue = watch("cpf"); //Observando o input CPF
   useEffect(() => {
-    setValue("cpf", cpfMask(cpfValue));//Alterando o valor do input CPF de acordo com a mascara criada
+    setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
   }, [cpfValue, setValue]);
 
   const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
-  const User = data;
-  console.log(User)
+    const User = data;
+    console.log(User);
 
-  
-  if (User) {
-    const isLogged = await auth.signin(
-      User.cpf,
-      User.password,
-      User.userType
-    );
+    if (User) {
+      const isLogged = await auth.signin(
+        User.cpf,
+        User.password,
+        User.userType
+      );
 
-    if (isLogged) {
-      const userType = User.userType;
+      if (isLogged) {
+        const userType = User.userType;
 
-      if (["student", "teacher", "parent", "adm"].includes(userType)) {
-        navigate(`/${userType}`);
+        if (["student", "teacher", "parent", "adm"].includes(userType)) {
+          navigate(`/${userType}`);
+        } else {
+          alert("Tipo de usuário inexistente");
+        }
       } else {
-        alert("Tipo de usuário inexistente");
+        alert("Algo deu errado");
       }
-    } else {
-      alert("Algo deu errado");
     }
-  }
-};
-
+  };
 
   return (
     <>
@@ -89,12 +87,13 @@ export default function LoginForm() {
       >
         <div>
           <CustomSelect
-            id="userType"
-            htmlFor="userType"
             text="Tipo de acesso"
             register={register}
             name="userType"
           >
+            <option className="text-slate-400" value="">
+              Escolha o tipo de usuário
+            </option>
             <option value={"student"}>Aluno</option>
             <option value={"parent"}>Responsável</option>
             <option value={"teacher"}>Professor</option>
@@ -110,8 +109,6 @@ export default function LoginForm() {
         <CustomInput
           text="CPF"
           inputType="text"
-          htmlFor="cpf"
-          id="cpf"
           placeHolder="Digite seu CPF"
           name="cpf"
           register={register}
@@ -127,8 +124,6 @@ export default function LoginForm() {
         <CustomInput
           text="Senha"
           inputType="password"
-          htmlFor="password"
-          id="password"
           placeHolder="Digite sua senha"
           name="password"
           register={register}

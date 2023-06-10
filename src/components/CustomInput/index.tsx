@@ -7,10 +7,8 @@ type Props = {
   name: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  inputType: "text" | "number" | "email" | "password";
-  placeHolder: string;
-  htmlFor: string;
-  id: string;
+  inputType: "text" | "number" | "email" | "password" | "date" | "tel";
+  placeHolder?: string;
   children?: ReactNode;
   register: UseFormRegister<any>;
   maxLength?: number;
@@ -19,32 +17,28 @@ type Props = {
 export function CustomInput({
   text,
   name,
-  value,
   inputType = "text",
   placeHolder,
-  htmlFor,
-  id,
   children,
   maxLength,
-  register
+  register,
 }: Props) {
   return (
     <div className="w-full">
-      <label htmlFor={htmlFor} className="w-full">
-        <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
-          {text}
-        </span>
-      </label>
+      <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
+        <label htmlFor={name} className="w-full" />
+        {text}
+      </span>
+      
       <input
         {...register(name)}
-        value={value}
         type={inputType}
         placeholder={placeHolder}
-        id={id}
+        id={name}
         className="input"
         maxLength={maxLength}
       />
-      { children }
+      {children}
     </div>
   );
 }

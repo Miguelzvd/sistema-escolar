@@ -27,16 +27,17 @@ export const SideMenuDataStudent = [
       link: "relatorio-disciplina",
     },
 ];
+
 export const SideMenuDataAdm = [
     {
       Icon: DadosPessoais,
       title: "Cadastro",
-      link: "cadastro",
+      link: "register",
     },
     {
       Icon: DadosPessoais,
       title: "Atualizar Cadastro",
-      link: "atualizar-cadastro",
+      link: "records",
     },
-
 ];
+

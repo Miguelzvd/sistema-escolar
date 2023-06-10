@@ -49,7 +49,8 @@
     shadow-zinc-500;
   }
 
-  .input { @apply 
+  .input {
+    @apply 
     mt-1
     p-3
     w-full
@@ -67,6 +68,7 @@
     focus:ring-1
     hover:bg-slate-200
   }
+
 
   .select{
     @apply 
@@ -88,6 +90,7 @@
     hover:bg-slate-200
     hover:cursor-pointer
   }
+
 
   .form-login {
     @apply w-80

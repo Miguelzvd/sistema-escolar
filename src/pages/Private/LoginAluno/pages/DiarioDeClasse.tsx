@@ -3,8 +3,6 @@ import { Card } from "../../../../components/Card";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 import { Modal } from "../../../../components";
 
-const PAGE_SIZE = 3;
-
 //O metodo Object.freeze() previne que um objeto seja modificado
 const diarioClasse = Object.freeze([
   {
@@ -31,6 +29,48 @@ const diarioClasse = Object.freeze([
     texto:
       "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
   },
+  {
+    materia: "Matematica",
+    data: "20/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Portugues",
+    data: "12/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Geografia",
+    data: "02/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Ingles",
+    data: "02/07/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Matematica",
+    data: "20/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Portugues",
+    data: "12/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
+  {
+    materia: "Geografia",
+    data: "02/06/2023",
+    texto:
+      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
+  },
 ]);
 
 type DiarioClasse = {
@@ -43,6 +83,7 @@ export function DiarioDeClasse() {
   const [openModal, setOpenModal] = useState(false);
   const [selectedData, setSelectedData] = useState<DiarioClasse | null>(null);
   const [page, setPage] = useState(1);
+  const PAGE_SIZE = 3;
 
   const handleClickNext = () => {
     if (page < Math.ceil(diarioClasse.length / PAGE_SIZE)) setPage(page + 1);
@@ -62,7 +103,8 @@ export function DiarioDeClasse() {
   const startIndex = (page - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
   const diarioClassePaginated = diarioClasse.slice(startIndex, endIndex);
-
+  const pages = (diarioClasse.length / PAGE_SIZE)
+  
   return (
     < >
       <Card title="DIÁRIO DE CLASSE">
@@ -84,15 +126,22 @@ export function DiarioDeClasse() {
             </section>
           ))}
           <section className="flex flex-row w-full  justify-center items-center gap-4 mt-4">
-            <div className="Button" onClick={handleClickPrevious}>
-              <IoCaretBack />
+            <div className="w-6 h-6">
+              <button className={`Button ${page <= 1 ? "hidden": "static"}`} onClick={handleClickPrevious}>
+                <IoCaretBack />
+              </button>
             </div>
+
             <p className="font-bold">
-              {page} / {Math.ceil(diarioClasse.length / PAGE_SIZE)}
+              {page} / {Math.ceil(pages)}
             </p>
-            <div className="Button" onClick={handleClickNext}>
-              <IoCaretForward />
+
+            <div className="w-6 h-6">
+              <button className={`Button ${page >= pages ? "hidden": "static"}`} onClick={handleClickNext}>
+                <IoCaretForward />
+              </button>
             </div>
+
           </section>
         </main>
       </Card>

@@ -56,7 +56,7 @@ export default function Menu({ children, open }: Props) {
             mlClosed="ml-2"
             mlOpened="ml-5"
             handleClick={handleLogout}
-            link="/"
+            link="/signin"
             textColor="hover:text-red-500"
           />
         </ul>

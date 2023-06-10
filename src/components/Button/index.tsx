@@ -5,7 +5,7 @@ type Props = {
   text: string;
   textColor?: string;
   color?: string;
-  type?:  "button" | "submit" | "reset" | undefined;
+  type?:  "button" | "submit" | "reset";
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   children?: React.ReactNode;
 };
