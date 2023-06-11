@@ -1,6 +1,6 @@
 import { SVGProps, useState } from "react";
 import MenuItem from "./components/MenuItem";
-import { Seta } from "../../iconComponents";
+import { Seta } from "src/iconComponents";
 
 import Menu from "./components/Menu";
 

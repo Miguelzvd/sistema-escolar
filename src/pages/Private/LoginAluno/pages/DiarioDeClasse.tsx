@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Card } from "../../../../components/Card";
+import { Modal } from "src/components";
+import { Card } from "src/components/Card";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
-import { Modal } from "../../../../components";
 
 //O metodo Object.freeze() previne que um objeto seja modificado
 const diarioClasse = Object.freeze([

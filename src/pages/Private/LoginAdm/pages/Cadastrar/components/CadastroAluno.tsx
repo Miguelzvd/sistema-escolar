@@ -1,20 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-  Button,
-  CustomInput,
-  CustomSelect,
-} from "../../../../../../components";
-import {
-  validateBirthDate,
-  validateCPF,
-} from "../../../../../../utils/functions";
-import { Card } from "../../../../../../components";
+import { Button, CustomInput, CustomSelect } from "src/components";
+import { validateBirthDate, validateCPF } from "src/utils/functions";
+import { Card } from "src/components";
 import { useEffect, useState } from "react";
-import { cpfMask, rgMask } from "../../../../../../utils/inputMasks";
-import { inputDataAluno } from "../../../../../../constants/inputData";
+import { cpfMask, rgMask } from "src/utils/inputMasks";
 import { useNavigate } from "react-router-dom";
+import { InputDataAluno } from "src/constants/InputData";
 
 export function CadastroAluno() {
   const [isSaved, setIsSaved] = useState(false);
@@ -108,8 +101,11 @@ export function CadastroAluno() {
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataAluno.map(
-              ({ label, type, placeholder, name, maxLength, required, error }, index) => (
+            {InputDataAluno.map(
+              (
+                { label, type, placeholder, name, maxLength, required, error },
+                index
+              ) => (
                 <CustomInput
                   key={index}
                   text={label}

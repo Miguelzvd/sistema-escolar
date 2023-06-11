@@ -1,16 +1,8 @@
-interface IinputData{
-  name: string;
-  label: string;
-  type: string;
-  placeholder: string;
-  maxLength?: number;
-  required?: boolean;
-}
+import { IinputData } from "../types";
 
 interface IinputAlundoData extends IinputData {
   error: "nome" | "cpf" | "rg" | "tel" | "dataNascimento" | "email";
 }
-
 
 interface IinputResponsavelData extends IinputData {
   error: "nome" | "cpf" | "rg" | "tel" | "tel2" | "dataNascimento" | "email";
@@ -19,7 +11,7 @@ interface IinputResponsavelData extends IinputData {
 type InputProfessorData = IinputResponsavelData
 
 
-export const inputDataAluno: IinputAlundoData[] = [
+export const InputDataAluno: IinputAlundoData[] = [
   {
     name: "nome",
     label: "Nome",
@@ -67,7 +59,7 @@ export const inputDataAluno: IinputAlundoData[] = [
   },
 ];
 
-export const inputDataResponsavel: IinputResponsavelData[] = [
+export const InputDataResponsavel: IinputResponsavelData[] = [
   {
     name: "nome",
     label: "Nome",
@@ -123,7 +115,7 @@ export const inputDataResponsavel: IinputResponsavelData[] = [
   },
 ];
 
-export const inputDataProfessor: InputProfessorData[] = [
+export const InputDataProfessor: InputProfessorData[] = [
   {
     name: "nome",
     label: "Nome",

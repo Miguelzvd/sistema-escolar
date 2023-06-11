@@ -1,4 +1,4 @@
-import { Card } from "../../../../components";
+import { Card } from "src/components";
 
 export function BemVindoAdm() {
   return (

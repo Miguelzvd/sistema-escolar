@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { AuthContext } from ".";
-import { User } from "../../types";
-import { useApi } from "../../Hooks/useApi";
+import { User } from "src/types";
+import { useApi } from "src/Hooks/useApi";
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);

@@ -1,4 +1,4 @@
-import { Card } from "../../../../components/Card";
+import { Card } from "src/components/Card";
 
 export function DiarioDeClasse() {
   return (

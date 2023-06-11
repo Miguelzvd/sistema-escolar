@@ -1,6 +1,6 @@
  
 import axios from "axios";
-import { Card } from "../../../../components/Card";
+import { Card } from "src/components/Card";
 import { useEffect, useState } from "react";
 
 export function DadosPessoais() {

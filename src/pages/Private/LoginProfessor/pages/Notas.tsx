@@ -1,5 +1,5 @@
-import { Card } from "../../../../components/Card";
-import { Disciplines } from "../../../../constants";
+import { Card } from "src/components/Card";
+import { Disciplines } from "src/constants";
 
 export function Notas() {
   return (

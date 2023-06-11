@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { AuthContext } from ".";
-import { Login } from "../../pages";
+import { AuthContext } from "./";
+import { Login } from "src/pages";
 
 export function RequireAuth({ children }: { children: React.ReactNode }) {
 

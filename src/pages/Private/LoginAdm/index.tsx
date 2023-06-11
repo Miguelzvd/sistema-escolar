@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { SideMenu } from "../../../components";
-import { SideMenuDataAdm } from "../../../constants/SideMenuData";
+import { SideMenuDataAdm } from "../../../constants";
 
 export function LoginAdm() {
   return (

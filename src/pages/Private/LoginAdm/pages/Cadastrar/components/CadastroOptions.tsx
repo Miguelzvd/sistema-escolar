@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Card } from "../../../../../../components";
+import { Button, Card } from "src/components";
 
 export function CadastroOptions() {
   const navigate = useNavigate();

@@ -1,18 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-  Button,
-  CustomInput,
-} from "../../../../../../components";
-import {
-  validateBirthDate,
-  validateCPF,
-} from "../../../../../../utils/functions";
-import { Card } from "../../../../../../components";
+import { Button, CustomInput } from "src/components";
+import { validateBirthDate, validateCPF } from "src/utils/functions";
+import { Card } from "src/components";
 import { useEffect, useState } from "react";
-import { cpfMask, rgMask } from "../../../../../../utils/inputMasks";
-import { inputDataResponsavel } from "../../../../../../constants/inputData";
+import { cpfMask, rgMask } from "src/utils/inputMasks";
+import { InputDataResponsavel } from "src/constants/InputData";
 import { useNavigate } from "react-router-dom";
 
 export function CadastroResponsavel() {
@@ -40,14 +34,13 @@ export function CadastroResponsavel() {
     email: z.string().nonempty("Campo obrigatório"),
 
     tel: z.string().nonempty("Campo obrigatório"),
-    
+
     tel2: z.string(),
 
     dataNascimento: z
       .string()
       .nonempty("Campo obrigatório")
       .refine((date) => validateBirthDate(date), "Data inválida"),
-
   });
 
   type FormSchemaValues = z.infer<typeof FormSchema>;
@@ -87,20 +80,18 @@ export function CadastroResponsavel() {
     } else {
       alert("Responsável atualizado com sucesso!");
     }
-    
-    
+
     const User = data;
     console.log(User);
-
   };
 
   //Proxima pagina
   const nextPage = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    alert("Cadastro de aluno e responsável conlcluido!")
+    alert("Cadastro de aluno e responsável conlcluido!");
     navigate("/adm");
   };
-  
+
   return (
     <Card title="CADASTRO ALUNO">
       <main className="w-full h-full text-black flex flex-col gap-8 justify-around items-center">
@@ -111,26 +102,29 @@ export function CadastroResponsavel() {
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataResponsavel.map(({label, type, placeholder, name, maxLength, required, error}, index) => (
-              <CustomInput
-                key={index}
-                text={label}
-                inputType={type}
-                placeHolder={placeholder}
-                name={name}
-                register={register}
-                maxLength={maxLength}
-                required={required}
-              >   
-              {errors[error] && (
-                  <span className="ml-2 text-red-600 text-sm">
-                    {errors[error]?.message}
-                  </span>
-                )}
-              </CustomInput>
-            ))}
-
-           
+            {InputDataResponsavel.map(
+              (
+                { label, type, placeholder, name, maxLength, required, error },
+                index
+              ) => (
+                <CustomInput
+                  key={index}
+                  text={label}
+                  inputType={type}
+                  placeHolder={placeholder}
+                  name={name}
+                  register={register}
+                  maxLength={maxLength}
+                  required={required}
+                >
+                  {errors[error] && (
+                    <span className="ml-2 text-red-600 text-sm">
+                      {errors[error]?.message}
+                    </span>
+                  )}
+                </CustomInput>
+              )
+            )}
           </section>
 
           <section className="w-128 m-auto justify-center flex">

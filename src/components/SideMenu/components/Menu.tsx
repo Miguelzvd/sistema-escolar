@@ -1,8 +1,8 @@
 import { HiOutlineUserCircle } from "react-icons/Hi";
-import { EscolaMHR, Sair } from "../../../iconComponents";
-import MenuItem from "./MenuItem";
+import { EscolaMHR, Sair } from "src/iconComponents";
+import { AuthContext } from "src/contexts";
 import { useContext } from "react";
-import { AuthContext } from "../../../contexts";
+import MenuItem from "./MenuItem";
 
 type Props = {
   children: React.ReactNode;
