@@ -4,7 +4,6 @@ import { z } from "zod";
 import {
   Button,
   CustomInput,
-  CustomSelect,
 } from "../../../../../../components";
 import {
   validateBirthDate,
@@ -13,10 +12,10 @@ import {
 import { Card } from "../../../../../../components";
 import { useEffect, useState } from "react";
 import { cpfMask, rgMask } from "../../../../../../utils/inputMasks";
-import { inputDataAluno } from "../../../../../../constants/inputData";
+import { inputDataResponsavel } from "../../../../../../constants/inputData";
 import { useNavigate } from "react-router-dom";
 
-export function CadastroAluno() {
+export function CadastroResponsavel() {
   const [isSaved, setIsSaved] = useState(false);
   const navigate = useNavigate();
 
@@ -41,13 +40,14 @@ export function CadastroAluno() {
     email: z.string().nonempty("Campo obrigatório"),
 
     tel: z.string().nonempty("Campo obrigatório"),
+    
+    tel2: z.string(),
 
     dataNascimento: z
       .string()
       .nonempty("Campo obrigatório")
       .refine((date) => validateBirthDate(date), "Data inválida"),
 
-    sexo: z.string().nonempty("Campo obrigatório"),
   });
 
   type FormSchemaValues = z.infer<typeof FormSchema>;
@@ -66,7 +66,7 @@ export function CadastroAluno() {
       dataNascimento: "",
       email: "",
       tel: "",
-      sexo: "",
+      tel2: "",
     },
     resolver: zodResolver(FormSchema),
   });
@@ -90,20 +90,21 @@ export function CadastroAluno() {
 
   //Proxima pagina
   const nextPage = () => {
-    navigate("/adm/register/parent");
+    alert("Cadastro de aluno conlcluido!")
+    navigate("/adm");
   };
   
   return (
     <Card title="CADASTRO ALUNO">
       <main className="w-full h-full text-black flex flex-col gap-8 justify-around items-center">
-        <h1 className="font-bold text-2xl">Aluno</h1>
+        <h1 className="font-bold text-2xl">Responsável</h1>
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
           name="registerForm"
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataAluno.map((input, index) => (
+            {inputDataResponsavel.map((input, index) => (
               <CustomInput
                 key={index}
                 text={input.label}
@@ -121,20 +122,7 @@ export function CadastroAluno() {
               </CustomInput>
             ))}
 
-            <div>
-              <CustomSelect text="Sexo" register={register} name="sexo">
-                <option className="text-slate-400" value="">
-                  Escolha o sexo
-                </option>
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-              </CustomSelect>
-              {errors.sexo && (
-                <span className="ml-2 text-red-600 text-sm">
-                  {errors.sexo.message}
-                </span>
-              )}
-            </div>
+           
           </section>
 
           <section className="w-128 m-auto justify-center flex">

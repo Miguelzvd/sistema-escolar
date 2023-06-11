@@ -4,7 +4,7 @@
 export function Cadastros() {
 
   return (
-    <Card title="ATUALIZAR CADASTRO">
+    <Card title="CADASTROS">
       <main className="w-[95%] h-full text-black flex flex-col gap-8 justify-around items-center">
         
       </main>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode } from "react";
+import {  ReactNode } from "react";
 import { UseFormRegister } from "react-hook-form";
 
 type Props = {
@@ -7,11 +7,11 @@ type Props = {
   name: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  inputType: "text" | "number" | "email" | "password" | "date" | "tel";
+  inputType: string;
   placeHolder?: string;
   children?: ReactNode;
   register: UseFormRegister<any>;
-  maxLength?: number;
+  maxLength?: any;
 };
 
 export function CustomInput({

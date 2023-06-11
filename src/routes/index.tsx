@@ -4,6 +4,7 @@ import { RequireAuth } from "../contexts";
 import { DadosPessoais, DiarioDeClasse, Notas, Relatorio, BemVindoAluno} from "../pages/Private/LoginAluno/pages";
 import { Cadastros, Cadastrar, BemVindoAdm } from "../pages/Private/LoginAdm/pages";
 import { CadastroAluno, CadastroOptions, CadastroProfessor } from "../pages/Private/LoginAdm/pages/Cadastrar/components";
+import { CadastroResponsavel } from "../pages/Private/LoginAdm/pages/Cadastrar/components/CadastroResponsavel";
 
 export function AppRoutes() {
   return (
@@ -36,6 +37,7 @@ export function AppRoutes() {
           <Route path="register" element={<Cadastrar/>}>
             <Route index element={<CadastroOptions/>}/>
             <Route path="student" element={<CadastroAluno/>}/>
+            <Route path="parent" element={<CadastroResponsavel/>}/>
             <Route path="teacher" element={<CadastroProfessor/>}/>
           </Route>
         </Route>
