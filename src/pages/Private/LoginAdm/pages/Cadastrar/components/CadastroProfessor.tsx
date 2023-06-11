@@ -103,19 +103,20 @@ export function CadastroProfessor() {
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataProfessor.map((input, index) => (
+            {inputDataProfessor.map(({label, type, placeholder, name, maxLength, required, error}, index) => (
               <CustomInput
                 key={index}
-                text={input.label}
-                inputType={input.type}
-                placeHolder={input.placeholder}
-                name={input.name}
+                text={label}
+                inputType={type}
+                placeHolder={placeholder}
+                name={name}
                 register={register}
-                maxLength={input.maxLength}
+                required={required}
+                maxLength={maxLength}
               >
-                {errors[input.name] && (
+                {errors[error] && (
                   <span className="ml-2 text-red-600 text-sm">
-                    {errors[input.name].message}
+                    {errors[error]?.message}
                   </span>
                 )}
               </CustomInput>

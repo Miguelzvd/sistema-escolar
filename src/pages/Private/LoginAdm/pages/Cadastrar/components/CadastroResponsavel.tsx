@@ -81,16 +81,23 @@ export function CadastroResponsavel() {
 
   //Submit
   const handleFormSubmit = async (data: FormSchemaValues): Promise<void> => {
+    if (!isSaved) {
+      alert("Responsável cadastrado com sucesso!");
+      setIsSaved(true);
+    } else {
+      alert("Responsável atualizado com sucesso!");
+    }
+    
+    
     const User = data;
     console.log(User);
-
-    setIsSaved(!isSaved);
 
   };
 
   //Proxima pagina
-  const nextPage = () => {
-    alert("Cadastro de aluno conlcluido!")
+  const nextPage = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    alert("Cadastro de aluno e responsável conlcluido!")
     navigate("/adm");
   };
   
@@ -104,19 +111,20 @@ export function CadastroResponsavel() {
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataResponsavel.map((input, index) => (
+            {inputDataResponsavel.map(({label, type, placeholder, name, maxLength, required, error}, index) => (
               <CustomInput
                 key={index}
-                text={input.label}
-                inputType={input.type}
-                placeHolder={input.placeholder}
-                name={input.name}
+                text={label}
+                inputType={type}
+                placeHolder={placeholder}
+                name={name}
                 register={register}
-                maxLength={input.maxLength}
-              >
-                {errors[input.name] && (
+                maxLength={maxLength}
+                required={required}
+              >   
+              {errors[error] && (
                   <span className="ml-2 text-red-600 text-sm">
-                    {errors[input.name].message}
+                    {errors[error]?.message}
                   </span>
                 )}
               </CustomInput>
@@ -135,7 +143,7 @@ export function CadastroResponsavel() {
                 <Button text="Atualizar" type="submit" />
               </div>
               <div className="w-[50%]">
-                <Button text="Proximo" onClick={nextPage} />
+                <Button text="Concluir" onClick={nextPage} />
               </div>
             </div>
           </section>

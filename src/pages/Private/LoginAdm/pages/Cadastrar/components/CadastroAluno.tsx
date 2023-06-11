@@ -81,18 +81,23 @@ export function CadastroAluno() {
 
   //Submit
   const handleFormSubmit = async (data: FormSchemaValues): Promise<void> => {
+    if (!isSaved) {
+      alert("Aluno cadastrado com sucesso!");
+      setIsSaved(true);
+    } else {
+      alert("Aluno atualizado com sucesso!");
+    }
+
     const User = data;
     console.log(User);
-
-    setIsSaved(!isSaved);
-
   };
 
   //Proxima pagina
-  const nextPage = () => {
+  const nextPage = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     navigate("/adm/register/parent");
   };
-  
+
   return (
     <Card title="CADASTRO ALUNO">
       <main className="w-full h-full text-black flex flex-col gap-8 justify-around items-center">
@@ -103,23 +108,26 @@ export function CadastroAluno() {
           className="px-10 w-full h-full text-black flex flex-col gap-8"
         >
           <section className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {inputDataAluno.map((input, index) => (
-              <CustomInput
-                key={index}
-                text={input.label}
-                inputType={input.type}
-                placeHolder={input.placeholder}
-                name={input.name}
-                register={register}
-                maxLength={input.maxLength}
-              >
-                {errors[input.name] && (
-                  <span className="ml-2 text-red-600 text-sm">
-                    {errors[input.name].message}
-                  </span>
-                )}
-              </CustomInput>
-            ))}
+            {inputDataAluno.map(
+              ({ label, type, placeholder, name, maxLength, required, error }, index) => (
+                <CustomInput
+                  key={index}
+                  text={label}
+                  inputType={type}
+                  placeHolder={placeholder}
+                  name={name}
+                  register={register}
+                  maxLength={maxLength}
+                  required={required}
+                >
+                  {errors[error] && (
+                    <span className="ml-2 text-red-600 text-sm">
+                      {errors[error]?.message}
+                    </span>
+                  )}
+                </CustomInput>
+              )
+            )}
 
             <div>
               <CustomSelect text="Sexo" register={register} name="sexo">

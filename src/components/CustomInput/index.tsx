@@ -8,16 +8,18 @@ type Props = {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   inputType: string;
+  required?: boolean;
   placeHolder?: string;
   children?: ReactNode;
   register: UseFormRegister<any>;
-  maxLength?: any;
+  maxLength?: number | undefined;
 };
 
 export function CustomInput({
   text,
   name,
   inputType = "text",
+  required = true,
   placeHolder,
   children,
   maxLength,
@@ -25,9 +27,10 @@ export function CustomInput({
 }: Props) {
   return (
     <div className="w-full">
-      <span className="after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium ">
+      <span>
         <label htmlFor={name} className="w-full" />
         {text}
+        <span className={`${required ? "after:content-['*'] after:ml-0.5 after:text-red-500  text-gray-700 font-medium" : "hidden"} `}/>
       </span>
       
       <input
