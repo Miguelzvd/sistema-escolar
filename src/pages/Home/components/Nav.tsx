@@ -1,5 +1,5 @@
 import { Link as LinkItem } from "react-router-dom";
-import IconeSite from "../../../iconComponents/General/IconeSite";
+import IconeSite from "src/iconComponents/General/IconeSite";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 

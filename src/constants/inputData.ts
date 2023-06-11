@@ -48,6 +48,7 @@ export const InputDataAluno: IinputAlundoData[] = [
     label: "Telefone",
     type: "tel",
     placeholder: "Digite o telefone",
+    maxLength: 15,
     error: "tel",
   },
   {
@@ -153,14 +154,17 @@ export const InputDataProfessor: InputProfessorData[] = [
     type: "tel",
     placeholder: "Digite o telefone",
     error: "tel",
+    maxLength: 15,
   },
-  {
-    name: "tel2",
-    label: "Telefone 2",
-    type: "tel",
-    placeholder: "Digite o telefone",
-    error: "tel2",
-  },
+  // {
+  //   name: "tel2",
+  //   label: "Telefone 2",
+  //   type: "tel",
+  //   placeholder: "Digite o telefone",
+  //   error: "tel2",
+  //   required: false,
+  //   maxLength: 15,
+  // },
   {
     name: "email",
     label: "E-mail",

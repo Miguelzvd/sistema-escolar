@@ -13,6 +13,7 @@ type Props = {
   children?: ReactNode;
   register: UseFormRegister<any>;
   maxLength?: number | undefined;
+  errorFocus?: string | undefined;
 };
 
 export function CustomInput({
@@ -23,6 +24,7 @@ export function CustomInput({
   placeHolder,
   children,
   maxLength,
+  errorFocus = "",
   register,
 }: Props) {
   return (
@@ -38,7 +40,7 @@ export function CustomInput({
         type={inputType}
         placeholder={placeHolder}
         id={name}
-        className="input"
+        className={`input ${errorFocus ? "focus:border-red-500 focus:ring-red-500" : "focus:border-sky-500 focus:ring-sky-500"}`}
         maxLength={maxLength}
       />
       {children}

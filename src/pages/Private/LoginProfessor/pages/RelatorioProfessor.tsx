@@ -1,6 +1,6 @@
 import { Card } from "src/components/Card";
 
-export function Relatorio() {
+export function RelatorioProfessor() {
   return (
     <Card title="RELATÓRIO DA DISCIPLINA">
 

@@ -35,11 +35,12 @@ export const validateBirthDate = (v: string) => {
   const today = new Date();
   const date = new Date(v);
   today.setMonth(today.getMonth() - 12);
-  console.log(date)
   // Verifica se a data passada é inválida ou maior do que a data de um ano atras
-  if (isNaN(date.getTime()) || date > today ) {
+  if (isNaN(date.getTime()) || date > today) {
     return false;
   }
 
   return date;
 };
+
+

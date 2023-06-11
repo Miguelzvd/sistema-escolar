@@ -1,6 +1,6 @@
 import { Card } from "src/components/Card";
 
-export function DiarioDeClasse() {
+export function DiarioDeClasseProfessor() {
   return (
     <Card title="DIÁRIO DE CLASSE">
 

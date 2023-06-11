@@ -90,6 +90,7 @@ export default function LoginForm() {
             text="Tipo de acesso"
             register={register}
             name="userType"
+            errorFocus={errors.userType?.message}
           >
             <option className="text-slate-400" value="">
               Escolha o tipo de usuário
@@ -113,6 +114,7 @@ export default function LoginForm() {
           name="cpf"
           register={register}
           maxLength={14}
+          errorFocus={errors.cpf?.message}
         >
           {errors.cpf && (
             <span className="ml-2 text-red-600 text-sm">
@@ -127,6 +129,7 @@ export default function LoginForm() {
           placeHolder="Digite sua senha"
           name="password"
           register={register}
+          errorFocus={errors.password?.message}
         >
           {errors.password && (
             <span className="ml-2 text-red-600 text-sm">

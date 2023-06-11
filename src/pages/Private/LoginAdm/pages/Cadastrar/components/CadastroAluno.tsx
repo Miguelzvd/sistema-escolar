@@ -1,13 +1,13 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Button, CustomInput, CustomSelect } from "src/components";
 import { validateBirthDate, validateCPF } from "src/utils/functions";
-import { Card } from "src/components";
-import { useEffect, useState } from "react";
-import { cpfMask, rgMask } from "src/utils/inputMasks";
-import { useNavigate } from "react-router-dom";
 import { InputDataAluno } from "src/constants/InputData";
+import { cpfMask, rgMask, telMask } from "src/utils/inputMasks";
+import { Card } from "src/components";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { z } from "zod";
 
 export function CadastroAluno() {
   const [isSaved, setIsSaved] = useState(false);
@@ -33,7 +33,7 @@ export function CadastroAluno() {
 
     email: z.string().nonempty("Campo obrigatório"),
 
-    tel: z.string().nonempty("Campo obrigatório"),
+    tel: z.string().nonempty("Campo obrigatório").min(15, "Preencha todo o campo"),
 
     dataNascimento: z
       .string()
@@ -67,10 +67,12 @@ export function CadastroAluno() {
   //Mascaras
   const cpfValue = watch("cpf"); //Observando o input CPF
   const rgValue = watch("rg"); //Observando o input CPF
+  const telValue = watch("tel"); //Observando o input CPF
   useEffect(() => {
     setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
     setValue("rg", rgMask(rgValue)); //Alterando o valor do input CPF de acordo com a mascara criada
-  }, [cpfValue, rgValue, setValue]);
+    setValue("tel", telMask(telValue)); //Alterando o valor do input CPF de acordo com a mascara criada
+  }, [cpfValue, rgValue, telValue, setValue]);
 
   //Submit
   const handleFormSubmit = async (data: FormSchemaValues): Promise<void> => {
@@ -115,6 +117,7 @@ export function CadastroAluno() {
                   register={register}
                   maxLength={maxLength}
                   required={required}
+                  errorFocus={errors[error]?.message}
                 >
                   {errors[error] && (
                     <span className="ml-2 text-red-600 text-sm">
@@ -126,7 +129,7 @@ export function CadastroAluno() {
             )}
 
             <div>
-              <CustomSelect text="Sexo" register={register} name="sexo">
+              <CustomSelect text="Sexo" register={register} name="sexo" errorFocus={errors.sexo?.message}>
                 <option className="text-slate-400" value="">
                   Escolha o sexo
                 </option>
@@ -139,6 +142,7 @@ export function CadastroAluno() {
                 </span>
               )}
             </div>
+            
           </section>
 
           <section className="w-128 m-auto justify-center flex">

@@ -116,6 +116,7 @@ export function CadastroResponsavel() {
                   register={register}
                   maxLength={maxLength}
                   required={required}
+                  errorFocus={errors[error]?.message}
                 >
                   {errors[error] && (
                     <span className="ml-2 text-red-600 text-sm">

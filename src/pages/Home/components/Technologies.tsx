@@ -1,8 +1,5 @@
 import { Card } from "./Card";
-import {
-  HeroCardsData,
-} from "../../../constants";
-
+import { HeroCardsData } from "src/constants";
 
 export default function Technologies() {
   return (
@@ -12,9 +9,11 @@ export default function Technologies() {
       </h1>
       {/* Card Container */}
       <div>
-      <div className="w-full p-0 md:p-8 grid grid-flow-row md:grid-cols-3 gap-10 md:gap-8 duration-300">
+        <div className="w-full p-0 md:p-8 grid grid-flow-row md:grid-cols-3 gap-10 md:gap-8 duration-300">
           {/* Card */}
-          {HeroCardsData.filter((data) => ["Vitejs", "React", "Tailwind"].includes(data.title)).map((data, index) => (
+          {HeroCardsData.filter((data) =>
+            ["Vitejs", "React", "Tailwind"].includes(data.title)
+          ).map((data, index) => (
             <Card
               key={index}
               title={data.title}
@@ -26,7 +25,9 @@ export default function Technologies() {
         </div>
         <div className="w-full mt-10 md:mt-0 px-0 md:px-40 grid md:grid-flow-col md:grid-cols-2 gap-10 md:gap-8 duration-300">
           {/* Card */}
-          {HeroCardsData.filter((data) => ["MySQL", "Nodejs"].includes(data.title)).map((data, index) => (
+          {HeroCardsData.filter((data) =>
+            ["MySQL", "Nodejs"].includes(data.title)
+          ).map((data, index) => (
             <Card
               key={index}
               title={data.title}
