@@ -1,4 +1,4 @@
-import { Button, CustomInput, CustomSelect } from "src/components";
+import { Button, CustomFormInput, CustomSelect } from "src/components";
 import { validateBirthDate, validateCPF } from "src/utils/functions";
 import { InputDataAluno } from "src/constants/InputData";
 import { cpfMask, rgMask, telMask } from "src/utils/inputMasks";
@@ -108,7 +108,7 @@ export function CadastroAluno() {
                 { label, type, placeholder, name, maxLength, required, error },
                 index
               ) => (
-                <CustomInput
+                <CustomFormInput
                   key={index}
                   text={label}
                   inputType={type}
@@ -124,7 +124,7 @@ export function CadastroAluno() {
                       {errors[error]?.message}
                     </span>
                   )}
-                </CustomInput>
+                </CustomFormInput>
               )
             )}
 

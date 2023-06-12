@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button, CustomInput, CustomSelect } from "src/components";
+import { Button, CustomFormInput, CustomSelect } from "src/components";
 import { validateBirthDate, validateCPF } from "src/utils/functions";
 import { Card } from "src/components";
 import { useEffect, useState } from "react";
@@ -119,7 +119,7 @@ export function CadastroProfessor() {
                 { label, type, placeholder, name, maxLength, required, error },
                 index
               ) => (
-                <CustomInput
+                <CustomFormInput
                   key={index}
                   text={label}
                   inputType={type}
@@ -135,7 +135,7 @@ export function CadastroProfessor() {
                       {errors[error]?.message}
                     </span>
                   )}
-                </CustomInput>
+                </CustomFormInput>
               )
             )}
 

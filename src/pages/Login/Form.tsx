@@ -1,12 +1,12 @@
-import { Button, CustomInput, CustomSelect } from "../../components/index";
+import { Button, CustomFormInput, CustomSelect } from "src/components/index";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../contexts";
+import { AuthContext } from "src/contexts";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod"; //Biblioteca de validacao
-import { cpfMask } from "../../utils/inputMasks";
-import { validateCPF } from "../../utils/functions";
+import { cpfMask } from "src/utils/inputMasks";
+import { validateCPF } from "src/utils/functions";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -107,7 +107,7 @@ export default function LoginForm() {
           )}
         </div>
 
-        <CustomInput
+        <CustomFormInput
           text="CPF"
           inputType="text"
           placeHolder="Digite seu CPF"
@@ -121,9 +121,9 @@ export default function LoginForm() {
               {errors.cpf.message}
             </span>
           )}
-        </CustomInput>
+        </CustomFormInput>
 
-        <CustomInput
+        <CustomFormInput
           text="Senha"
           inputType="password"
           placeHolder="Digite sua senha"
@@ -136,7 +136,7 @@ export default function LoginForm() {
               {errors.password.message}
             </span>
           )}
-        </CustomInput>
+        </CustomFormInput>
 
         <Button text="Entrar" type="submit" />
       </form>

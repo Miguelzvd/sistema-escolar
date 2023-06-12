@@ -3,7 +3,7 @@ import {  ReactNode } from "react";
 import { UseFormRegister } from "react-hook-form";
 
 type Props = {
-  text: string;
+  text?: string;
   name: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,7 +16,7 @@ type Props = {
   errorFocus?: string | undefined;
 };
 
-export function CustomInput({
+export function CustomFormInput({
   text,
   name,
   inputType = "text",
