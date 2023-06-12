@@ -1,2 +1,2 @@
 export * from "./ModalDiarioClasse"
-export * from "./ModalDiarioClasseProfessor"
+export * from "./ModalNotasProfessor"
