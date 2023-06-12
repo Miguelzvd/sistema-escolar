@@ -20,7 +20,7 @@ export function CustomInput({
   onChange,
 }: Props) {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <label htmlFor={name} className="w-full" />
       <div className="relative">
         {search && (

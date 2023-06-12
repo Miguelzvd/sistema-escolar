@@ -6,7 +6,7 @@ type Props = {
 
 export function Card({ children, title, padding="py-8" }: Props) {
   return (
-    <div className="min-h-screen flex flex-row items-center m-auto">
+    <div className="min-h-screen flex flex-row items-center m-auto ">
       <div
         className={` 
         bg-slate-200 
@@ -28,6 +28,7 @@ export function Card({ children, title, padding="py-8" }: Props) {
         border-slate-300
         shadow-sm drop-shadow-md
         duration-300
+
         `}
       >
         <header>

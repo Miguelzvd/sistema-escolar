@@ -1,6 +1,7 @@
 import { Button } from "src/components";
 import { Card } from "src/components/Card";
 import { CustomInput } from "src/components/CustomInputs/CustomInput";
+import { LoadingNotas } from "src/components/Loading";
 import { Disciplines } from "src/constants";
 
 export function NotasProfessor() {
@@ -9,27 +10,7 @@ export function NotasProfessor() {
       {/* TABELA */}
 
       {Disciplines.length === 0 ? (
-        <div className="w-[95%] col-span-1 md:col-span-2 lg:col-span-3">
-          <div className="animate-pulse flex space-x-4">
-            <div className="flex-1 space-y-6 py-1">
-              <div className="space-y-3">
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-                <div className="h-3 bg-slate-700 rounded" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <LoadingNotas/>
       ) : (
         <table className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
           <thead className="flex flex-row justify-center w-full">
@@ -43,14 +24,16 @@ export function NotasProfessor() {
                       <th className="w-[30%]">Disciplina</th>
                     </tr>
                   </thead>
-                  <tbody className="w-[40%] flex flex-row items-center">
-                    <tr className="w-full mr-2">
+                  <tbody className="w-[40%]">
+                    <tr className="flex flex-row mr-2">
+                      <td className="grow">
                         <CustomInput
                           inputType="text"
                           name="tumar"
                           placeHolder="Pesquisar turma"
                           search={true}
                         />
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -58,13 +41,13 @@ export function NotasProfessor() {
             </tr>
           </thead>
 
-          <tbody className="flex flex-col items-center w-full">
-            <tr className="w-[95%]">
-              <td className="w-full flex flex-col gap-4 rounded-md">
+          <tbody className="flex flex-col items-center w-full ">
+            <tr className="w-[95%] ">
+              <td className="w-full flex flex-col gap-4 rounded-md h-128 overflow-y-scroll scrollw">
                 {Disciplines.map((discipline, index) => (
                   <table
                     key={index}
-                    className="w-full bg-neutral-400 flex flex-row rounded-md py-1 items-center"
+                    className="w-full bg-neutral-400 flex flex-row justify-between rounded-md py-2 items-center "
                   >
                     <thead className="w-[50%]">
                       <tr className="flex flex-row justify-around text-xl">
@@ -75,13 +58,20 @@ export function NotasProfessor() {
                     </thead>
 
                     <tbody className="w-[40%]">
-                      <tr className="flex flex-row justify-around ">
-                        <Button text="Digitar Notas"/>
+                      <tr className="flex flex-row mr-2">
+                        <td className="grow">
+                          <Button
+                            text="Digitar Notas"
+                            color="bg-teal-500"
+                            hoverBG="hover:bg-teal-600"
+                            padding="p-1"
+                            onClick={()=> console.log("click")}
+                          />
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 ))}
-                
               </td>
             </tr>
           </tbody>

@@ -3,9 +3,9 @@ import { Home, Login, LoginAluno, LoginProfessor, LoginAdm } from "src/pages"
 import { RequireAuth } from "src/contexts";
 import { DadosPessoais, DiarioDeClasse, Notas, Relatorio, BemVindoAluno} from "src/pages/Private/LoginAluno/pages";
 import { Cadastros, Cadastrar, BemVindoAdm } from "src/pages/Private/LoginAdm/pages";
-import { CadastroAluno, CadastroOptions, CadastroProfessor } from "src/pages/Private/LoginAdm/pages/Cadastrar/components";
-import { CadastroResponsavel } from "src/pages/Private/LoginAdm/pages/Cadastrar/components/CadastroResponsavel";
+import { CadastroAluno, CadastroOptions, CadastroProfessor, CadastroResponsavel } from "src/pages/Private/LoginAdm/pages/Cadastrar/components";
 import { DadosPessoaisProfessor, DiarioDeClasseProfessor, NotasProfessor, RelatorioProfessor } from "src/pages/Private/LoginProfessor/pages";
+import { BemVindoProfessor } from "src/pages/Private/LoginProfessor/pages/BemVindoProfessor";
 
 export function AppRoutes() {
   return (
@@ -44,7 +44,7 @@ export function AppRoutes() {
         </Route>
 
         <Route path="teacher" element={ <RequireAuth> <LoginProfessor/></RequireAuth>}>
-          <Route index element={<Notas/>}/>
+          <Route index element={<BemVindoProfessor/>}/>
           <Route path="notas" element={<NotasProfessor/>}/>
           <Route path="diario-classe" element={<DiarioDeClasseProfessor/>}/>
           <Route path="dados-pessoais" element={<DadosPessoaisProfessor/>}/>

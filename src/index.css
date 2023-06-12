@@ -30,7 +30,7 @@
   }
 
   .scrollw {
-    @apply scrollbar-thin scrollbar-thumb-zinc-500 scrollbar-track-gray-200;
+    @apply scrollbar-thin scrollbar-thumb-zinc-500 scrollbar-track-gray-300;
   }
 
   .Button {

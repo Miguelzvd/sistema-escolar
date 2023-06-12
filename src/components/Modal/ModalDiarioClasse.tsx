@@ -12,8 +12,7 @@ type Props = {
   data: DiarioClasse | null;
 };
 
-
-export function Modal({ isOpen, setModalOpen, data }: Props) {
+export function ModalDiarioClasse({ isOpen, setModalOpen, data }: Props) {
   if (isOpen) {
     return (
       <main className="fixed top-0 left-0 flex items-center justify-center w-full h-full z-10">

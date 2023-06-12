@@ -1,4 +1,4 @@
-import { api } from "../service/api";
+import { api } from "src/service/api";
 
 export const useApi = () => ({
 

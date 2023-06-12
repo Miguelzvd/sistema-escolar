@@ -1,77 +1,11 @@
 import { useState } from "react";
-import { Modal } from "src/components";
+import { ModalDiarioClasse } from "src/components";
 import { Card } from "src/components/Card";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
+import { DiarioClasse } from "src/constants/DiarioClasse";
 
 //O metodo Object.freeze() previne que um objeto seja modificado
-const diarioClasse = Object.freeze([
-  {
-    materia: "Matematica",
-    data: "20/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Portugues",
-    data: "12/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Geografia",
-    data: "02/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Ingles",
-    data: "02/07/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Matematica",
-    data: "20/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Portugues",
-    data: "12/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Geografia",
-    data: "02/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Ingles",
-    data: "02/07/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Matematica",
-    data: "20/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Portugues",
-    data: "12/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-  {
-    materia: "Geografia",
-    data: "02/06/2023",
-    texto:
-      "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto",
-  },
-]);
+const diarioClasse = Object.freeze(DiarioClasse);
 
 type DiarioClasse = {
   materia: string;
@@ -146,7 +80,7 @@ export function DiarioDeClasse() {
         </main>
       </Card>
 
-      <Modal
+      <ModalDiarioClasse
         isOpen={openModal}
         setModalOpen={() => setOpenModal(false)}
         data={selectedData}

@@ -6,7 +6,9 @@ export function LoginProfessor() {
   return (
     <>
       <div className="flex flex-row scrollbar-thin overflow-auto min-h-screen w-full">
-        <SideMenu menuItems={SideMenuDataTeacher} />
+        <div className="min-h-screen">
+          <SideMenu menuItems={SideMenuDataTeacher} />
+        </div>
         <Outlet />
       </div>
     </>
