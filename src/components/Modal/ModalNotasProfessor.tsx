@@ -3,16 +3,24 @@ import { Button } from "..";
 import { Disciplines } from "src/constants";
 import { CustomInput } from "src/components/CustomInputs";
 
-type DiarioClasse = {
-  materia: string;
-  data: string;
-  texto: string;
-};
+type Turma = {
+  NomeTurma: string;
+  Série: string;
+  Disciplina: string;
+  Alunos: {
+      AlunoNome: string;
+      AlunoNota_1: string;
+      AlunoNota_2: string;
+      AlunoNota_3: string;
+      Media: string;
+  };
+}
 
+// {data?.map((data) => data.NomeTurma)}
 type Props = {
   isOpen: boolean;
   setModalOpen: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  data: DiarioClasse | null;
+  data: Turma | null;
 };
 
 export function ModalNotasProfessor({ isOpen, setModalOpen, data }: Props) {

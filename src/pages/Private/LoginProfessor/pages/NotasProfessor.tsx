@@ -7,18 +7,34 @@ import { ModalNotasProfessor } from "src/components/Modal";
 import { Disciplines } from "src/constants";
 import { Turma } from "src/constants/Turma";
 
+type TurmaData = {
+    NomeTurma: string;
+    Série: string;
+    Disciplina: string;
+    Alunos: {
+        AlunoNome: string;
+        AlunoNota_1: string;
+        AlunoNota_2: string;
+        AlunoNota_3: string;
+        Media: string;
+    }[];
+}
+
 export function NotasProfessor() {
   const [openModal, setOpenModal] = useState(false);
+  const [selectedData, setSelectedData] = useState<TurmaData | null>(null);
 
-
+  const handleOpenModal = () => {
+    setOpenModal(true);
+    // setSelectedData(data);
+  };
 
   return (
     <>
       <Card title="NOTAS">
         {/* TABELA */}
-
         {Disciplines.length === 0 ? (
-          <LoadingNotas/>
+          <LoadingNotas />
         ) : (
           <table className="text-white w-full h-full flex flex-col items-center justify-evenly gap-4">
             <thead className="flex flex-row justify-center w-full">
@@ -51,8 +67,8 @@ export function NotasProfessor() {
 
             <tbody className="flex flex-col items-center w-full ">
               <tr className="w-[95%] ">
-                <td className="w-full flex flex-col gap-4 rounded-md h-128 overflow-y-scroll scrollw">
-                  {Turma.map((Turma, index) => (
+                <td className="w-full flex flex-col gap-4 rounded-md h-128 overflow-y-scroll overflow-x-scroll">
+                  {Turma.map((turmaData, index) => (
                     <table
                       key={index}
                       className="w-full bg-neutral-400 flex flex-row justify-between rounded-md py-2 items-center "
@@ -61,7 +77,7 @@ export function NotasProfessor() {
                         <tr className="flex flex-row justify-around text-xl">
                           <th className="w-[30%]">Turma A</th>
                           <th className="w-[30%]">1°</th>
-                          <th className="w-[30%]">{Turma.Disciplina}</th>
+                          <th className="w-[30%]">{turmaData.Disciplina}</th>
                         </tr>
                       </thead>
 
@@ -73,7 +89,7 @@ export function NotasProfessor() {
                               color="bg-teal-500"
                               hoverBG="hover:bg-teal-600"
                               padding="p-1"
-                              onClick={() => setOpenModal(true)}
+                              onClick={handleOpenModal}
                             />
                           </td>
                         </tr>
@@ -88,9 +104,9 @@ export function NotasProfessor() {
       </Card>
       <ModalNotasProfessor
         isOpen={openModal}
-        setModalOpen={() => setOpenModal(false)} 
-        data={null}      
-        />
+        setModalOpen={() => setOpenModal(false)}
+        data={null}
+      />
     </>
   );
 }

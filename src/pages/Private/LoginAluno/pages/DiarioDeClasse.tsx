@@ -29,7 +29,7 @@ export function DiarioDeClasse() {
     else return;
   };
 
-  const handleClickOpenModal = (data: DiarioClasse | null) => {
+  const handleOpenModal = (data: DiarioClasse | null) => {
     setOpenModal(true);
     setSelectedData(data);
   };
@@ -45,7 +45,7 @@ export function DiarioDeClasse() {
         <main className="w-[95%] h-[25rem] select-none flex flex-col justify-between">
           {diarioClassePaginated.map((data, index) => (
             <section
-              onClick={() => handleClickOpenModal(data)}
+              onClick={() => handleOpenModal(data)}
               key={index}
               className="bg-gray-200 h-24 w-full border border-slate-300 rounded-lg truncate shadow-sm hover:shadow-md hover:cursor-pointer duration-200 "
             >
