@@ -28,6 +28,7 @@ export function CadastroResponsavel() {
 
     rg: z
       .string()
+      .min(11, "RG inválido")
       .nonempty("Campo obrigatório")
       .transform((rg) => rg.replace(/[.-]/g, "")),
 
@@ -89,7 +90,7 @@ export function CadastroResponsavel() {
   const nextPage = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     alert("Cadastro de aluno e responsável conlcluido!");
-    navigate("/adm");
+    navigate("/adm/register");
   };
 
   return (

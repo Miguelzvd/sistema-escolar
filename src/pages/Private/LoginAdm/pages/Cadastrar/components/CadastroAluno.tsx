@@ -29,11 +29,15 @@ export function CadastroAluno() {
     rg: z
       .string()
       .nonempty("Campo obrigatório")
+      .min(11, "RG inválido")
       .transform((rg) => rg.replace(/[.-]/g, "")),
 
     email: z.string().nonempty("Campo obrigatório"),
 
-    tel: z.string().nonempty("Campo obrigatório").min(15, "Preencha todo o campo"),
+    tel: z
+      .string()
+      .nonempty("Campo obrigatório")
+      .min(15, "Preencha todo o campo"),
 
     dataNascimento: z
       .string()
@@ -129,7 +133,12 @@ export function CadastroAluno() {
             )}
 
             <div>
-              <CustomSelect text="Sexo" register={register} name="sexo" errorFocus={errors.sexo?.message}>
+              <CustomSelect
+                text="Sexo"
+                register={register}
+                name="sexo"
+                errorFocus={errors.sexo?.message}
+              >
                 <option className="text-slate-400" value="">
                   Escolha o sexo
                 </option>
@@ -142,7 +151,6 @@ export function CadastroAluno() {
                 </span>
               )}
             </div>
-            
           </section>
 
           <section className="w-128 m-auto justify-center flex">

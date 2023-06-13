@@ -20,7 +20,7 @@ export function ModalNotasProfessor({ isOpen, setModalOpen, data }: Props) {
     return (
       <main className="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-full h-full z-10">
         <section className="bg-white md:bg-black md:opacity-30 fixed w-full h-full top-0 left-0" />
-        <section className=" w-full md:w-224 h-screen md:h-fit flex flex-col p-4 rounded-lg md:shadow-lg z-10 gap-2">
+        <section className=" w-full md:w-224 h-screen md:h-fit flex flex-col p-4 rounded-lg md:shadow-lg bg-white z-10 gap-2">
           <div className="w-full flex flex-col items-end ">
             <button onClick={setModalOpen} className="Button">
               <IoClose size={30} />

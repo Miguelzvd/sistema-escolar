@@ -5,6 +5,7 @@ import { CustomInput } from "src/components/CustomInputs/CustomInput";
 import { LoadingNotas } from "src/components/Loading";
 import { ModalNotasProfessor } from "src/components/Modal";
 import { Disciplines } from "src/constants";
+import { Turma } from "src/constants/Turma";
 
 export function NotasProfessor() {
   const [openModal, setOpenModal] = useState(false);
@@ -36,7 +37,7 @@ export function NotasProfessor() {
                         <td className="grow">
                           <CustomInput
                             inputType="text"
-                            name="tumar"
+                            name="turma"
                             placeHolder="Pesquisar turma"
                             search={true}
                           />
@@ -51,7 +52,7 @@ export function NotasProfessor() {
             <tbody className="flex flex-col items-center w-full ">
               <tr className="w-[95%] ">
                 <td className="w-full flex flex-col gap-4 rounded-md h-128 overflow-y-scroll scrollw">
-                  {Disciplines.map((discipline, index) => (
+                  {Turma.map((Turma, index) => (
                     <table
                       key={index}
                       className="w-full bg-neutral-400 flex flex-row justify-between rounded-md py-2 items-center "
@@ -60,7 +61,7 @@ export function NotasProfessor() {
                         <tr className="flex flex-row justify-around text-xl">
                           <th className="w-[30%]">Turma A</th>
                           <th className="w-[30%]">1°</th>
-                          <th className="w-[30%]">{discipline.title}</th>
+                          <th className="w-[30%]">{Turma.Disciplina}</th>
                         </tr>
                       </thead>
 

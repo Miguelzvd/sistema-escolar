@@ -15,39 +15,38 @@ export function CadastroProfessor() {
   const navigate = useNavigate();
 
   const FormSchema = z.object({
-    
     nome: z
       .string()
       .nonempty("Campo obrigatório")
       .regex(/^[a-záàâãéèêíïóôõöúçñ ]+$/i, "Apenas letras"),
-    
-      cpf: z
+
+    cpf: z
       .string()
       .nonempty("Campo obrigatório")
       .min(14, "CPF inválido")
       .refine((cpf) => validateCPF(cpf), "CPF inválido")
       .transform((cpf) => cpf.replace(/[.-]/g, "")),
-    
-      rg: z
+
+    rg: z
       .string()
       .nonempty("Campo obrigatório")
       .transform((rg) => rg.replace(/[.-]/g, "")),
-    
+
     email: z.string().nonempty("Campo obrigatório"),
-    
+
     disciplina: z.string().nonempty("Campo obrigatório"),
-    
+
     sexo: z.string().nonempty("Campo obrigatório"),
-    
+
     tel: z
       .string()
       .nonempty("Campo obrigatório")
       .min(15, "Preencha todo o campo"),
-    
+
     tel2: z.string(),
-    
+
     status: z.string().nonempty("Campo obrigatório"),
-    
+
     dataNascimento: z
       .string()
       .nonempty("Campo obrigatório")
