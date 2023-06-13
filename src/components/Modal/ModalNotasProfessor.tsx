@@ -18,10 +18,10 @@ type Props = {
 export function ModalNotasProfessor({ isOpen, setModalOpen, data }: Props) {
   if (isOpen) {
     return (
-      <main className="fixed top-0 left-0 flex items-center justify-center w-full h-full z-10">
-        <section className="bg-black opacity-30 fixed w-full h-full top-0 left-0" />
-        <section className="bg-white sm:w-50 sm:h-50 w-full md:w-224 h-full md:h-fit flex flex-col p-4 rounded-lg shadow-lg z-10 gap-2">
-          <div className="w-full flex flex-col items-end">
+      <main className="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-full h-full z-10">
+        <section className="bg-white md:bg-black md:opacity-30 fixed w-full h-full top-0 left-0" />
+        <section className=" w-full md:w-224 h-screen md:h-fit flex flex-col p-4 rounded-lg md:shadow-lg z-10 gap-2">
+          <div className="w-full flex flex-col items-end ">
             <button onClick={setModalOpen} className="Button">
               <IoClose size={30} />
             </button>
@@ -30,7 +30,7 @@ export function ModalNotasProfessor({ isOpen, setModalOpen, data }: Props) {
               <h2 className="text-xl">Turma A</h2>
             </div>
           </div>
-          <table className="sm:text-xs text-white w-full h-60 md:h-128 flex flex-col items-center gap-4 bg-neutral-200 py-4 rounded-md">
+          <table className="sm:text-xs text-white w-full h-128 flex flex-col items-center gap-4 bg-neutral-200 py-4 rounded-md">
             <thead className="w-[95%] bg-neutral-500 py-2 px-4 sm:px-0 rounded-md ">
               <tr className="w-full flex flex-row justify-around items-center text-xl">
                 <th className="w-[20%]">Nome do Aluno</th>
