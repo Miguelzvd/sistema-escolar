@@ -46,6 +46,9 @@ export function CadastroAluno() {
       .refine((date) => validateBirthDate(date), "Data inválida"),
 
     sexo: z.string().nonempty("Campo obrigatório"),
+
+    senha:z.string().nonempty("Campo obrigatório"),
+
   });
 
   type FormSchemaValues = z.infer<typeof FormSchema>;
@@ -65,6 +68,7 @@ export function CadastroAluno() {
       email: "",
       telefone: "",
       sexo: "",
+      senha: "",
     },
     resolver: zodResolver(FormSchema),
   });

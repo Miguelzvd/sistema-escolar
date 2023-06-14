@@ -1,11 +1,11 @@
 import { IinputData } from "../types";
 
 interface IinputAlundoData extends IinputData {
-  error: "nome" | "cpf" | "rg" | "telefone" | "data_nascimento" | "email" | "sexo";
+  error: "nome" | "cpf" | "rg" | "telefone" | "data_nascimento" | "email" | "sexo" | "senha";
 }
 
 interface IinputResponsavelData extends IinputData {
-  error: "nome" | "cpf" | "rg" | "telefone" | "telefone2" | "data_nascimento" | "email" | "sexo";
+  error: "nome" | "cpf" | "rg" | "telefone" | "telefone2" | "data_nascimento" | "email" | "sexo" | "senha";
 }
 
 interface InputProfessorData extends IinputData {
@@ -60,6 +60,13 @@ export const InputDataAluno: IinputAlundoData[] = [
     type: "email",
     placeholder: "Digite o E-mail",
     error: "email",
+  },
+  {
+    name: "senha",
+    label: "Senha",
+    type: "text",
+    placeholder: "Digite a senha",
+    error: "senha",
   },
 ];
 
@@ -118,6 +125,13 @@ export const InputDataResponsavel: IinputResponsavelData[] = [
     type: "email",
     placeholder: "Digite o E-mail",
     error: "email",
+  },
+  {
+    name: "senha",
+    label: "Senha",
+    type: "text",
+    placeholder: "Digite a senha",
+    error: "senha",
   },
 ];
 

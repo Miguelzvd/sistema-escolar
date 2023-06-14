@@ -45,6 +45,9 @@ export function CadastroResponsavel() {
       .string()
       .nonempty("Campo obrigatório")
       .refine((date) => validateBirthDate(date), "Data inválida"),
+    
+    senha:z.string().nonempty("Campo obrigatório"),
+
   });
 
   type FormSchemaValues = z.infer<typeof FormSchema>;
@@ -65,6 +68,7 @@ export function CadastroResponsavel() {
       telefone: "",
       telefone2: "",
       sexo: "",
+      senha: "",
     },
     resolver: zodResolver(FormSchema),
   });
