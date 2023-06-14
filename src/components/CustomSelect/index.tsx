@@ -22,7 +22,7 @@ export function CustomSelect({ text, children, name, errorFocus, required = true
 
       <select 
         className={`select ${errorFocus ? "focus:border-red-500 focus:ring-red-500" : "focus:border-sky-500 focus:ring-sky-500"}`}
-        {...register(name)} id={name}>
+        {...register(name)} id={name} >
         {children}
       </select>
     </div>

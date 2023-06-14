@@ -8,7 +8,10 @@ interface IinputResponsavelData extends IinputData {
   error: "nome" | "cpf" | "rg" | "tel" | "tel2" | "dataNascimento" | "email";
 }
 
-type InputProfessorData = IinputResponsavelData
+interface InputProfessorData extends IinputData {
+  error: "nome" | "cpf" | "rg" | "telefone" | "email" | "senha";
+
+}
 
 
 export const InputDataAluno: IinputAlundoData[] = [
@@ -141,35 +144,25 @@ export const InputDataProfessor: InputProfessorData[] = [
     error: "rg",
   },
   {
-    name: "dataNascimento",
-    label: "Data de nascimento",
-    type: "date",
-    placeholder: "",
-    maxLength: 10,
-    error: "dataNascimento",
-  },
-  {
-    name: "tel",
+    name: "telefone",
     label: "Telefone",
     type: "tel",
     placeholder: "Digite o telefone",
-    error: "tel",
+    error: "telefone",
     maxLength: 15,
   },
-  // {
-  //   name: "tel2",
-  //   label: "Telefone 2",
-  //   type: "tel",
-  //   placeholder: "Digite o telefone",
-  //   error: "tel2",
-  //   required: false,
-  //   maxLength: 15,
-  // },
   {
     name: "email",
     label: "E-mail",
     type: "email",
     placeholder: "Digite o E-mail",
     error: "email",
+  },
+  {
+    name: "senha",
+    label: "Senha",
+    type: "text",
+    placeholder: "Digite a senha",
+    error: "senha",
   },
 ];

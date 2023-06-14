@@ -36,6 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(data.user);
       //Salva o token no localStorage
       setToken(data.token);
+      console.log(data.user);
       return true;
     }
     return false;

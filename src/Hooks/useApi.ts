@@ -12,14 +12,14 @@ export const useApi = () => ({
 
     signin: async (cpf:string, password:string, userType:string) => {
         //O metodo post é executado para enviar os dados para a api e recebe um objeto como resposta se o usuario é ou nao valido e armazena na variável response 
-        const response = await api.post("/login", {cpf, password, userType});
-        //O "data" se refere a resposta da requisicao 
-        return response.data;
         return {
             user: {id: 3, name: "miguel", cpf:"341242144", userType: "aluno"},
             token: "1231243"
         };
-        
+        const response = await api.post("/login", {cpf, password, userType});
+        //O "data" se refere a resposta da requisicao 
+        return response.data;
+
     },
 
     logout: async () => {
