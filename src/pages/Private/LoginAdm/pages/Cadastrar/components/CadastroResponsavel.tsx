@@ -1,13 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button, CustomFormInput } from "src/components";
+import { Button, CustomFormInput, CustomSelect } from "src/components";
 import { validateBirthDate, validateCPF } from "src/utils/functions";
 import { Card } from "src/components";
 import { useEffect, useState } from "react";
-import { cpfMask, rgMask } from "src/utils/inputMasks";
+import { cpfMask, rgMask, telMask } from "src/utils/inputMasks";
 import { InputDataResponsavel } from "src/constants/InputData";
 import { useNavigate } from "react-router-dom";
+import { api } from "src/service/api";
 
 export function CadastroResponsavel() {
   const [isSaved, setIsSaved] = useState(false);
@@ -34,11 +35,13 @@ export function CadastroResponsavel() {
 
     email: z.string().nonempty("Campo obrigatório"),
 
-    tel: z.string().nonempty("Campo obrigatório"),
+    telefone: z.string().nonempty("Campo obrigatório"),
 
-    tel2: z.string(),
+    telefone2: z.string(),
 
-    dataNascimento: z
+    sexo: z.string().nonempty("Campo obrigatório"),
+
+    data_nascimento: z
       .string()
       .nonempty("Campo obrigatório")
       .refine((date) => validateBirthDate(date), "Data inválida"),
@@ -57,10 +60,11 @@ export function CadastroResponsavel() {
       nome: "",
       cpf: "",
       rg: "",
-      dataNascimento: "",
+      data_nascimento: "",
       email: "",
-      tel: "",
-      tel2: "",
+      telefone: "",
+      telefone2: "",
+      sexo: "",
     },
     resolver: zodResolver(FormSchema),
   });
@@ -68,18 +72,29 @@ export function CadastroResponsavel() {
   //Mascaras
   const cpfValue = watch("cpf"); //Observando o input CPF
   const rgValue = watch("rg"); //Observando o input CPF
+  const telValue = watch("telefone"); //Observando o input telefone
+  const telValue2 = watch("telefone2"); //Observando o input telefone
+
   useEffect(() => {
     setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
-    setValue("rg", rgMask(rgValue)); //Alterando o valor do input CPF de acordo com a mascara criada
-  }, [cpfValue, rgValue, setValue]);
+    setValue("rg", rgMask(rgValue)); //Alterando o valor do input rg de acordo com a mascara criada
+    setValue("telefone", telMask(telValue)); //Alterando o valor do input telefone de acordo com a mascara criada
+    setValue("telefone2", telMask(telValue2)); //Alterando o valor do input telefone2 de acordo com a mascara criada
+  }, [cpfValue, rgValue, telValue, telValue2, setValue]);
 
   //Submit
   const handleFormSubmit = async (data: FormSchemaValues): Promise<void> => {
     if (!isSaved) {
+      const response = await api.post("/insertResp", data);
       alert("Responsável cadastrado com sucesso!");
+      console.log(response.data);
       setIsSaved(true);
-    } else {
+
+    } 
+    else {
+      const response = await api.post("/updateResp", data);
       alert("Responsável atualizado com sucesso!");
+      console.log(response.data);
     }
 
     const User = data;
@@ -127,6 +142,25 @@ export function CadastroResponsavel() {
                 </CustomFormInput>
               )
             )}
+            <div>
+              <CustomSelect
+                text="Sexo"
+                register={register}
+                name="sexo"
+                errorFocus={errors.sexo?.message}
+              >
+                <option className="text-slate-400" value="">
+                  Escolha o sexo
+                </option>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+              </CustomSelect>
+              {errors.sexo && (
+                <span className="ml-2 text-red-600 text-sm">
+                  {errors.sexo.message}
+                </span>
+              )}
+            </div>
           </section>
 
           <section className="w-128 m-auto justify-center flex">

@@ -1,7 +1,9 @@
-import axios from "axios";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Card } from "src/components/Card";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoadingDadosPessoais } from "src/components/Loading/LoadingDadosPessoais";
+import { api } from "src/service/api";
+import { AuthContext } from "src/contexts";
 
 export function DadosPessoaisProfessor() {
   interface Data {
@@ -9,10 +11,11 @@ export function DadosPessoaisProfessor() {
     value: string;
   }
   const [data, setData] = useState([]);
+  const user = useContext(AuthContext);
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/alunos/");
+      const response = await api.get(`/dadosProf/${user.user?.cpf}`);
       console.log(response.data);
       setData(response.data.result);
     } catch (error) {

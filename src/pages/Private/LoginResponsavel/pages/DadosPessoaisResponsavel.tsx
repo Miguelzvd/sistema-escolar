@@ -5,7 +5,7 @@ import { useEffect, useState, useContext } from "react";
 import { LoadingDadosPessoais } from "src/components/Loading/LoadingDadosPessoais";
 import { api } from "src/service/api";
 
-export function DadosPessoais() {
+export function DadosPessoaisResponsavel() {
   interface Data {
     label: string;
     value: string | number;
@@ -15,7 +15,7 @@ export function DadosPessoais() {
 
   const getData = async () => {
     try {
-      const response = await api.get(`/alunodados/${user.user?.cpf}`);
+      const response = await api.get(`/dadosresp/${user.user?.cpf}`);
       console.log(response.data);
       setData(response.data.result);
     } catch (error) {

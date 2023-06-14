@@ -6,6 +6,8 @@ import { Cadastros, Cadastrar, BemVindoAdm } from "src/pages/Private/LoginAdm/pa
 import { CadastroAluno, CadastroOptions, CadastroProfessor, CadastroResponsavel } from "src/pages/Private/LoginAdm/pages/Cadastrar/components";
 import { DadosPessoaisProfessor, DiarioDeClasseProfessor, NotasProfessor, RelatorioProfessor } from "src/pages/Private/LoginProfessor/pages";
 import { BemVindoProfessor } from "src/pages/Private/LoginProfessor/pages/BemVindoProfessor";
+import { LoginResponsavel } from "src/pages/Private/LoginResponsavel";
+import { BemVindoResponsavel, DadosPessoaisResponsavel, DiarioDeClasseResponsavel, NotasResponsavel, RelatorioResponsavel } from "src/pages/Private/LoginResponsavel/pages";
 
 export function AppRoutes() {
   return (
@@ -22,12 +24,12 @@ export function AppRoutes() {
           <Route path="relatorio-disciplina" element={<Relatorio/>}/>
         </Route>
 
-        <Route path="parent" element={ <RequireAuth> <LoginAluno/></RequireAuth>}>
-          <Route index element={<Notas/>}/>
-          <Route path="notas" element={<Notas/>}/>
-          <Route path="diario-classe" element={<DiarioDeClasse/>}/>
-          <Route path="dados-pessoais" element={<DadosPessoais/>}/>
-          <Route path="relatorio-disciplina" element={<Relatorio/>}/>
+        <Route path="parent" element={ <RequireAuth> <LoginResponsavel/></RequireAuth>}>
+          <Route index element={<BemVindoResponsavel/>}/>
+          <Route path="notas" element={<NotasResponsavel/>}/>
+          <Route path="diario-classe" element={<DiarioDeClasseResponsavel/>}/>
+          <Route path="dados-pessoais" element={<DadosPessoaisResponsavel/>}/>
+          <Route path="relatorio-disciplina" element={<RelatorioResponsavel/>}/>
         </Route>
 
         <Route path="adm" element={ <RequireAuth> <LoginAdm/></RequireAuth>}>

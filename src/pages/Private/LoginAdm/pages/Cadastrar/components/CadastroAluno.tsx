@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import { api } from "src/service/api";
 
 export function CadastroAluno() {
   const [isSaved, setIsSaved] = useState(false);
@@ -34,12 +35,12 @@ export function CadastroAluno() {
 
     email: z.string().nonempty("Campo obrigatório"),
 
-    tel: z
+    telefone: z
       .string()
       .nonempty("Campo obrigatório")
       .min(15, "Preencha todo o campo"),
 
-    dataNascimento: z
+    data_nascimento: z
       .string()
       .nonempty("Campo obrigatório")
       .refine((date) => validateBirthDate(date), "Data inválida"),
@@ -60,9 +61,9 @@ export function CadastroAluno() {
       nome: "",
       cpf: "",
       rg: "",
-      dataNascimento: "",
+      data_nascimento: "",
       email: "",
-      tel: "",
+      telefone: "",
       sexo: "",
     },
     resolver: zodResolver(FormSchema),
@@ -70,25 +71,28 @@ export function CadastroAluno() {
 
   //Mascaras
   const cpfValue = watch("cpf"); //Observando o input CPF
-  const rgValue = watch("rg"); //Observando o input CPF
-  const telValue = watch("tel"); //Observando o input CPF
+  const rgValue = watch("rg"); //Observando o input rg
+  const telValue = watch("telefone"); //Observando o input telefone
   useEffect(() => {
     setValue("cpf", cpfMask(cpfValue)); //Alterando o valor do input CPF de acordo com a mascara criada
-    setValue("rg", rgMask(rgValue)); //Alterando o valor do input CPF de acordo com a mascara criada
-    setValue("tel", telMask(telValue)); //Alterando o valor do input CPF de acordo com a mascara criada
+    setValue("rg", rgMask(rgValue)); //Alterando o valor do input rg de acordo com a mascara criada
+    setValue("telefone", telMask(telValue)); //Alterando o valor do input telefone de acordo com a mascara criada
   }, [cpfValue, rgValue, telValue, setValue]);
 
   //Submit
   const handleFormSubmit = async (data: FormSchemaValues): Promise<void> => {
     if (!isSaved) {
+      const response = await api.post("/insertAluno", data);
       alert("Aluno cadastrado com sucesso!");
+      console.log(response.data);
       setIsSaved(true);
-    } else {
-      alert("Aluno atualizado com sucesso!");
-    }
 
-    const User = data;
-    console.log(User);
+    } 
+    else {
+      const response = await api.post("/updateAluno", data);
+      alert("Aluno atualizado com sucesso!");
+      console.log(response.data.msg);
+    }
   };
 
   //Proxima pagina

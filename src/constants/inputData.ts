@@ -1,15 +1,15 @@
 import { IinputData } from "../types";
 
 interface IinputAlundoData extends IinputData {
-  error: "nome" | "cpf" | "rg" | "tel" | "dataNascimento" | "email";
+  error: "nome" | "cpf" | "rg" | "telefone" | "data_nascimento" | "email" | "sexo";
 }
 
 interface IinputResponsavelData extends IinputData {
-  error: "nome" | "cpf" | "rg" | "tel" | "tel2" | "dataNascimento" | "email";
+  error: "nome" | "cpf" | "rg" | "telefone" | "telefone2" | "data_nascimento" | "email" | "sexo";
 }
 
 interface InputProfessorData extends IinputData {
-  error: "nome" | "cpf" | "rg" | "telefone" | "email" | "senha";
+  error: "nome" | "cpf" | "rg" | "telefone" | "email" | "senha" | "sexo";
 
 }
 
@@ -39,20 +39,20 @@ export const InputDataAluno: IinputAlundoData[] = [
     error: "rg",
   },
   {
-    name: "dataNascimento",
+    name: "data_nascimento",
     label: "Data de nascimento",
     type: "date",
     placeholder: "",
     maxLength: 10,
-    error: "dataNascimento",
+    error: "data_nascimento",
   },
   {
-    name: "tel",
+    name: "telefone",
     label: "Telefone",
     type: "tel",
     placeholder: "Digite o telefone",
     maxLength: 15,
-    error: "tel",
+    error: "telefone",
   },
   {
     name: "email",
@@ -88,26 +88,28 @@ export const InputDataResponsavel: IinputResponsavelData[] = [
     error: "rg",
   },
   {
-    name: "dataNascimento",
+    name: "data_nascimento",
     label: "Data de nascimento",
     type: "date",
     placeholder: "",
     maxLength: 10,
-    error: "dataNascimento",
+    error: "data_nascimento",
   },
   {
-    name: "tel",
+    name: "telefone",
     label: "Telefone",
     type: "tel",
     placeholder: "Digite o telefone",
-    error: "tel",
+    maxLength: 15,
+    error: "telefone",
   },
   {
-    name: "tel2",
+    name: "telefone2",
     label: "Telefone 2",
     type: "tel",
     placeholder: "Digite o telefone",
-    error: "tel2",
+    error: "telefone2",
+    maxLength: 15,
     required: false,
   },
   {

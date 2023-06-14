@@ -8,35 +8,44 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const api = useApi();
 
-  useEffect(() => {
-    const validateToken = async () => {
-      //captura o valor do localstorage
-      const storageData = localStorage.getItem("authToken");
+  // useEffect(() => {
+  //   const validateToken = async () => {
+  //     //captura o valor do localstorage
+  //     const storageData = localStorage.getItem("authToken");
+  //     const storageUser = localStorage.getItem("authToken");
 
-      //verifica se tem dado no localStorage
-      if (storageData) {
-        //caso exista dado é guardada a informação
-        const data = await api.validateToken(storageData);
-        if (data.user) {
-          setUser(data.user);
-        }
-      }
-    };
-    validateToken();
-  }, []);
+  //     //verifica se tem dado no localStorage
+  //     if (storageData) {
+  //       //caso exista dado é guardada a informação
+  //       const data = await api.validateToken(storageData);
+  //       if (data.user) {
+  //         setUser(data.user);
+  //       }
+  //     }
+  //   };
+  //   validateToken();
+  // }, []);
 
-  
   //função para realizar o login do usário
   const signin = async (cpf: string, password: string, userType: string) => {
     console.log("signin esta sendo executado");
-  
+
     const data = await api.signin(cpf, password, userType);
-    if (data.user && data.token) {
+    // if (data.user && data.token) {
+    if (data.token) {
+      const { user, acess } = data.token;
+      
+      console.log(user);
+      console.log(acess);
+
       //Salva o usuário
-      setUser(data.user);
+      setUser(user);
+      setUserStorage(user);
+      
+      localStorage.getItem("authToken")
+      
       //Salva o token no localStorage
-      setToken(data.token);
-      console.log(data.user);
+      setToken(acess)
       return true;
     }
     return false;
@@ -50,10 +59,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setToken("");
   };
 
-  //Salvando o token
+  //Salvando o token e usuario
   const setToken = (token: string) => {
     localStorage.setItem("authToken", token);
   };
+
+  const setUserStorage = (user: string) =>{
+    localStorage.setItem("authUser", user);
+
+  }
 
   return (
     <AuthContext.Provider value={{ user, signin, signout }}>

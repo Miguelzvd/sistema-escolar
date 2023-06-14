@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod"; //Biblioteca de validacao
 import { cpfMask } from "src/utils/inputMasks";
 import { validateCPF } from "src/utils/functions";
-import axios from "axios";
+import { api } from "src/service/api";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -56,9 +56,9 @@ export default function LoginForm() {
 
   const handleFormSubmit = async (data: FormLoginValues): Promise<void> => {
     const User = data
-    console.log(data);
+    // console.log(data);
 
-    const response = await axios.post("http://localhost:3000/api/login", data)
+    const response = await api.post("/login", data)
     console.log(response.data)
     if (User) {
       const isLogged = await auth.signin(
@@ -76,7 +76,7 @@ export default function LoginForm() {
           alert("Tipo de usuário inexistente");
         }
       } else {
-        alert("Algo deu errado");
+        alert("Ocorreu um erro ao fazer login");
       }
     }
     

@@ -5,3 +5,8 @@ export type User = {
     userType: string;
     password: string;
 }
+export type UserStorage = {
+    cpf: string;
+    userType: string;
+    password: string;
+}
