@@ -1,4 +1,4 @@
-import { IconeLogin } from "../../iconComponents/General";
+import { IconeLogin } from "src/iconComponents/General";
 import Form from "./Form";
 
 export function Login() {
