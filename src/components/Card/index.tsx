@@ -28,7 +28,6 @@ export function Card({ children, title, padding="py-8" }: Props) {
         border-slate-300
         shadow-sm drop-shadow-md
         duration-300
-
         `}
       >
         <header>

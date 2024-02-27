@@ -58,18 +58,19 @@ export default function LoginForm() {
     const User = data
     // console.log(data);
 
-    const response = await api.post("/login", data)
-    console.log(response.data)
+    const response = await auth.signin(User.cpf, User.password, User.userType)
+    console.log(response)
     if (User) {
       const isLogged = await auth.signin(
         User.cpf,
         User.password,
         User.userType
       );
-
+    
+      console.log(isLogged,"isLogged")
       if (isLogged) {
         const userType = User.userType;
-
+        console.log(userType)
         if (["student", "teacher", "parent", "adm"].includes(userType)) {
           navigate(`/${userType}`);
         } else {

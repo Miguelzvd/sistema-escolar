@@ -33,19 +33,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const data = await api.signin(cpf, password, userType);
     // if (data.user && data.token) {
     if (data.token) {
-      const { user, acess } = data.token;
-      
-      console.log(user);
-      console.log(acess);
+      const { user, acess } = data;
+      console.log(user, "user");
+
+      //   console.log(acess);
 
       //Salva o usuário
       setUser(user);
       setUserStorage(user);
-      
-      localStorage.getItem("authToken")
-      
+
+      localStorage.getItem("authToken");
+
       //Salva o token no localStorage
-      setToken(acess)
+      setToken(acess);
       return true;
     }
     return false;
@@ -64,10 +64,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("authToken", token);
   };
 
-  const setUserStorage = (user: string) =>{
+  const setUserStorage = (user: string) => {
     localStorage.setItem("authUser", user);
-
-  }
+  };
 
   return (
     <AuthContext.Provider value={{ user, signin, signout }}>
